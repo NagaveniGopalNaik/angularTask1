@@ -1,0 +1,99 @@
+<mat-card class = "container">
+    
+    <form [formGroup] = "employeeForm" (ngSubmit)="onSubmit()">
+        <h2 mat-headline class = "headding">Employee Register form</h2>
+        <mat-form-field appearance = "outline">
+            <mat-label >First Name </mat-label>
+            <input type="text" matInput formControlName = "fname" id="firstName" name="firstName">
+            <mat-hint *ngIf="employeeForm.get('fname')?.hasError('pattern')&& employeeForm.get('fname')?.touched">first name only accept characters</mat-hint>
+            <mat-hint *ngIf="employeeForm.get('fname')?.invalid&& employeeForm.get('fname')?.touched && !employeeForm.get('fname')?.hasError('pattern')">first name invalid</mat-hint>
+        </mat-form-field>
+
+            <!-- <small *ngIf="employeeForm.get('fname')?.hasError('pattern')&& employeeForm.get('fname')?.touched">first name only accept characters</small>
+            <small *ngIf="employeeForm.get('fname')?.invalid&& employeeForm.get('fname')?.touched">first name invalid</small> -->
+        
+        <mat-form-field appearance="outline" >
+            <mat-label for="lastName">Last Name </mat-label>
+            <input type="text" matInput formControlName = "lname" id="lastName" name="lastName">
+            <mat-hint *ngIf="employeeForm.get('lname')?.hasError('pattern')&& employeeForm.get('lname')?.touched">last name only accept characters</mat-hint>
+            <mat-hint *ngIf="employeeForm.get('lname')?.invalid&& employeeForm.get('lname')?.touched &&!employeeForm.get('lname')?.hasError('pattern')">last name invalid</mat-hint>
+        </mat-form-field>
+       
+        <!-- <mat-form-field appearance="fill" >
+            <label for="gender" >Gender</label>
+            <label for="male"><input type="radio" id="male" name="gender" formControlName="gender" value="male">Male</label>
+            <label for="female"><input type="radio" id="female" name="gender" formControlName="gender" value="female">Female</label>
+            <label for="other"><input type="radio" id="other" name="gender" formControlName="gender" value="other">Other</label>
+        </mat-form-field>
+         -->
+    
+           
+                <mat-label class="radioLabel">Gender : </mat-label>
+            <mat-radio-group aria-label="Select an option" name="gender" formControlName="gender" color="primary">
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+                <mat-radio-button value="other">Other</mat-radio-button>
+              </mat-radio-group>
+        
+           
+        <mat-form-field appearance="outline" >
+            <mat-label>Email</mat-label>
+            
+            <input type="email" matInput formControlName = "email" id="mail" name="gender">
+            <mat-hint *ngIf="employeeForm.get('email')?.hasError('email')&& employeeForm.get('email')?.touched">Email invalid</mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" >
+            <mat-label>Contact</mat-label>
+            <!-- <label for="cont">contact </label> -->
+            <input type="text" matInput formControlName = "contact" id="cont" name="cont">
+            <mat-hint *ngIf="employeeForm.get('contact')?.hasError('pattern')&& employeeForm.get('contact')?.touched && employeeForm.get('contact')?.invalid">Contact only accept 10 digits</mat-hint>
+       </mat-form-field>
+       
+       <mat-form-field appearance="outline" >
+            <mat-label for="age">Age </mat-label>
+            <input type="text" matInput formControlName = "age" id="age" name="age" required>
+            <mat-hint *ngIf="isValid(employeeForm.get('age'))">senior citizens are not allow registration</mat-hint> 
+            <!-- <small *ngIf="employeeForm.get('age')?.hasError('pattern')&& employeeForm.get('age')?.touched">please enter proper age</small> -->
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline" formArrayName="experience">
+        
+            <mat-label for="experience">experience: </mat-label>
+           <mat-select id="experience" (change)="add($event.target['value'])"> 
+                <mat-select id="experience" [(ngModel)] = "selectedValue">
+                <mat-option value="fresher">Fresher</mat-option>
+                <mat-option value="experience" >Experienced</mat-option>
+            </mat-select>
+           
+            <br>
+            <small *ngIf="dis">Add working details</small>
+             
+                
+                    <ng-container *ngFor = "let eform of employeeForm.get('experience')['controls'];index as i"
+                    [formGroupName]="i">
+
+                        <mat-card>
+                        <mat-form-field>
+                            <mat-label>year of Experience<input matInput type="text" formControlName="{{i}}"></mat-label> 
+                        <mat-label>Company Name<input type="text" matInput id="companyName{{i}}" formControlName = "companyName" name="companyName" ></mat-label>
+                        <mat-label>Year of experience<input type="number" matInput id="experiences{{i}}" formControlName = "experiences" name="experiences"></mat-label>
+                        <mat-label>Working Domain<input type="text" matInput id="workingDomain{{i}}" formControlName = "workingDomain" name="workingDomain"></mat-label>
+                        
+                        <button *ngIf="checkLength()" (click)="removeExperience('{{i}}')">Remove</button>
+                    
+                        </mat-form-field></mat-card>  
+                     
+                   </ng-container>
+                <button (click)="addExperience()" *ngIf="dis">+Add</button>
+        
+           
+        
+    </mat-form-field>  -->
+         
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+        <!-- <button type="submit">Submit</button> -->
+         <button type="clear" mat-raised-button (click)="formReset()"  color="primary">Reset</button>
+    </form>
+
+ <!-- <img src="../../assets/image.jpg" alt="image" width="50%" height="100%" float="right">  -->
+</mat-card>

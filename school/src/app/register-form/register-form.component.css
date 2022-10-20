@@ -1,0 +1,27 @@
+/* input.ng-invalid.ng-touched{
+    border: 1px solid red;
+} */
+.container{
+    width:40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10%;
+    padding: 4%;
+}
+
+mat-form-field,button{
+    width:100%;
+    display:block;
+    margin:3%;
+}
+.headding{
+    text-align:center;
+}
+
+mat-radio-button{
+    margin-left: 3%;
+}
+.radioLabel{
+    margin-left:3%;
+}
+

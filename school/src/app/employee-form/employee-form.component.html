@@ -1,0 +1,16 @@
+<!-- <p>employee-form works!</p> -->
+
+<form [formGroup]="employee_Details" (ngSubmit)="addEmployee()">
+    <div id="form-group">
+        <label for="employeeName">Name:</label>
+        <input type="text" formControlName="employeeName" name="employeeName" (keyup)="trackFrom()">
+        <!-- <small *ngIf = "employee_Details.get('employeeName')?.invalid && employee_Details.get('employeeName')?.touched">Name required</small> -->
+        <small *ngIf = "employee_Details.get('employeeName')?.hasError('maxlength') && employee_Details.get('employeeName')?.touched">Name too long</small>
+    </div>
+    <div id="form-group">
+        <label for="email">email:</label>
+        <input type="email" formControlName="email" name="email">
+    </div>
+    <button type="submit" [disabled]="!employee_Details.valid">Submit</button>
+    <button type="clear" (click)="resetForm()">Reset</button>
+</form>

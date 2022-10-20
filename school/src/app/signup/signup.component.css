@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    margin : 0;
+    padding : 0;
+}
+.required{
+    color:red;
+}
+
+.center{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    /* margin-bottom: 8%; */
+    font-size: 150%;
+    color: rgb(11, 67, 102)
+}
+.signup{
+    position: relative;
+    width: 30%;
+    margin:1.5% 35% ;
+    padding: 2%;
+    background-color: rgb(183, 212, 240);
+    line-height: 2em;
+    box-shadow: 4px 4px 2px black;
+}
+
+label{
+    font-size: 1vw;
+    color:#333;
+    display: inline-block;
+    color: rgb(11, 67, 102);
+
+}
+.input-text{
+    width:100%;
+    padding: 2%;
+    border-radius: 5%;
+    border:1px solid rgb(11, 67, 102);
+}
+ small{
+     color:red;
+ }
+select{
+    width: 100%;
+    padding: 2%;
+}
+textarea{
+    width: 100%;
+    
+}
+.btn{
+    width:100%;
+    padding: 2%;
+    background-color: rgb(11, 67, 102);
+    color:#fff;
+    margin-top: 2%;
+    font-size: 15px;
+}
+
+.btn:hover{
+    background-color:rgb(47, 132, 185) ;
+}
+
+input:focus,select:focus,textarea:focus{
+    background-color: rgb(32, 104, 148);
+    color:#fff;
+}
+input.ng-invalid.ng-touched{
+    border:1px solid #f00
+}

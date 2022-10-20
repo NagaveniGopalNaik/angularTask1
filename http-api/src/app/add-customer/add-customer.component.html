@@ -1,0 +1,16 @@
+<div class="form">
+    <form #add="ngForm" (submit)=addCustomer(add)>
+        <h2>Add Customer</h2>
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="name" name="name" placeholder="enter your name"><br>
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="email" name="email" placeholder="enter your mail"><br>
+        <!-- <label for="fev">Favorite</label>
+        <select name="fev" id="fev" [(ngModel)]="favorite" name="favorite">
+            <option value="dance">Dance</option>
+            <option value="sing">sing</option>
+            <option value="sports">sports</option>
+        </select><br> -->
+        <button type="submit">add</button>
+    </form>
+</div>

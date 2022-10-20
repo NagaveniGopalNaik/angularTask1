@@ -1,0 +1,18 @@
+<div>
+    <h2>Child Component</h2>
+<!-- {{name}} -->
+
+<ul *ngFor = "let value of data" style="list-style: none;">
+    <li>{{value.name}}</li>
+    <li (click) = "displayage(value.age)">{{value.age}}</li>
+</ul>
+
+
+<!-- 
+<input type="text" [value]="text" (change)="updateText($event)"> -->
+<label for="">Enter your name : </label>
+<input type="text" [(ngModel)] = 'editText' (keyup)="editUser()"><br>
+<p>data only share parent component</p>
+<input type="text" [(ngModel)] = 'editText1' (keyup)="editUser1()">
+
+</div>

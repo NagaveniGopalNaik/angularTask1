@@ -1,0 +1,96 @@
+<div class="signup">
+  <form #addUserDetails="ngForm" (submit)="addUser(addUserDetails)">
+    <!-- {{addUserDetails.value|json}} -->
+    <h2>User Registration</h2>
+    <p class = "center"><span class="required">*</span> represent not allow empty filled</p>
+    <label for="firstName">First Name<sup class="required" >*</sup></label><br />
+    <input
+      type="text"
+      [(ngModel)]="employeeDetails.firstName"
+      name="firstName"
+      id="firstName"
+      class="input-text"
+      required #fname="ngModel"
+    />
+    <small *ngIf="fname.touched && fname.invalid">First name is required</small><br>
+    <label for="lastName">Last Name<sup class="required">*</sup></label><br />
+    <input
+      type="text"
+      [(ngModel)]="employeeDetails.lastName"
+      name="lastName"
+      id="lastName"
+      class="input-text"
+      required #lname="ngModel"
+    />
+    <small *ngIf="lname.touched && lname.invalid">Last name is required</small><br>
+    <label for="email">Email<sup class="required">*</sup></label><br />
+    <input
+      type="email"
+      [(ngModel)]="employeeDetails.email"
+      name="email"
+      id="Emale"
+      class="input-text"
+      required 
+      #email1 ="ngModel"
+      email
+    /><small *ngIf="email1.touched && email1.invalid">Email is invalid</small><br>
+    <label for="gender">Gender<sup class="required">*</sup></label><br />
+    <select [(ngModel)]="employeeDetails.gender" name="gender" id="gender">
+      <!-- <option value="male">Male</option>
+      <option value="female">Female</option> -->
+      <option *ngFor="let g of Gender">{{g}}</option>
+    </select>
+     <br>
+    <label>Professional<sup class="required">*</sup></label><br />
+    <label for="professional1"
+      ><input
+        type="radio"
+        [(ngModel)]="employeeDetails.professional"
+        name="professional"
+        id="professional1"
+        value="trainee"
+        class="input-radio"
+       
+      />Software Trainee </label
+    ><br /> 
+
+    <label for="professional2"
+      ><input
+        type="radio"
+        [(ngModel)]="employeeDetails.professional"
+        name="professional"
+        id="professional2"
+        value="Developer"
+        class="input-radio"
+      />Software Developer
+    </label>
+    <br>
+    <label for="address">Address</label><br />
+    <textarea
+      [(ngModel)]="employeeDetails.address"
+      name="address"
+      id="address"
+      cols="30"
+      rows="10"
+    ></textarea
+    ><br />
+    <label for="password">Password<sup class="required">*</sup></label><br />
+    <input
+      type="password"
+      [(ngModel)]="employeeDetails.password"
+      name="password"
+      class="input-text"
+      required #pwd="ngModel"
+    />
+    <small *ngIf="pwd.touched && pwd.invalid">Password is required</small><br>
+    <input type="checkbox" [(ngModel)]="employeeDetails.terms" name="terms" required /> Accept terms and
+    conditions <br />
+    <button type="submit" class="btn" [disabled]="!addUserDetails.valid">Submit</button>
+
+    <button type="reset" (click)="resetForm(addUserDetails)" class="btn" >Reset</button>
+
+    <button type="submit" class="btn" (click)="loadValue(addUserDetails)">setValue</button>
+  </form>
+</div>
+
+<!-- {{name}} -->
