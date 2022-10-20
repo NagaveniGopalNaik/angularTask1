@@ -1,25 +1,27 @@
-.body{
+.main-body{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(53deg,#7A7FC8 0%, #BD385B);
    
-    width:1440px;
-    height: 1138px;
-    margin: auto;
-    /* padding: 20%; */
-    /* padding: 10% 5%; */
-    background-image: linear-gradient(53deg,blue,red);
 }
-.login-card{
-    margin: auto;
-    /* margin: auto; */
+
+
+.body{
     width: 20%;
+    margin: 20% 40%;
     border-radius: 5%;
     
     
+    
+    
+    
 }
-.login-card input{
-    display: block;
+.input{
+    
     width: 100%;
-   
-   
+    display: block;
+    
+
 }
 
 .body .login-card h2{
@@ -27,17 +29,16 @@
     padding-top:5% ;
 }
 .login-button{
-    background-color: rgb(224, 44, 104);
+    background-color: #D92756;
     border-radius: 50px;
     width: 30%;
-    margin: 0 35%;
+    /* margin: 0 35%; */
     color: #fff;
 }
 .password{
     text-align: center;
     padding:2% 0;
 }
-.headding{
-    width:1440px;
-    margin: auto;
+img{
+    margin-left: 10%;
 }
