@@ -3,24 +3,23 @@
     <mat-card class="headding">
         <img src="../../assets/Robosoft_logo_horizontal.png" alt="company logo">
     </mat-card>
-    <mat-card class="body">
-        <mat-card class="login-card">
-            <form>
+    <mat-card class="body" >
+        <form [formGroup]="loginForm" class="login-card" (ngSubmit)="onSubmit()">
+            
                 <h2>Login</h2>
                 <mat-form-field appearance="outline" class="input">
                     <mat-label>Enter Username</mat-label>
-                    <input type="text" matInput>
+                    <input type="text" matInput formControlName="username" name="username" >
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="input">
                     <mat-label>Enter Password</mat-label>
-                    <input type="password" matInput>
+                    <input type="password" matInput formControlName="password" name="password">
                 </mat-form-field>
-                <button mat-stroked-button class="login-button" routerLink="/home">Login</button>
+                <button type="submit" class="login-button" mat-button>Login</button>
                 <p class="password" routerLink="/home">Forgot Password?</p>
-            </form>
-        </mat-card>
+            
+        </form>
     </mat-card>
 
 </div>
-<router-outlet></router-outlet>
