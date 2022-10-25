@@ -10,6 +10,7 @@ import { AgePipe } from './age.pipe';
 import { UserPipe } from './user.pipe';
 import {UserImpurePipe} from './user.pipe';
 import { DirectivesComponent } from './directives/directives.component';
+import { HighlightDirective } from './highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { DirectivesComponent } from './directives/directives.component';
     AgePipe,
     UserPipe,
     UserImpurePipe,
-    DirectivesComponent
+    DirectivesComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
