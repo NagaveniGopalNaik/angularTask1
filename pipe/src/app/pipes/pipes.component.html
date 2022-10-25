@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="container1">
+        <p>Using Builtin pipe concept</p>
+    </div>
+    
+    <h2>Todays date : {{today}}</h2>
+    <h2>Todays date : {{today | date | uppercase}}</h2>
+    <h2>Todays date : {{today | date:'short' | lowercase}}</h2>
+    <h2>the value is : {{ nvalue |percent}}</h2>
+    <div class="container1">
+        <p>Using custom pipe concept</p>
+    </div><br>
+    <label for="name">Name : <input type="text" [(ngModel)]="name"></label>
+    <h3>Name in reverse order : {{name | custompipe}}</h3>
+    <div class="container1">
+        <p>passing parameter in pipe concept</p>
+    </div><br>
+    <label for="age">Age : <input type="date" [(ngModel)]="age" placeholder="enter your DOB"></label>
+    <h3>Your age is : {{ age | age}}</h3>
+    <div class="container1">
+        <p>pure and impure pipe concept</p>
+    </div><br>
+    <p>
+        <input type="text" #box
+    (keyup.enter)="addUser(box.value);box.value" placeholder="enter name">
+    
+    </p>
+    <p>
+        <input type="checkbox" [(ngModel)]="canFly">User can Flay
+    </p>
+    <p>
+        <input type="checkbox" [(ngModel)]="referenceSameInstance ">Reference checkbox
+    </p>
+    <div class="container1">
+        <p>User without pipe applied</p>
+       
+    </div>
+    <div>
+        <table>
+            <tr width="50%">
+                <th>Name</th>
+                <th width="50%">Can Fly</th>
+            </tr>
+            
+            <tr *ngFor = "let user of newUser">
+                <td>{{user.name}}</td>
+                <td>{{user.canFly}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="container1">
+        <p>User with pure pipe applied</p>
+       
+    </div>
+    <div>
+        <table>
+            <tr width="50%">
+                <th>Name</th>
+                <th width="50%">Can Fly</th>
+            </tr>
+            
+            <tr *ngFor = "let user of (newUser | user)">
+                <td>{{user.name}}</td>
+                <td>{{user.canFly}}</td>
+            </tr>
+        </table>
+        <div class="container1">
+            <p>User with Impure pipe applied</p>
+           
+        </div>
+        <div>
+            <table>
+                <tr width="50%">
+                    <th>Name</th>
+                    <th width="50%">Can Fly</th>
+                </tr>
+                
+                <tr *ngFor = "let user of (newUser | userImpure)">
+                    <td>{{user.name}}</td>
+                    <td>{{user.canFly}}</td>
+                </tr>
+            </table>
+    </div>
+    
+    
+    
+
+</div>
+
