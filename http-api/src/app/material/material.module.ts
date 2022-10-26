@@ -13,7 +13,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
+
 const angularMaterial = [
   MatButtonModule,
   MatButtonToggleModule,
@@ -29,7 +29,7 @@ const angularMaterial = [
   MatRadioModule,
   MatSelectModule,
   MatSidenavModule,
-  MatToolbarModule
+  
 ];
 
 @NgModule({

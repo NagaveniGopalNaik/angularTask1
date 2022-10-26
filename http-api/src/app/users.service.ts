@@ -30,7 +30,7 @@ export class UsersService {
     .set('pageSize','10')
     .set('pageOptions','100');
     // return this.http.get<user>('https://jsonplaceholder.typicode.com/users');
-     return this.http.get<user>('https://jsonplaceholder.typicode.com/users',{params:param});
+     return this.http.get<user>('http://localhost:3000/employees',{params:param});
    }
 
    addUser(body:any){
@@ -40,7 +40,7 @@ export class UsersService {
     const param = new HttpParams()
     .set('pageSize','10')
 
-     return this.http.post('https://jsonplaceholder.typicode.com/posts',body,{params:param});
+     return this.http.post('http://localhost:3000/employees',body,{params:param});
 
    }
 
@@ -56,7 +56,7 @@ export class UsersService {
     const param = new HttpParams()
     .set('pageSize','10')
 
-     return this.http.put<user>('https://jsonplaceholder.typicode.com/users/1',user,{params:param});
+     return this.http.put<user>('http://localhost:3000/employees/1',user,{params:param});
    }
    deleteUser(id:any){
 
@@ -66,7 +66,7 @@ export class UsersService {
     const param = new HttpParams()
     .set('pageSize','10')
 
-     return this.http.delete('https://jsonplaceholder.typicode.com/users/'+id,{params:param});
+     return this.http.delete('http://localhost:3000/employees/'+id,{params:param});
    }
 
    
