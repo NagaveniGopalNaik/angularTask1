@@ -1,23 +1,21 @@
 <div class="main-body">
 
-    <mat-card class="headding">
-        <img src="../../assets/Robosoft_logo_horizontal.png" alt="company logo">
-    </mat-card>
+    <app-headder></app-headder>
     <mat-card class="body" >
         <form [formGroup]="loginForm" class="login-card" (ngSubmit)="onSubmit()">
             
                 <h2>Login</h2>
                 <mat-form-field appearance="outline" class="input">
                     <mat-label>Enter Username</mat-label>
-                    <input type="text" matInput formControlName="username" name="username" >
+                    <input type="text" matInput formControlName="username" name="username" required>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="input">
                     <mat-label>Enter Password</mat-label>
-                    <input type="password" matInput formControlName="password" name="password">
+                    <input type="password" matInput formControlName="password" name="password" required>
                 </mat-form-field>
                 <button type="submit" class="login-button" mat-button>Login</button>
-                <p class="password" routerLink="/home">Forgot Password?</p>
+                <p class="password" ><a routerLink="/checkMail">Forgot Password?</a></p>
             
         </form>
     </mat-card>

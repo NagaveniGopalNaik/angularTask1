@@ -1,0 +1,17 @@
+{
+    "Questionnaire": [{
+      "title":"Secure coding Guidelines",
+      "Description":"These Guidelines Helps you to code in a secure manor which would assist in keeping the product data safe",
+      "button_title":"I Accept",
+      "button_text":"I have the red guidelines",
+      "check_box_text":"I had read the guidelines",
+      "Additional_details":{
+          "start_date":"17/08/2020",
+          "end_date":"17/08/2020",
+          "auto_remainder":4,
+          "ppt_file":"secure coding.ppt",
+          "participant_xl_sheet":"participant.xls",
+          "mail_body": "Hello<name> you are hear-by invited to read and accept the terms and conditions by clicking on the following link <link>"
+      }
+    }]
+  }

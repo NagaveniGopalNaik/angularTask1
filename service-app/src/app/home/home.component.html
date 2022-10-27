@@ -1,17 +1,23 @@
 
 <mat-card>
-    <mat-toolbar>
-        <img src="../../assets/Robosoft_logo_horizontal.png" alt="company logo">
-        <span class="example-spacer"></span>
-        
-       <mat-card position="end">
-        user <img src="../../assets/profile.png" alt="profile photo" width="3%" height="3%" >
-        
-         
-        
-       </mat-card>
-       
-      </mat-toolbar>
-
-
+    <app-head></app-head>
+    <div class="body">
+        <mat-card class="questionnaire-list">
+            <h1 class="questionnaire-headding">Your <br> Questionnaires</h1>
+            <button mat-raised-button color="accent">New Questionnaire</button>
+            <div class="list-questionnaire">
+                <div><button mat-raised-button class="adding"> Secure coding Guidel....</button></div>
+                <div><button mat-button> ISMS Questionnaire <mat-icon>arrow_forward_ios</mat-icon></button></div>
+                <div><button mat-button> PA Questionnaire <mat-icon>arrow_forward_ios</mat-icon></button></div>
+                <div><button mat-button> Process Guidelines <mat-icon>arrow_forward_ios</mat-icon></button></div>
+                
+            </div>
+        </mat-card>
+        <mat-card class="questionnaire">
+            <div class="form">
+                
+            </div>
+        </mat-card>
+    </div>
+    <app-footer></app-footer>
 </mat-card>

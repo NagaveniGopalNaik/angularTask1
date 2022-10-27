@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Login } from '../login';
 
 // import {Login} from '../login';
 
@@ -12,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   //to add ! mark to avoid initializer error 
   loginForm !: FormGroup;
-  constructor(private fb : FormBuilder) { }
+  constructor(private fb : FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -22,8 +24,24 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log('add success');
-    // const login = new Login("service",'12345');
+    
+    // if  validation success goto home page
+
+    const login = new Login();
+    
+    
+    let username  = this.loginForm.get('username').value;
+    
+    
+    let password = this.loginForm.get('password').value;
+    if(this.loginForm.invalid && username === '' && password === ''){
+      console.log('invalid login');
+      
+    } else {
+      if (login.username === username && login.password === password){
+        this.router.navigate(['./home']);
+      }
+    }
     
     
     
