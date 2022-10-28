@@ -1,7 +1,7 @@
 {
     "Questionnaire": [{
       "title":"Secure coding Guidelines",
-      "Description":"These Guidelines Helps you to code in a secure manor which would assist in keeping the product data safe",
+      "description":"These Guidelines Helps you to code in a secure manor which would assist in keeping the product data safe",
       "button_title":"I Accept",
       "button_text":"I have the red guidelines",
       "check_box_text":"I had read the guidelines",

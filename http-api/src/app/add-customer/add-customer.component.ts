@@ -23,8 +23,9 @@ email='';
       email:formvalue.value.email
     };
     console.log(formvalue.value);
-    this.us.addUser(customer).subscribe(data=>console.log(data),(err)=>console.log("can't post "+err)
-    )
+    this.us.addUser(customer).subscribe(data=>this.us.getUsers().subscribe(),(err)=>console.log("can't post "+err)
+    );
+    
     
   }
   

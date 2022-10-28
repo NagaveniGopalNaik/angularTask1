@@ -1,1 +1,35 @@
-<p>test works!</p>
+<ng-container *ngIf="dis">
+  <table>
+    <tr>
+      <th>data from local storage</th>
+      <th>data from session storage</th>
+      <th>data from cookies</th>
+    </tr>
+    <tr>
+      <td>{{ data }}</td>
+      <td>{{ data1 }}</td>
+      <td>{{ data2 | json }}</td>
+    </tr>
+  </table>
+  <div>
+    <p>{{ all | json }}</p>
+  </div>
+</ng-container>
+
+<div>
+  <h2>Local and session storage</h2>
+  <p>
+    <input type="text" [(ngModel)]="key" placeholder="enter your key" />
+    <input type="text" [(ngModel)]="value" placeholder="enter your value" />
+  </p>
+
+  <p>
+    <button (click)="addObject()">Add object</button>
+    <button (click)="getObject()">get object</button>
+  </p>
+  <p>
+    <button (click)="deleteObject()">delete object</button>
+    <button (click)="clearAll()">clear</button>
+  </p>
+  <p><button (click)="addObjects()">Add object form data</button></p>
+</div>
