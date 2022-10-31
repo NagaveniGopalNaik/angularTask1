@@ -1,94 +1,291 @@
-
 <mat-card>
-    <app-head></app-head>
-    <div class="body">
-        <mat-card class="questionnaire-list">
-            <h1 class="questionnaire-headding">Your <br> Questionnaires</h1>
-            <button mat-raised-button color="accent">New Questionnaire</button>
-            <div class="list-questionnaire">
-                <div><button mat-raised-button class="adding"> Secure coding Guidel....</button></div>
-                <div><button mat-button> ISMS Questionnaire <mat-icon>arrow_forward_ios</mat-icon></button></div>
-                <div><button mat-button> PA Questionnaire <mat-icon>arrow_forward_ios</mat-icon></button></div>
-                <div><button mat-button> Process Guidelines <mat-icon>arrow_forward_ios</mat-icon></button></div>
-                
+  <app-head></app-head>
+  <div class="body">
+    <mat-card class="questionnaire-list">
+      <h1 class="questionnaire-headding">
+        Your <br />
+        Questionnaires
+      </h1>
+      <button mat-raised-button color="accent" class="button">
+        New Questionnaire
+      </button>
+      <div class="list-questionnaire">
+        <div>
+          <button mat-raised-button class="adding button">
+            Secure coding Guidel....
+          </button>
+        </div>
+        <div>
+          <button mat-button class="button">
+            ISMS Questionnaire
+            <mat-icon class="mat-icon1">arrow_forward_ios</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button mat-button class="button">
+            PA Questionnaire
+            <mat-icon class="mat-icon1">arrow_forward_ios</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button mat-button class="button">
+            Process Guidelines
+            <mat-icon class="mat-icon1">arrow_forward_ios</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
+    <mat-card class="questionnaire">
+      <div class="form">
+        <form class="form-body" [formGroup]="profileFrom">
+          <div class="form-space">
+            <h2>Questionnaire</h2>
+            <div>
+              <mat-form-field
+                appearance="outline"
+                class="input"
+                hideRequiredMarker
+              >
+                <mat-label>Enter Title</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  name="title"
+                  formControlName="title"
+                  required
+                />
+              </mat-form-field>
             </div>
-        </mat-card>
-        <mat-card class="questionnaire">
-            <div class="form">
-                <form class="form-body" [formGroup]="profileFrom" (ngSubmit)="onSubmit()">
-            <!-- [formGroup]="profileFrom"  -->
-                    <h2>Questionnaire</h2>
-                    <mat-form-field appearance="outline" class="input">
-                        <mat-label>Enter Title</mat-label>
-                        <input type="text" matInput name="title" formControlName="title" required>
-                    <!-- <mat-hint>Please enter appropriate title</mat-hint> formControlName="title" -->
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class="input">
-                        <mat-label>Enter Description</mat-label>
-                        <input type="text" matInput name="description" formControlName="description" required>
-                    <!-- <mat-hint>Please enter appropriate description</mat-hint> formControlName="description" -->
-                    </mat-form-field>
 
-                
-                <mat-form-field appearance="outline" class="input">
-                    <mat-label>button title</mat-label>
-                    <input type="text" matInput name="button_title" formControlName="button_title" required>
-                <!--formControlName="button_title"  <mat-hint>Please enter appropriate description</mat-hint> -->
+            <div>
+              <mat-form-field
+                appearance="outline"
+                class="input"
+                hideRequiredMarker
+              >
+                <mat-label>Enter Description</mat-label>
+                <textarea
+                  name="description"
+                  matInput
+                  id="description"
+                  formControlName="description"
+                  rows="2"
+                  required
+                ></textarea>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field
+                appearance="outline"
+                class="input-2 margin"
+                hideRequiredMarker
+              >
+                <mat-label>button title</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  name="button_title"
+                  formControlName="button_title"
+                  required
+                />
+              </mat-form-field>
+              <mat-form-field
+                appearance="outline"
+                class="input-2"
+                hideRequiredMarker
+              >
+                <mat-label>button text</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  name="button_title"
+                  formControlName="button_text"
+                  required
+                />
+              </mat-form-field>
+            </div>
+
+            <mat-form-field
+              appearance="outline"
+              class="input"
+              hideRequiredMarker
+            >
+              <mat-label>check box text</mat-label>
+              <input
+                type="text"
+                matInput
+                formControlName="check_box_text"
+                name="check_box_text"
+                required
+              />
+            </mat-form-field>
+
+            <div class="profile-form">
+              <div formGroupName="additional_details">
+                <mat-form-field
+                  appearance="outline"
+                  class="input-3 margin-1"
+                  hideRequiredMarker
+                >
+                  <mat-label>start date</mat-label>
+                  <!-- 
+                            <input type="date" matInput name="start_date" formControlName="start_date"  required> 
+                             -->
+                  <input
+                    matInput
+                    [matDatepicker]="picker"
+                    placeholder="17/12/2012"
+                    name="start_date"
+                    formControlName="start_date"
+                    required
+                  />
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field
+                  appearance="outline"
+                  class="input-3 margin-1"
+                  hideRequiredMarker
+                >
+                  <mat-label>end date</mat-label>
+                  <!-- <input type="date" matInput name="end_date" formControlName="end_date" class="date"  required>  -->
+                  <input
+                    matInput
+                    [matDatepicker]="dp"
+                    color="assent"
+                    placeholder="17/12/2012"
+                    formControlName="end_date"
+                    class="date"
+                    required
+                  />
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matSuffix [for]="dp">
+                    <mat-icon class="end-date" matDatepickerToggleIcon
+                      >event</mat-icon
+                    >
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #dp disabled="false"></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field
+                  appearance="outline"
+                  class="input-3"
+                  hideRequiredMarker
+                >
+                  <mat-label>auto remainder</mat-label>
+                  <input
+                    type="text"
+                    matInput
+                    name="auto_remainder"
+                    formControlName="auto_remainder"
+                    required
+                  />
                 </mat-form-field>
 
-                <mat-form-field appearance="outline" class="input">
-                    <mat-label>button text</mat-label>
-                    <input type="text" matInput name="button_title" formControlName="button_text" required>
-                <!-- <mat-hint>Please enter appropriate description</mat-hint>  formControlName="button_text" -->
-                </mat-form-field>
-
-                <mat-form-field appearance="outline" class="input">
-                    <mat-label>check box text</mat-label>
-                    <input type="text" matInput formControlName="check_box_text" name="check_box_text" required>
-                <!-- <mat-hint>Please enter appropriate description</mat-hint> -->
-                 </mat-form-field>
-    
                 <div>
-                    <div formGroupName="additional_details">
-                        <mat-form-field appearance="outline" class="input">
-                            <mat-label>start date</mat-label>
-                            <input type="date" matInput name="start_date" formControlName="start_date" formControlName="start_date" required> 
-                        <!--formControlName="start_date"  <mat-hint>Please enter appropriate description</mat-hint> -->
-                         </mat-form-field>
-                        <mat-form-field appearance="outline" class="input">
-                            <mat-label>end date</mat-label>
-                            <input type="date" matInput name="end_date" formControlName="end_date"  required> 
-                        <!-- <mat-hint>Please enter appropriate description</mat-hint> formControlName="end_date" -->
-                        </mat-form-field>
-                        <mat-form-field appearance="outline" class="input">
-                            <mat-label>auto remainder</mat-label>
-                            <input type="text" matInput name="auto_remainder" formControlName="auto_remainder" required>
-                        <!-- <mat-hint>Please enter appropriate description</mat-hint> formControlName="auto_remainder" -->
-                        </mat-form-field>
-                    </div>
-                    <div>
-                        <mat-form-field appearance="outline" class="input">
-                            <mat-label>select content PPT file</mat-label>
-                            <input type="file" name="ppt_file" required>
-                        <!--formControlName="ppt_file"  <mat-hint>Please enter appropriate description</mat-hint> -->
-                         </mat-form-field></div>
-                        <mat-form-field appearance="outline" class="input">
-                            <mat-label>select participant xl sheet</mat-label>
-                            <input type="file" name="participant_xl_sheet" required>
-                        <!-- <mat-hint>Please enter appropriate description</mat-hint> formControlName="participant_xl_sheet" -->
-                        </mat-form-field>
-                    </div>
-                    <mat-form-field appearance="outline" class="input">
-                        <mat-label>Mail Body</mat-label>
-                       <textarea name="mail_body" id="mail_body" cols="30" rows="10" ></textarea>
-                    <!-- <mat-hint>Please enter appropriate description</mat-hint> formControlName="mail_body" -->
-                    </mat-form-field>
-                
-           
-            </form>
-            </div> 
-        </mat-card>
-    </div>
-    <!-- </div> -->
-    <app-footer></app-footer>
-<!-- </mat-card> -->
+                  <mat-form-field
+                    appearance="outline"
+                    class="input-2 margin display"
+                    hideRequiredMarker
+                  >
+                    <mat-label>select content PPT file</mat-label>
+                    <input
+                      type="text"
+                      matInput
+                      name="ppt_file"
+                      formControlName="ppt_file"
+                      required
+                    />
+                    <mat-icon class="file" color="accent"
+                      >cloud_upload</mat-icon
+                    >
+                  </mat-form-field>
+
+                  <mat-form-field
+                    appearance="outline"
+                    class="input-2 display"
+                    hideRequiredMarker
+                  >
+                    <mat-label>select participant xl sheet</mat-label>
+                    <input
+                      type="text"
+                      matInput
+                      name="participant_xl_sheet"
+                      formControlName="participant_xl_sheet"
+                      required
+                    />
+                    <mat-icon class="file" color="accent"
+                      >cloud_upload</mat-icon
+                    >
+                  </mat-form-field>
+                </div>
+                <mat-form-field
+                  appearance="outline"
+                  class="input"
+                  hideRequiredMarker
+                >
+                  <mat-label>Mail Body</mat-label>
+                  <textarea
+                    name="mail_body"
+                    matInput
+                    id="mail_body"
+                    formControlName="mail_body"
+                    rows="2"
+                  ></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="submit-option">
+            <div>
+              <button mat-icon-button class="button-option">
+                <mat-icon class="background">save</mat-icon><span class="button-label">SAVE</span>
+              </button>
+            </div>
+            <div>
+              <button mat-icon-button class="button-option" (click)="goPreview()">
+                <mat-icon class="background">preview</mat-icon>
+                <span class="button-label">PRIVIEW</span>
+              </button>
+            </div>
+            <div>
+              <button mat-icon-button class="button-option">
+                <mat-icon class="background">publish</mat-icon>
+                <span class="button-label">PUBLISH</span>
+              </button>
+            </div>
+            <div>
+              <button mat-icon-button class="button-option">
+                <mat-icon class="background">add_alert</mat-icon>
+                <span class="button-label"> REMIND</span>
+               
+              </button>
+            </div>
+            <div>
+              <button mat-icon-button class="button-option">
+                <mat-icon class="background">article</mat-icon>
+                <span class="button-label">GENRATE REPORT</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="button-function">
+        <button mat-fab (click)="select()">
+          <ng-container #add *ngIf="select1">
+            <mat-icon class="background-icon">add</mat-icon>
+          </ng-container>
+          <ng-container #close *ngIf="select2">
+            <mat-icon class="background-icon transition">close</mat-icon>
+          </ng-container>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+
+  <app-footer></app-footer>
+</mat-card>

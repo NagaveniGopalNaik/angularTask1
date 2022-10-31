@@ -7,21 +7,25 @@
 }
 .body{
     display: flex;
-    margin: auto 10%;
+    /* margin: auto 10%; */
+    width:65%;
+    margin: auto;
     justify-content: space-between;
+    /* box-shadow: 6px 6px 10px rgb(196, 134, 155); */
     
 }
-.mat-icon{
+.mat-icon1{
     float: right;
     margin-top: 3%;
     
 }
-button{
+.button{
     width: 100%;
     border-radius: 50px;
-    padding: 3%;
+    padding:2% 4%;
     margin-top: 11%;
-    font-size:2vh;
+    font-size:100%;
+    
     
 }
 .adding{
@@ -32,15 +36,157 @@ button{
     margin: 1.5%;
     border-radius: 5%;
     padding: 2%;
+    box-shadow: 6px 6px 10px rgb(196, 134, 155);
+    height: fit-content;
+    width: 20%;
 }
 .list-questionnaire button{
     opacity: 0.7;
     
 }
 .questionnaire-headding{
-    font-size: 5vh;
+    font-size: 173%;
     line-height: normal;
 }
+
+
+/* profile form style */
+.form-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-option{
+    width: 30%;
+    box-shadow: -3px 0 0 #D92756;
+    border-radius: 1px;
+    
+    height: fit-content;
+}
+.questionnaire{
+    width: 80%;
+    margin: 1.5% 0;
+    border-radius: 2%;
+    padding: 2%;
+    box-shadow: 6px 6px 10px rgb(196, 134, 155);
+    height: fit-content;
+    line-height: 5%;
+    
+}
+
+
+.form-space{
+    width: 70%;
+}
+.submit-option{
+    width: 25%;
+   
+    
+}
+.submit-option button{
+    width: 100%;
+    
+}
+
+.input{
+    width: 100%;
+    padding: 2% 0;
+}
+.input-2{
+    width: 48%;
+    padding: 2% 0;
+}
+
+.margin{
+    margin-right: 4%;
+}
+
+.input-3{
+    width: 32%;
+    padding: 2% 0;
+}
+.margin-1{
+    margin-right: 2%;
+}
+
+.button-choice{
+    color: #D92756;
+    margin-left: 3%;
+    border-radius: 5px;
+    margin-left: 2%;
+    
+}
+
+.display{
+    position: relative;
+}
+.file{
+   
+    position: absolute;
+    right: 0;
+    top:0
+
+    
+}
+.button-option{
+    color: #D92756;
+    background-color: rgba(217,39,86,0.05);
+    border-radius: 2%;
+    /* margin: 2% 2% 2% 4%; */
+    border-radius: 5%;
+    text-align: justify;
+    margin: 4%;
+    margin-left: 7%;
+    padding: 10%;
+    position: relative;
+    
+    
+}
+.background{
+    background-color: rgba(217,39,86,0.05);
+    /* margin-right: 4%; */
+    position: absolute;
+    top: 20%;
+    
+}
+.button-label{
+    position: absolute;
+    top: 10%;
+    margin-left: 20%;
+    background-color: transparent;
+
+}
+.button-function{
+    float: right;
+   
+}
+.button-function button{
+    padding: 5%;
+    
+    border-radius: 50%;
+    background-color: #D92756;
+    
+    box-shadow: 3px 3px 6px #ee7797;
+    
+}
+.background-icon{
+    background-color: #D92756;
+    color: white;
+    font-weight: bold;
+    font-size: 175%;
+}
+
+::ng-deep .mat-datepicker-toggle{
+    color:#D92756;
+ }
+
+ .end-date{
+     background-color: white;
+ }
+
+
+
+
 
 
 

@@ -3,10 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CheckMailComponent } from './check-mail/check-mail.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import {PreviewComponent } from './preview/preview.component';
 const routes: Routes = [
   {path :'home', component: HomeComponent},
   {path:'login', component: LoginComponent},
-  {path:'checkMail',component:CheckMailComponent}
+  {path:'checkMail',component:CheckMailComponent},
+  {path:'changePassword',component:ChangePasswordComponent},
+  {path:'preview',component:PreviewComponent}
 ];
 
 @NgModule({
@@ -14,4 +18,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { };
-export  const RoutingComponents = [HomeComponent,LoginComponent,CheckMailComponent];
+export  const RoutingComponents = [HomeComponent,LoginComponent,CheckMailComponent,ChangePasswordComponent,PreviewComponent];

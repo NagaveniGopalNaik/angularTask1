@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Profile } from '../profile';
 
 
@@ -10,10 +11,12 @@ import { Profile } from '../profile';
 })
 export class HomeComponent implements OnInit {
 profileFrom : FormGroup;
-  constructor(private fb : FormBuilder) { }
+select1=true;
+select2=false;
+  constructor(private fb : FormBuilder, private router:Router) { }
 
   ngOnInit(): void {
-    let userProfile = new Profile();
+    // let userProfile = new Profile();
     this.profileFrom = this.fb.group({
       'title':[''],
       'description':[''],
@@ -32,8 +35,15 @@ profileFrom : FormGroup;
     })
   }
 
-  onSubmit(){
+  select(){
+    this.select2=!this.select2;
+    this.select1=!this.select1;
+  }
+  // onSubmit(){
 
+  // }
+  goPreview(){
+    this.router.navigate(['/preview']);
   }
   
 }

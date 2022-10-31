@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeadderComponent } from './headder/headder.component';
 import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PreviewComponent } from './preview/preview.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     HeadderComponent,
     HeadComponent,
     FooterComponent,
+    ChangePasswordComponent,
+    PreviewComponent,
     
   ],
   imports: [
