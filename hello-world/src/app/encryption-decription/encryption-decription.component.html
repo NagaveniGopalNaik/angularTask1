@@ -1,0 +1,18 @@
+
+<h1>Encryption form</h1><div>
+    <label for="user name">plain test</label>
+    <input type="text" [(ngModel)]='username' name="username" id="username">
+</div>
+
+<div>
+    <label for="pws">password : </label>
+    <input type="password" [(ngModel)]='password' name="password" id="pws">
+</div>
+<br>
+<button (click)="encryption()">Encryption form</button>
+<br><br>
+<textarea name="" id="" cols="30" rows="10">{{encryptText}}</textarea>
+
+<hr>
+<h2>Decription method</h2>
+<button (click)="convertText('encrypt')">Decryption</button>

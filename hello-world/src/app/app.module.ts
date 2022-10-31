@@ -6,16 +6,19 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-
+import { EncryptionDecriptionComponent } from './encryption-decription/encryption-decription.component';
+import * as cryptojs from 'crypto-js';
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    EncryptionDecriptionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    cryptojs
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

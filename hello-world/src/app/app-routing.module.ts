@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { EncryptionDecriptionComponent } from './encryption-decription/encryption-decription.component';
+import { TestComponent } from './test/test.component';
+const routes: Routes = [
+  {path:'aes',component:EncryptionDecriptionComponent},
+  {path:'text',component:TestComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
