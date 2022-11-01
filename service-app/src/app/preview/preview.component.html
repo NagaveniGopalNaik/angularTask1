@@ -15,4 +15,24 @@
             <img src="../../assets/Robosoft_logo_horizontal.png" alt="logo" class="logo">
         </div>
     </div>
+    
+<div class="ppt-presentation">
+    <ng-container  *ngIf="agree">
+        <mat-card class="agree-msg">
+             <p>fgkhglkjl;kjhgfgghjkljhghjkl<button mat-button><mat-icon>close</mat-icon></button></p>
+        </mat-card>
+    </ng-container>
+</div>
+
+<div class="conditions">
+   <p>
+    <mat-checkbox (click)="agreeMsg()">I have read all the Terms and conditions</mat-checkbox>
+   </p>
+   <p>By clicking the 'I Agree' button you hereby agree to follow all the guildlines mentioned above</p>
+   <button mat-button class="agreebtn">I Agree</button>
+</div>
+</div>
+<div>
+    <h2 class="copyright">Robosoft Technologies 1996-2022 </h2>
+
 </div>

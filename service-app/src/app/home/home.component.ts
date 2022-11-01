@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 profileFrom : FormGroup;
 select1=true;
 select2=false;
+
   constructor(private fb : FormBuilder, private router:Router) { }
 
   ngOnInit(): void {

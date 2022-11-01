@@ -59,3 +59,59 @@
     font-size: 120%;
     /* font-weight: bold; */
 }
+
+.ppt-presentation{
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    border: 1px solid black;
+    
+}
+.conditions{
+    margin-top: 2%;
+}
+.conditions p{
+    text-align: center;
+}
+
+.mat-checkbox-checked
+  .mat-checkbox-layout
+  .mat-checkbox-inner-container
+  .mat-checkbox-background {
+  background-color: #ffbf00 !important;
+}
+
+.copyright{
+    text-align: center;
+   color: rgba(0,0,0,0.6);
+   font-family: Roboto;
+   font-size: 16px;
+   letter-spacing: 0.15px;
+   line-height: 24px;
+   bottom: 0;
+ }
+ 
+ .mat-icon{
+     
+     font-size: 15px;
+      height: 14px ; 
+     
+ }
+ .agree-msg{
+    background-color: rgb(196, 229, 162);
+    padding: 2%;
+    width: fit-content;
+    margin: auto;
+    margin-top: 20%;
+    z-index: 1;
+ }
+
+ .agreebtn{
+    background-color: red;
+    color: white;
+    padding: 2% 4%;
+    width: 10%;
+    margin: auto;
+ }
+ 
+ 
