@@ -1,0 +1,26 @@
+.person1{
+    width: 20%;
+    border: 1px solid black;
+    margin: auto;
+    padding: 2% 0;
+    text-align: center;
+    position: relative;
+    
+}
+.person1 .button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1%;
+   
+}
+.button input{
+    border : none;
+}
+.form{
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+    text-align: center;
+}

@@ -1,0 +1,14 @@
+div{
+    background-color: bisque;
+    border: 2px solid black;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+h1{
+    text-align: center;
+}
+button,input{
+    margin-left: 30%;
+}

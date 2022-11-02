@@ -7,19 +7,21 @@ import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { EncryptionDecriptionComponent } from './encryption-decription/encryption-decription.component';
-import * as cryptojs from 'crypto-js';
+import { WebWorkerComponent } from './web-worker/web-worker.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    EncryptionDecriptionComponent
+    EncryptionDecriptionComponent,
+    WebWorkerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    cryptojs
+    
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
