@@ -18,19 +18,23 @@
     
 <div class="ppt-presentation">
     <ng-container  *ngIf="agree">
-        <mat-card class="agree-msg">
-             <p>fgkhglkjl;kjhgfgghjkljhghjkl<button mat-button><mat-icon>close</mat-icon></button></p>
-        </mat-card>
+        <div class="agree-msg opacity">
+             <div class="display-flex"><img src="../../assets/save-image.png" alt="save">
+                <div class="text">Thank you for accepting Term and Conditions </div>
+                </div>
+                 <span (click)="closeAgreeMsg()" ><img src="../../assets/close.png" alt="close" class="right"></span>
+        </div>
     </ng-container>
 </div>
 
 <div class="conditions">
-   <p>
+   <p class="opacity">
     <mat-checkbox (click)="agreeMsg()">I have read all the Terms and conditions</mat-checkbox>
    </p>
    <p>By clicking the 'I Agree' button you hereby agree to follow all the guildlines mentioned above</p>
-   <button mat-button class="agreebtn">I Agree</button>
+   
 </div>
+<button mat-button class="agreebtn">I Agree</button>
 </div>
 <div>
     <h2 class="copyright">Robosoft Technologies 1996-2022 </h2>

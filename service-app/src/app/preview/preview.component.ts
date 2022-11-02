@@ -17,4 +17,9 @@ export class PreviewComponent implements OnInit {
     this.agree=!this.agree;
   }
 
+  closeAgreeMsg(){
+    this.agree=false;
+    
+  }
+
 }

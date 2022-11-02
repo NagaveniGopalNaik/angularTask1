@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Profile } from '../profile';
+import { MatDialog } from '@angular/material/dialog';
+import { ActionsComponent } from '../actions/actions.component';
 
 
 @Component({
@@ -14,7 +16,7 @@ profileFrom : FormGroup;
 select1=true;
 select2=false;
 
-  constructor(private fb : FormBuilder, private router:Router) { }
+  constructor(private fb : FormBuilder, private router:Router,public dialog:MatDialog) { }
 
   ngOnInit(): void {
     // let userProfile = new Profile();
@@ -39,6 +41,8 @@ select2=false;
   select(){
     this.select2=!this.select2;
     this.select1=!this.select1;
+    this.dialog.open(ActionsComponent);
+
   }
   // onSubmit(){
 

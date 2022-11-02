@@ -15,6 +15,8 @@ import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PreviewComponent } from './preview/preview.component';
+import { ActionsComponent } from './actions/actions.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { PreviewComponent } from './preview/preview.component';
     FooterComponent,
     ChangePasswordComponent,
     PreviewComponent,
+    ActionsComponent,
     
   ],
   imports: [
@@ -37,6 +40,7 @@ import { PreviewComponent } from './preview/preview.component';
     ReactiveFormsModule
   ],
   providers: [],
+  entryComponents:[MatDialogModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
