@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "http-api": {
+    "asw": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/http-api",
+            "outputPath": "dist/asw",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -21,11 +21,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -69,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "http-api:build:production"
+              "browserTarget": "asw:build:production"
             },
             "development": {
-              "browserTarget": "http-api:build:development"
+              "browserTarget": "asw:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "http-api:build"
+            "browserTarget": "asw:build"
           }
         },
         "test": {
@@ -93,11 +91,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -107,6 +103,6 @@
     }
   },
   "cli": {
-    "analytics": "f2667e7e-e2eb-4a10-aae6-e394393ad359"
+    "analytics": "8b8dd721-d079-4440-8622-e549c2494e05"
   }
 }
