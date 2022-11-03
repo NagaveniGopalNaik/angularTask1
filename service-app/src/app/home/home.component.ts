@@ -14,7 +14,7 @@ import { ActionsComponent } from '../actions/actions.component';
 export class HomeComponent implements OnInit {
 profileFrom : FormGroup;
 select1=true;
-select2=false;
+
 
   constructor(private fb : FormBuilder, private router:Router,public dialog:MatDialog) { }
 
@@ -39,10 +39,17 @@ select2=false;
   }
 
   select(){
-    this.select2=!this.select2;
-    this.select1=!this.select1;
-    this.dialog.open(ActionsComponent);
-
+    this.select1=false;
+    let dialogRef = this.dialog.open(ActionsComponent,{panelClass: 'custom-modalbox'});
+    
+    dialogRef.afterClosed().subscribe(()=>{
+      this.select1=true;
+    })
+    
+    
+    
+    
+    
   }
   // onSubmit(){
 

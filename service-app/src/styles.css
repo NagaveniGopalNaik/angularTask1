@@ -9,3 +9,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #36B834;
 
   }
+  
+
+  
+
+  .custom-modalbox .mat-dialog-container{
+    position: fixed !important;
+    left: 68%;
+    top: 64%;
+
+    width: 13vw;
+   
+    background-color:transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+ 
+
+  

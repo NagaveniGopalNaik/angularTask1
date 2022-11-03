@@ -1,7 +1,12 @@
-<div>
-    <mat-dialog-actions>
-        <div><button mat-dialog-close>option1</button></div><br>
-    <div><button mat-dialog-close>option2</button></div><br>
-    <div><button mat-dialog-close>option2</button></div><br>
-    </mat-dialog-actions>
-</div>
+
+   <div class="action">
+    <mat-dialog-actions class="action-btn">
+        <button mat-dialog-close routerLink="/changePassword">Change Password</button>
+        <button mat-dialog-close >Add/Remove Super Admins</button>
+        <button mat-dialog-close >Add/Remove Admins</button>
+    
+      
+        </mat-dialog-actions>
+        <button mat-fab color="accent" mat-dialog-close class="float"><mat-icon class="background-icon transition">close</mat-icon></button>
+    
+   </div>

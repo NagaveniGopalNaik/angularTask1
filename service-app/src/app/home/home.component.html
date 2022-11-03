@@ -275,13 +275,10 @@
         </form>
       </div>
       <div class="button-function">
-        <button mat-fab (click)="select()">
-          <ng-container #add *ngIf="select1">
+        <button mat-fab *ngIf="select1" (click)="select()">
+          
             <mat-icon class="background-icon">add</mat-icon>
-          </ng-container>
-          <ng-container #close *ngIf="select2">
-            <mat-icon class="background-icon transition">close</mat-icon>
-          </ng-container>
+          
         </button>
       </div>
     </mat-card>
