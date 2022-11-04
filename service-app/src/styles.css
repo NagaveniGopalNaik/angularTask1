@@ -25,6 +25,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     box-shadow: none;
   }
 
+  .super-admin .mat-dialog-container{
+    /* position: fixed; */
+    margin: 10%;
+    width: 100%;
+    height: 100%;
+    
+    /* top: 10%; */
+    /* padding: 10%; */
+  }
+
  
 
   

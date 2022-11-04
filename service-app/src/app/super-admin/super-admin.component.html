@@ -1,0 +1,106 @@
+<div class="container">
+    <h1>Add/Remove Super Admins</h1>
+    <form [formGroup]="superAdmin">
+        <div class="super-admin-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter name</mat-label>
+                <input type="text" matInput formControlName="name" name="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter employee code</mat-label>
+                <input type="text" matInput formControlName="employeeCode" name="employeeCode">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Mail ID</mat-label>
+                <input type="email" matInput formControlName="mailId" name="mailId">
+            </mat-form-field>
+            <button mat-fab class="button" (click)="addAdmin()"><mat-icon>add</mat-icon></button>
+            
+        </div>
+        <hr class="line">
+        <ng-container>
+            
+            <!-- <div  formArrayName="details" *ngFor="let admin of superAdmin.get('details')['controls'];index as i">
+                <div [formGroupName]="i" class="super-admin-form">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter name</mat-label>
+                        <input type="text" matInput formControlName="admin_name" name="admin_name">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter employee code</mat-label>
+                        <input type="text" matInput formControlName="admin_employeeCode" name="admin_employeeCode">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter Mail ID</mat-label>
+                        <input type="email" matInput formControlName="admin_mailId" name="admin_mailId">
+                    </mat-form-field>
+                    <button mat-fab class="button"><mat-icon>edit</mat-icon></button>
+                    <button mat-fab class="button"><mat-icon>delete</mat-icon></button>
+                    
+                </div>
+            </div> -->
+
+             <!-- <div   > -->
+                <form class="super-admin-form"  [formGroup]="updatesuperAdmin" (ngSubmit)="editAdmin(2)" *ngFor="let admin of admin_details;">
+                    <mat-form-field appearance="outline">
+                        
+                        <input type="text" matInput name="name" value="{{admin.name}}" formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        
+                        <input type="text" matInput value="{{admin.employeeCode}}" formControlName="employeeCode" name="employeeCode">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        
+                        <input type="email" matInput value="{{admin.mailId}}" formControlName="mailId" name="mailId" >
+                    </mat-form-field>
+                    <button mat-fab class="button" type="submit" (click)="editAdmin(admin.id)"><mat-icon>edit</mat-icon></button>
+                    <button mat-fab class="button"  (click)="deleteAdmin(admin.id)"><mat-icon>delete</mat-icon></button>
+                    
+                </form>
+            <!-- </div> -->
+        </ng-container>
+
+        <!-- <ng-container>
+            <div  class="super-admin-form" *ngFor="let admin in superAdmin.controls;index as i">
+                
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter name</mat-label>
+                        <input type="text" matInput value="admin[name]">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter employee code</mat-label>
+                        <input type="text" matInput  name="employeeCode" value="admin[employeeCode]">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Enter Mail ID</mat-label>
+                        <input type="email" matInput  name="mailId" value="admin[mailId]">
+                    </mat-form-field>
+                    <button mat-fab class="button"><mat-icon>edit</mat-icon></button>
+                    <button mat-fab class="button"><mat-icon>delete</mat-icon></button>
+                    
+               
+            </div>
+        </ng-container> -->
+    </form>
+   
+    <!-- <form [formGroup]="superAdmin" >
+        <div class="super-admin-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter name</mat-label>
+                <input type="text" matInput formControlName="name" name="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter employee code</mat-label>
+                <input type="text" matInput formControlName="employeeCode" name="employeeCode">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Mail ID</mat-label>
+                <input type="email" matInput formControlName="mailId" name="mailId">
+            </mat-form-field>
+            <button mat-fab class="button"><mat-icon>edit</mat-icon></button>
+            <button mat-fab class="button"><mat-icon>delete</mat-icon></button>
+            
+        </div>
+    </form> -->
+</div>

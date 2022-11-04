@@ -17,6 +17,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { PreviewComponent } from './preview/preview.component';
 import { ActionsComponent } from './actions/actions.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SuperAdminComponent } from './super-admin/super-admin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     ChangePasswordComponent,
     PreviewComponent,
     ActionsComponent,
+    SuperAdminComponent,
     
   ],
   imports: [
@@ -37,7 +40,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   entryComponents:[MatDialogModule],

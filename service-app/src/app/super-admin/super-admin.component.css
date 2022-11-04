@@ -1,0 +1,19 @@
+.container{
+    box-sizing: border-box;
+    margin: 10%;
+    padding: 2%;
+    /* background-color: aquamarine; */
+    
+}
+.super-admin-form{
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
+.button{
+    box-shadow: 2px 2px 10px rgb(168, 38, 60);
+}
+
+.line{
+    border: 1px dashed rgb(209, 204, 204);
+}
