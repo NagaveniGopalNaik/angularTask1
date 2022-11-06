@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SuperAdminComponent } from '../super-admin/super-admin.component';
-
+import { AdminComponent } from '../admin/admin.component';
 @Component({
   selector: 'app-actions',
   templateUrl: './actions.component.html',
@@ -16,6 +16,10 @@ export class ActionsComponent implements OnInit {
 
   superAdmin(){
     this.dialog.open(SuperAdminComponent,{panelClass: 'super-admin'});
+  }
+
+  admin(){
+    this.dialog.open(AdminComponent,{panelClass: 'admin'});
   }
 
 }

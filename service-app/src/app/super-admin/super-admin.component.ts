@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ServerService } from '../server.service';
-import { SuperAdmin } from '../super-admin';
-import { NgForm } from '@angular/forms';
+// import { SuperAdmin } from '../super-admin';
+// import { NgForm } from '@angular/forms';
+// import { from } from 'rxjs';
+// import { __values } from 'tslib';
 
 @Component({
   selector: 'app-super-admin',
@@ -11,11 +13,11 @@ import { NgForm } from '@angular/forms';
 })
 export class SuperAdminComponent implements OnInit {
 superAdmin:FormGroup;
-updatesuperAdmin:FormGroup;
+
 admin_details:any;
-name='';
-employeeCode='';
-mailId='';
+// super_Admin=new SuperAdmin();
+
+
 
   constructor(private fb:FormBuilder,private service:ServerService) { }
 
@@ -23,35 +25,19 @@ mailId='';
     this.superAdmin = this.fb.group({
       name:[''],
       employeeCode:[''],
-      mailId:[''],
-      // 'details':this.fb.array([this.superAdminUpdate()])
-    });
-    this.updatesuperAdmin = this.fb.group({
-      name:[''],
-      employeeCode:[''],
-      mailId:[''],
-      
+      mailId:['']
     });
 
     this.service.getSuperAdmin().subscribe((data)=>{
-      this.admin_details = data
-    console.log(this.admin_details);
-
-    })
-    
-    
+      this.admin_details = data;
+    });
+  
 
     
   }
   
 
-  // superAdminUpdate(){
-  //   return this.fb.group({
-  //     'admin_name':['adsf'],
-  //     'admin_employeeCode':[],
-  //     'admin_mailId':[]
-  //   })
-  // }
+ 
 get details(){
   return this.service.getSuperAdmin().subscribe((data)=>{
     this.admin_details = data;
@@ -66,27 +52,33 @@ get details(){
       this.details;
   
       alert("done")
-      console.log(data)
+    this.superAdmin.reset();
     });
 
     
   }
   deleteAdmin(value:any){
-    this.service.deleteAdmin(value).subscribe((data)=>{
+    this.service.deleteSuperAdmin(value).subscribe((data)=>{
       this.details;
     });
     
 
   }
-  editAdmin(id:any){
-    const adminDetails = {name:this.name,employeeCode:this.employeeCode,mailId:this.mailId};
-    console.log(adminDetails);
-    // console.log(form);
+  editAdmin(id:any,name:any,empCode:any,mailId:any){
     
-    
-    
-    
+    const updateDetails={name:name,employeeCode:empCode,mailId:mailId};
+    this.service.updateSuperAdmin(id,updateDetails).subscribe(()=>
+    alert('updated successfully'));
+   
     
   }
 
+  updateData(id:any,name:any,empCode:any,mailId:any){
+   
+      const updateDetails={name:name,employeeCode:empCode,mailId:mailId};
+    this.service.updateSuperAdmin(id,updateDetails).subscribe(()=>
+    alert('updated successfully'));
+    
+  }
+ 
 }

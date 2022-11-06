@@ -19,6 +19,7 @@ import { ActionsComponent } from './actions/actions.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SuperAdminComponent } from './super-admin/super-admin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     PreviewComponent,
     ActionsComponent,
     SuperAdminComponent,
+    AdminComponent,
     
   ],
   imports: [

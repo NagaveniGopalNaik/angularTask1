@@ -16,12 +16,56 @@
       }
     }
   ],
+  "super-admin": [
+    {
+      "name": "Radhika Gopal Naik",
+      "employeeCode": "ahdj780",
+      "mailId": "dasdkl;2hja@.djkf",
+      "id": 12
+    },
+    {
+      "name": "nagaveni",
+      "employeeCode": "adsfkj56789",
+      "mailId": "nagaveni@gmail.com",
+      "id": 13
+    },
+    {
+      "name": "nagaveni Gopal Naik",
+      "employeeCode": "adsfh;",
+      "mailId": "afdagfds",
+      "id": 14
+    },
+    {
+      "name": "fdsa",
+      "employeeCode": "dfa",
+      "mailId": "asf",
+      "id": 15
+    },
+    {
+      "name": "nagaveni",
+      "employeeCode": "RT330077",
+      "mailId": "nagaveni.naik@robosoftin.com",
+      "id": 16
+    },
+    {
+      "name": "asdfsadf",
+      "employeeCode": "adsfdfa",
+      "mailId": "dsaf",
+      "id": 17
+    },
+    {
+      "name": null,
+      "employeeCode": null,
+      "mailId": null,
+      "id": 18
+    }
+  ],
   "admin": [
     {
-      "name": "dfa",
-      "employeeCode": "gaf",
-      "mailId": "asdgh",
-      "id": 8
+      "name": "gopal",
+      "employeeCode": "1111",
+      "mailId": "g@1.com",
+      "id": 1
     }
   ]
 }

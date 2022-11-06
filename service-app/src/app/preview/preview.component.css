@@ -66,6 +66,7 @@
     height: 60%;
     margin: auto;
     border: 1px solid black;
+    /* z-index: 1; */
     
 }
 .conditions{
@@ -99,17 +100,22 @@
       height: 14px ; 
      
  }
- 
+ .ppt{
+    position: relative;
+ }
  .agree-msg{
+    position: absolute;
+    top:50%;
      display: flex;
      justify-content: space-between;
     background-color: rgb(196, 229, 162);
+    /* background-color: wheat; */
     box-shadow: 5px 5px 5px white;
     padding: 1% 2%;
     width: 60%;
     margin: auto;
-    margin-top: 20%;
-    /* z-index: 1; */
+    /* margin-top: 1%; */
+    z-index: 1;
  }
 
  .text{

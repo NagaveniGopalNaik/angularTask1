@@ -1,7 +1,7 @@
 <div class="container">
     <button mat-dialog-close class="float"><mat-icon class="icon-style">close</mat-icon></button>
     <h1>Add/Remove Super Admins</h1>
-    <form [formGroup]="superAdmin">
+    <form [formGroup]="adminForm">
         <div class="super-admin-form">
             <mat-form-field appearance="outline">
                 <mat-label>Enter name</mat-label>
@@ -22,7 +22,7 @@
         <ng-container>
           
                  <form>
-                    <div  class="super-admin-form" *ngFor="let admin of admin_details;index as i">
+                    <div  class="super-admin-form" *ngFor="let admin of adminData;index as i">
                         <!-- <div aria-disabled="readOnly"> -->
                             <mat-form-field appearance="outline">
                         
