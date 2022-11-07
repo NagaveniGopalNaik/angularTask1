@@ -35,6 +35,7 @@ export class ServerService {
 }
 
 updateSuperAdmin(id:any,body):Observable<admin[]>{
+  // debugger;
   return this.server.put<admin[]>('http://localhost:3000/super-admin/'+id,body)
 }
 

@@ -9,6 +9,14 @@
     display: flex;
     justify-content: space-between;
     margin: 2%;
+    
+}
+.admin-form{
+    height: 18vh;
+    overflow-y:scroll;
+}
+.admin-form::-webkit-scrollbar{
+    display: none;
 }
 .super-admin-form input{
     margin-right: 2%;
@@ -29,4 +37,20 @@
 .icon-style{
     background-color: transparent;
     color: gray;
+}
+
+.button-submit{
+    background-color: #D92756;
+    border-radius: 50px;
+    width:100%;
+    margin-left:35%;
+    color: #fff;
+    padding: 5% ;
+}
+
+.button-div{
+    display: flex;
+    float: right;
+    justify-content: space-between;
+    padding-right:20% ;
 }

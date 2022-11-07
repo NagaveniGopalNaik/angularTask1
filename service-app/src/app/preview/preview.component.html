@@ -18,17 +18,13 @@
     
 <div class="ppt-presentation">
     
-    <iframe src="https://onedrive.live.com/embed?cid=71384A13DA89F31B&resid=71384A13DA89F31B%21262571&authkey=AOiGUhaxNpQ70Q4&em=2" width="100%" height="100%" frameborder="0" scrolling="no" class="ppt">
-        <ng-container  *ngIf="agree">
-            <div class="agree-msg opacity">
-                 <div class="display-flex"><img src="../../assets/save-image.png" alt="save">
-                    <div class="text">Thank you for accepting Term and Conditions </div>
-                    </div>
-                     <span (click)="closeAgreeMsg()" ><img src="../../assets/close.png" alt="close" class="right"></span>
-            </div>
-        </ng-container>
-        
-    </iframe>
+    <iframe src="https://onedrive.live.com/embed?cid=71384A13DA89F31B&resid=71384A13DA89F31B%21199489&authkey=ANmFk7GGLgXY8A4&em=2" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+    <div class="agree-msg opacity" *ngIf="agree">
+        <div class="display-flex"><img src="../../assets/save-image.png" alt="save">
+           <div class="text">Thank you for accepting Term and Conditions </div>
+           </div>
+            <span (click)="closeAgreeMsg()" ><img src="../../assets/close.png" alt="close" class="right"></span>
+   </div>
     
 </div>
 

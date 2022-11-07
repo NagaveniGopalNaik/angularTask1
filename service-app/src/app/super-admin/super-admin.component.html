@@ -21,8 +21,8 @@
         <hr class="line">
         <ng-container>
           
-                 <form>
-                    <div  class="super-admin-form" *ngFor="let admin of admin_details;index as i">
+                 <form class="admin-form">
+                    <div  class="super-admin-form " *ngFor="let admin of admin_details;index as i">
                         <!-- <div aria-disabled="readOnly"> -->
                             <mat-form-field appearance="outline">
                         
@@ -43,6 +43,10 @@
                     </div>
                     
                 </form>
+                <div class="button-div">
+                    <button mat-button class="button-submit" (click)="update()" mat-dialog-close>Update</button>
+                    <button mat-button class="button-submit" (click)="clear()">Cancel</button>
+                </div>
                 
         </ng-container>
 
