@@ -1,1 +1,135 @@
-<p>recent-search works!</p>
+
+<div class="container">
+    <app-header>
+    </app-header>
+
+    <div class="fevourite">
+        <div class="no-fevourite" *ngIf="false">
+            
+                <img src="../../assets/images/no-data.png" alt="no-fevourite">
+            
+            <p>No Recent search</p>
+        </div>
+        <div class="fevourite-list">
+            <div class="update-data-delete">
+                <div class="list">You recently searched for </div>
+                <button class="remove">clear All</button>
+            </div>
+        </div>
+<div class="scroll">
+    
+    <mat-card class="fev-data">
+        <table >
+            <tr class="collapse">
+                <td class="place primary">
+                    Udupi,Karnataka
+                </td>
+                <td class="img">
+                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
+                </td>
+                <td class="right down img">
+                    <h1><span class="temp">31 </span><span>&#176;c</span></h1>
+                </td>
+                <td class="place">
+                    <p>Mostly Sunny</p>
+                </td>
+                <td class="right img color">
+                    <p><mat-icon *ngIf="favourite" class="icon" (click)="change()">favorite</mat-icon>
+                        <mat-icon *ngIf="favourite1" class="icon-selected" (click)="change()">favorite</mat-icon></p>
+                </td>
+            </tr>
+           
+        </table>
+    </mat-card>
+    <mat-card class="fev-data">
+        <table >
+            <tr class="collapse">
+                <td class="place primary">
+                    Udupi,Karnataka
+                </td>
+                <td class="img">
+                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
+                </td>
+                <td class="right down img">
+                    <h1><span class="temp">31 </span><span>&#176;c</span></h1>
+                </td>
+                <td class="place">
+                    <p>Mostly Sunny</p>
+                </td>
+                <td class="right img color">
+                    <mat-icon>favorite</mat-icon>
+                </td>
+            </tr>
+           
+        </table>
+    </mat-card>
+    <mat-card class="fev-data">
+        <table >
+            <tr class="collapse">
+                <td class="place primary">
+                    Udupi,Karnataka
+                </td>
+                <td class="img">
+                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
+                </td>
+                <td class="right down img">
+                    <h1><span class="temp">31 </span><span>&#176;c</span></h1>
+                </td>
+                <td class="place">
+                    <p>Mostly Sunny</p>
+                </td>
+                <td class="right img">
+                    <mat-icon>favorite</mat-icon>
+                </td>
+            </tr>
+           
+        </table>
+    </mat-card>
+    <mat-card class="fev-data">
+        <table >
+            <tr class="collapse">
+                <td class="place primary">
+                    Udupi,Karnataka
+                </td>
+                <td class="img">
+                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
+                </td>
+                <td class="right down img">
+                    <h1><span class="temp">31 </span><span>&#176;c</span></h1>
+                </td>
+                <td class="place">
+                    <p>Mostly Sunny</p>
+                </td>
+                <td class="right img">
+                    <mat-icon>favorite</mat-icon>
+                </td>
+            </tr>
+           
+        </table>
+    </mat-card>
+    <mat-card class="fev-data">
+        <table >
+            <tr class="collapse">
+                <td class="place primary">
+                    Udupi,Karnataka
+                </td>
+                <td class="img">
+                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
+                </td>
+                <td class="right down img">
+                    <h1><span class="temp">31 </span><span>&#176;c</span></h1>
+                </td>
+                <td class="place">
+                    <p>Mostly Sunny</p>
+                </td>
+                <td class="right img color">
+                    <mat-icon>favorite</mat-icon>
+                </td>
+            </tr>
+           
+        </table>
+    </mat-card>
+</div>
+        
+    </div>
+</div>

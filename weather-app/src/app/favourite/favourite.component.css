@@ -12,8 +12,8 @@ body{
 }
 
 .container{
-width: 100vw;
-height: 100vh;
+width: 100%;
+height: 100%;
 background: url('../../assets/images/background.png') no-repeat;
 background-size: cover;
 position: relative;
@@ -81,13 +81,25 @@ img{
 }
 .fev-data{
     box-sizing: border-box;
-    margin-bottom: -1.75em;
+    margin: -1%;
+    /* margin-bottom: -1.75em; */
     background-color: rgba(255,255,255,0.2);
-    /* margin: -1.7em; */
+    font-size: 1rem;
+    font-family: 'Roboto';
+    color:#fff;
+    font-weight: 500;
+    margin-top: 1rem;
+    /* padding: 1%; */
+}
+.fev-data:hover{
+    background-color: rgba(255,255,255,0.4);
+}
+.fev-data:hover .primary{
+    color:#FFD639;
 }
 table{
     width:80vw;
-    margin-top: 2%;
+    /* margin-top: 2%; */
     /* border:1px solid black; */
     border-collapse: collapse;
     border-spacing: 1px 0;
@@ -103,19 +115,16 @@ table{
 table tr td{
     text-align: left;
     padding-left:1%;
-    margin: 0;
     border-collapse: collapse;
     
-    
-    margin: 0;
 }
 table tr .right{
     text-align: center;
     position: relative;
 }
 .image{
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 60%;
 }
 .place{
     width: 35%;
@@ -137,4 +146,16 @@ table tr .right{
 .down{
     position: absolute;
     margin-top: 2%;
+}
+
+
+.scroll{
+    height: 55vh;
+    overflow-y:scroll;
+}
+.scroll::-webkit-scrollbar{
+    display: none;
+}
+.color{
+    color: #FFD639;
 }

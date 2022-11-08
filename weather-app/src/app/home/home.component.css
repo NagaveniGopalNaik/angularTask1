@@ -91,6 +91,13 @@ position: relative;
     /* display: flex; */
    
 }
+/* .temp-data .up{
+    position: absolute;
+    width: 10%;
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+} */
 
 .weather .temp-data button {
     font-size: 1.25rem;
@@ -105,4 +112,7 @@ position: relative;
 #background{
     background-color: #fff;
     color: rgba(227,40,67,1);
+}
+.icon-selected{
+    color: #FFD639;
 }

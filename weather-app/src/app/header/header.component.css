@@ -92,7 +92,7 @@ input:focus{
 .navbar ul{
     width: 100%;
     list-style: none;
-    display: flex;
+    /* display: flex; */
     margin-bottom: 0;
     
 }
@@ -103,6 +103,7 @@ input:focus{
 .navbar ul li{
     margin-right: 2.5rem;
     padding: 0 1%;
+    display: inline-block;
 }
 
 
@@ -117,10 +118,69 @@ input:focus{
 }
 
 
-#active{
+#active,a:hover{
     border-bottom:2px solid #FFD639;
 }
 #active a{
     
     color: #FFD639;
+}
+
+.checkbtn .mat{
+    display:inline-block;
+    font-size: 30px;
+    color:white;
+    cursor: pointer;
+    /* line-height: 80px; */
+}
+#check{
+    display: none;
+}
+
+/* @media(max-width:952px){
+    .navbar ul li a{
+        font-size: 2em;
+    }
+} */
+@media (max-width:800){
+    .navbar ul li{
+        font-size: 0.5rem;
+        
+    } 
+}
+@media(max-width:500px){
+    .checkbtn .mat{
+        display: block;
+    }
+
+    .navbar ul{
+        position: fixed;
+        width: 50vh;
+        height: 100vh;
+        background-color: rgb(184, 32, 32);
+        color:#000;
+        top:25%;
+        left:-100%;
+        text-align: right;
+        transition: all .5s;
+        z-index: 2;
+    }
+
+    .navbar ul li{
+        /* font-size: 0.5rem; */
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .navbar ul li a{
+        font-size: 1.5em;
+    }
+    .navbar ul li a:hover,#active a{
+        background-color: rgb(21, 26, 25);
+        color:rgb(239, 178, 178);
+    }
+    #check:checked ~ .navbar ul{
+        left: 0;
+
+    }
 }
