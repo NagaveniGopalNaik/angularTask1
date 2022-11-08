@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SuperAdminComponent } from './super-admin/super-admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AdminComponent } from './admin/admin.component';
     ActionsComponent,
     SuperAdminComponent,
     AdminComponent,
+    HeaderComponent,
     
   ],
   imports: [

@@ -1,0 +1,108 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto';
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    
+}
+
+.container{
+width: 100vw;
+height: 100vh;
+background: url('../../assets/images/background.png') no-repeat;
+background-size: cover;
+position: relative;
+
+
+}
+.home{
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+    height: 60vh;
+    /* border: 1px solid red; */
+    margin-top: 3%;
+    color:#fff;
+    font-weight: 500;
+    display: flex;
+    position: absolute;
+    
+}
+.location{
+    width: 20%;
+    
+}
+.fevourite{
+    width: 100%;
+    display: flex;
+
+    /* justify-content: space-between; */
+
+}
+.location .current-location{
+    font-family: Roboto;
+    line-height: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.fevourite #text{
+    padding: 0.3% 0.5%;
+    font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.weather{
+    /* position: absolute; */
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.value{
+    font-size: 4rem;
+}
+
+.weather .image-div{
+    
+    width: 10%;
+    margin-bottom: 3%;
+}
+
+.weather .image{
+    object-fit: cover;
+}
+.weather .temp-data{
+    width: 100%;
+    /* display: flex; */
+   
+}
+
+.weather .temp-data button {
+    font-size: 1.25rem;
+    padding: 0.5%;
+    border: 1px solid #fff;
+    background: transparent;
+    color:#fff;
+    
+   
+}
+
+#background{
+    background-color: #fff;
+    color: rgba(227,40,67,1);
+}
