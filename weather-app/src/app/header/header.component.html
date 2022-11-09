@@ -1,30 +1,103 @@
-<div class="header">
+<!-- for home page -->
+<div class="header" *ngIf="home">
+   
+       
     <div class="logo-searchbar">
-        <div class="logo">
-            <img src="../../assets/images/logo.png" alt="logo image" class="logo-image">
-        </div>
-        <div class="searchbar">
-            <form class="search-form">
-                <input type="text" placeholder="Search city" class="search-input">
-            <button class="search-button" type="submit"><mat-icon class="search-icon">search</mat-icon></button>
-            </form>
+        
+        <div class="menubar">
+            
+                <mat-icon class="mat" (click)="navDisplayPermission()">menu</mat-icon>
+                <!-- <mat-icon class="back-color" *ngIf="fev" (click)="navDisplayPermission()">keyboard_backspace</mat-icon> -->
+           </div>
+        <div class="logo1">
+            <div class="logo" >
+               
+                <img src="../../assets/images/logo.png" alt="logo image" class="logo-image">
+            </div>
+           <!-- <p id="name" *ngIf="fev">Favourite</p> -->
+            <div class="searchbar" [class.searchBar]="search">
+                <form class="search-form">
+                    <mat-icon *ngIf="search" class="back" (click)="backHome()">keyboard_backspace</mat-icon>
+                    <input type="text" placeholder="Search city" class="search-input" *ngIf="search1">
+                    <input type="text" placeholder="Search for city" class="search-input" *ngIf="search">
+                    <mat-icon *ngIf="search" class="clear" (click)="clear()">clear</mat-icon>
+                <button class="search-button" type="submit"><mat-icon class="search-icon">search</mat-icon></button>
+                </form>
+            </div>
+            <!-- <mat-icon *ngIf="fev" class="back-color" (click)="backHome()">keyboard_backspace</mat-icon> -->
+            
+            
+                <mat-icon class="search" (click)="searchBar()">search</mat-icon>
+            
         </div>
         
-    </div>
-    <div class="navbar-date">
         
-        <div class="navbar">
-            <!-- <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <mat-icon class="mat">menu</mat-icon>
-        </label> -->
-            <ul>
-                <li id="active"><a href="">HOME</a></li>
-                <li><a routerLink="/favourite">FAVOURITE</a></li>
-                <li><a routerLink="/recent-search">RECENT SEARCH</a></li>
-            </ul>
-        </div>
-        <div class="date"><p>{{date |date:'ccc' }},{{date | date:'dd MMM yyyy HH:mm:ss a'}}</p></div>
     </div>
+
+    <!-- for fevourite -->
+    <!-- <div class="logo-searchbar fevourite"> -->
+       
+            
+                
+             
+            <!-- <mat-icon *ngIf="fev" class="back-color" (click)="backHome()">keyboard_backspace</mat-icon> -->
+            <!-- <div class="fav">Favourite</div> -->
+           
+                <!-- <mat-icon class="search" (click)="searchBar()">search</mat-icon> -->
+<!--                 
+        
+        
+        
+    </div>
+     -->
+
+<div class="navbar-date" >
     
+    <div class="navbar"  [class.menuClass]="navDisplay" >
+       
+        <ul>
+            <li id="active"><a routerLink="/home" (click)="gotoHome()">HOME</a></li>
+            <li><a routerLink="/favourite" (click)="gotoFavorite()">FAVOURITE</a></li>
+            <li><a routerLink="/recent-search" (click)="gotoRecentSearch()">RECENT SEARCH</a></li>
+        </ul>
+    </div>
+    <div class="date"><p>{{date |date:'ccc' }},{{date | date:'dd MMM yyyy HH:mm:ss a'}}</p></div>
 </div>
+
+</div>
+
+<!-- for fevourite page -->
+<div class="header" *ngIf="fev">
+   
+       
+    <div class="fevourite">
+        
+        <div class="menubar">
+            
+                <!-- <mat-icon class="mat" (click)="navDisplayPermission()">menu</mat-icon> -->
+                <mat-icon class="back-color" (click)="navDisplayPermission()">keyboard_backspace</mat-icon>
+           </div>
+        <div class="logo1">
+           
+           <p id="name" *ngIf="fev1">Favourite</p>
+           <p id="name" *ngIf="recent">Recent Search</p>
+            <div class="searchbar" [class.searchBar]="search">
+                <form class="search-form">
+                    <mat-icon *ngIf="search" class="back" (click)="backHome()">keyboard_backspace</mat-icon>
+                    <input type="text" placeholder="Search city" class="search-input" *ngIf="search1">
+                    <input type="text" placeholder="Search for city" class="search-input" *ngIf="search">
+                    <mat-icon *ngIf="search" class="clear" (click)="clear()">clear</mat-icon>
+                <button class="search-button" type="submit"><mat-icon class="search-icon">search</mat-icon></button>
+                </form>
+            </div>
+            
+                <mat-icon class="search" (click)="searchBar()">search</mat-icon>
+            
+        </div>
+        
+        
+    </div>
+
+
+</div>
+

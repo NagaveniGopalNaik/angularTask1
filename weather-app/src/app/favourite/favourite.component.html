@@ -1,6 +1,10 @@
 <div class="container">
-    <app-header>
-    </app-header>
+   
+        <app-header></app-header>
+    
+    <!-- <div class="fev_head">
+        <mat-icon class="back" (click)="backHome()">keyboard_backspace</mat-icon>
+    </div> -->
 
     <div class="fevourite">
         <div class="no-fevourite" *ngIf="false">
@@ -12,7 +16,7 @@
         <div class="fevourite-list">
             <div class="update-data-delete">
                 <div class="list">6 City added as favourite</div>
-                <button class="remove" (click)="openDialog()">Remove All</button>
+                <button class="remove" mat-dialog-close (click)="openDialog()">Remove All</button>
             </div>
         </div>
 <div class="scroll">

@@ -3,5 +3,14 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.alert-remove .mat-dialog-container{
+    padding: 13%;
+    width: 70vh;
+}
 
+
+.removeAll .mat-dialog-container{
+    padding: 13%;
+    width: 70vh;
+}
 

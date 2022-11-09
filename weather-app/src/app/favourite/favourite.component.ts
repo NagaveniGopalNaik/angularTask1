@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatDialog } from '@angular/material/dialog';
+import { RemoveAlertComponent } from '../remove-alert/remove-alert.component';
 @Component({
   selector: 'app-favourite',
   templateUrl: './favourite.component.html',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouriteComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
   }
 
   openDialog(){
+    this.dialog.open(RemoveAlertComponent,{panelClass:'alert-remove'});
+  }
+  backHome(){
     
   }
 

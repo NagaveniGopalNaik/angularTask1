@@ -5,7 +5,7 @@
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
-.logo-searchbar{
+.logo1{
     padding-top: 5% ;
     display: flex;
     justify-content: space-between;
@@ -74,6 +74,7 @@ input:focus{
     
 }  
 
+
 .logo-image{
     size: 100%;
 }
@@ -92,7 +93,7 @@ input:focus{
 .navbar ul{
     width: 100%;
     list-style: none;
-    /* display: flex; */
+    display: flex;
     margin-bottom: 0;
     
 }
@@ -125,15 +126,12 @@ input:focus{
     
     color: #FFD639;
 }
-
-.checkbtn .mat{
-    display:inline-block;
-    font-size: 30px;
-    color:white;
-    cursor: pointer;
+.mat,.back-color{
+    display:none;
+    
     /* line-height: 80px; */
 }
-#check{
+.search{
     display: none;
 }
 
@@ -142,45 +140,251 @@ input:focus{
         font-size: 2em;
     }
 } */
-@media (max-width:800){
+
+@media(max-width:500px){
+    .header{
+        border: none;
+        width: 100%;
+        
+    }
+
+    
+    .searchbar{
+        
+        background: none;
+        border: none;
+        width: 0%;
+        
+    }
+    .search-button{
+        display: none;
+    }
+    
+    /* .search-button{
+        display: block;
+        float: right;
+    }
+    .search-button .search-icon{
+        font-size: 1.5rem;
+        float: right;
+    } */
+    .navbar-date{
+        flex-direction: column;
+    }
+    
+    .mat,.back-color{
+        display:inline-block;
+        margin-top: 3vh;
+        margin-left: 1vh;
+        font-size: 30px;
+        color:white;
+        cursor: pointer;
+        /* line-height: 80px; */
+    }
+    .back-color{
+        color:black;
+    }
+    .search{
+        margin-right:2% ;
+        margin-top: 2%;
+        display: block;
+        color:white;
+        font-size: 1.5rem;
+    }
+   
+.logo-searchbar{
+    width: 100vw;
+    display: flex;
+   
+    margin: 4%;
+    justify-content:space-between;
+    
+}
+.logo1{
+   
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+}
+
+.date p{
+    margin-top: 10%;
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+}
+
+.logo{
+    margin: 0;
+    padding-left:0 ;
+}
+
+    .logo .logo-image{
+        width: fit-content;
+    }
+    
+    .navbar{
+        height: 100%;
+        position: fixed;
+        padding: 0 20%;
+        background-color: white;
+        z-index: 1;
+        margin:1vh 0 ;
+        top:0;
+        left: -100%;
+    }
+    .navbar ul{
+        
+        
+        
+        background-color: white;
+        color:#000;
+       
+        text-align: left;
+        transition: all 1s;
+        
+        padding-top: 5%;
+        flex-direction: column;
+        line-height: 2rem;
+        
+    }
+    
+
     .navbar ul li{
         font-size: 0.5rem;
+        display: block;
+        margin: 5px 0;
         
-    } 
-}
-@media(max-width:500px){
-    .checkbtn .mat{
-        display: block;
-    }
-
-    .navbar ul{
-        position: fixed;
-        width: 50vh;
-        height: 100vh;
-        background-color: rgb(184, 32, 32);
-        color:#000;
-        top:25%;
-        left:-100%;
-        text-align: right;
-        transition: all .5s;
-        z-index: 2;
-    }
-
-    .navbar ul li{
-        /* font-size: 0.5rem; */
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
+        
     }
     .navbar ul li a{
-        font-size: 1.5em;
+        
+        font-size: 1rem;
+        color: rgba(0,0,0,0.5);
+        font-family: 'Roboto';
+        
+    }
+    #active{
+        border: none;
+        color:black;
     }
     .navbar ul li a:hover,#active a{
-        background-color: rgb(21, 26, 25);
-        color:rgb(239, 178, 178);
+       
+        color:#000;
+       
     }
     #check:checked ~ .navbar ul{
         left: 0;
 
     }
+   .menuClass{
+        left:0;
+    }
+
+    .searchBar{
+        position: fixed;
+        box-sizing: border-box;
+        margin: 0;
+        margin-top: 0;
+        width: 120%;
+        background: white;
+        height: 100vh;
+        z-index: 1;
+        transition: 0.5s ;
+
+
+    }
+    .searchBar .search-form ,.searchBar .search-form,.searchBar .search-button ,.searchBar .search-button .search-icon{
+        display: block;
+    }
+    .searchBar .search-form {
+        background-color: transparent;
+        border-bottom:1px solid rgba(0,0,0,0.2) ;
+        /* background-color: red; */
+    }
+    .searchBar .search-input::placeholder{
+        color: rgba(0,0,0,0.5);
+        font-size: 1rem;
+    }
+    .searchBar .back{
+        color:rgba(0,0,0,0.5);
+        margin:1.1rem 0.25rem 0 1rem;
+        font-size: 2rem;
+    }
+    .searchBar .search-input{
+        width: 60%;
+        margin-left: 1vh;
+        color:rgba(0,0,0,0.5);
+        
+        border-bottom:rgba(0,0,0,0.5) ;
+    }
+    .searchBar .search-button .search-icon{
+        /* background-color: red; */
+        position: fixed;
+        font-size: 1.5rem;
+        right: 3%;
+        top: 8.5vh;
+        color:rgba(0,0,0,0.5);
+        /* padding: 10vh; */
+    }
+    .searchBar .clear{
+        /* background-color: red; */
+        position: fixed;
+        font-size: 1.5rem;
+        right: 10%;
+        top: 8.2vh;
+        color:rgba(0,0,0,0.5);
+        /* padding: 10vh; */
+    }
+    .fevourite{
+        background-color: #fff;
+        margin: 0;
+        
+        padding: 2pv 0;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+
+        
+    }
+    
+    .menubar .back-color{
+        position: fixed;
+        top:-1.5%;
+        color:black;
+        margin-left:5% ;
+/*         
+        padding: 5%;
+        margin-bottom: 5%; */
+        
+    }
+    .fevourite .search{
+        position: fixed;
+        right: 5%;
+        top:1%;
+        
+    }
+    .fevourite .logo1 #name{
+        margin: 0 10%;
+    color: rgba(41,47,51,1);
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+    margin-bottom: 5%;
+  
+    }
+    .fevourite .menubar .mat{
+        display: none;
+    }
+    .fevourite .search{
+        color:#000;
+    }
+
+    /* for fevourite */
+    
 }

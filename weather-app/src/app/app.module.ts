@@ -11,6 +11,7 @@ import { FavouriteComponent } from './favourite/favourite.component';
 import { RecentSearchComponent } from './recent-search/recent-search.component';
 import { FooterComponent } from './footer/footer.component';
 import { RemoveAlertComponent } from './remove-alert/remove-alert.component';
+import { RemoveRecentSearchComponent } from './remove-recent-search/remove-recent-search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { RemoveAlertComponent } from './remove-alert/remove-alert.component';
     FavouriteComponent,
     RecentSearchComponent,
     FooterComponent,
-    RemoveAlertComponent
+    RemoveAlertComponent,
+    RemoveRecentSearchComponent
   ],
   imports: [
     BrowserModule,
