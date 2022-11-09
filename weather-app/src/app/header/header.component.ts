@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,25 +8,62 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 date:any;
+id:any;
 // display=true;
 navDisplay=false;
 search=false;
 search1=true;
 home=true;
-fev=false;
+fev=true;
 recent=false;
 fev1=false;
-mobileMedia:any=window.matchMedia("(max-width:500)");
+textFocus=false;
+mobileMedia:any=window.matchMedia("('max-width:500')");
 
 
 
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.date = new Date();
+    this.route.queryParams.subscribe(data=>this.id=data['id']);
+    this.fev = false;
+    console.log(this.mobileMedia);
+    
+    // console.log(this.id);
+   
+    // if(this.mobileMedia){
+    //   console.log(1);
+      
+    //   if(this.id == 2){
+    //     this.home = false;
+    //     this.fev = true;
+    //     this.fev1 = true;
+    //     this.recent = false;
+    //   } else if(this.id == 3) {
+    //     this.home=false;
+    //     this.fev = true;
+    //     this.recent = true;
+    //     this.fev1 = false;
+    //   } else {
+    //     this.fev = false;
+    //     this.home = true;
+    //   this.fev1=false;
+    // this.recent = false;}
+    // } else { 
+    //   this.fev = false;
+    //   this.fev1=false;
+    //   this.recent = false;
+    //   this.home = true; }
+    
     
   }
+
+  clearBtn(){
+    this.textFocus = true;
+  }
+ 
   navDisplayPermission(){
     if(this.mobileMedia){
       
@@ -58,17 +96,17 @@ mobileMedia:any=window.matchMedia("(max-width:500)");
   gotoHome(){
   this.home=true;
   this.fev= false;
-  // this.recent= false;
+  
   }
 
   gotoFavorite(){
+    // debugger;
     this.fev1=true;
     this.recent= false;
     if(this.mobileMedia){
-      
+      this.home=false;
       this.fev= true;
       
-    this.home=false;
     
     } else{
       this.fev=false;
@@ -88,6 +126,7 @@ mobileMedia:any=window.matchMedia("(max-width:500)");
       this.fev=false;
       this.home=true;
     }
+    
   }
     
 

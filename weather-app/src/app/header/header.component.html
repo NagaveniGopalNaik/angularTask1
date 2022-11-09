@@ -18,9 +18,9 @@
             <div class="searchbar" [class.searchBar]="search">
                 <form class="search-form">
                     <mat-icon *ngIf="search" class="back" (click)="backHome()">keyboard_backspace</mat-icon>
-                    <input type="text" placeholder="Search city" class="search-input" *ngIf="search1">
-                    <input type="text" placeholder="Search for city" class="search-input" *ngIf="search">
-                    <mat-icon *ngIf="search" class="clear" (click)="clear()">clear</mat-icon>
+                    <input type="text" placeholder="Search city" class="search-input" *ngIf="search1" (click)="clearBtn()">
+                    <input type="text" placeholder="Search for city" class="search-input" *ngIf="search" (click)="clearBtn()">
+                    <mat-icon *ngIf="textFocus" class="clear" (click)="clear()">clear</mat-icon>
                 <button class="search-button" type="submit"><mat-icon class="search-icon">search</mat-icon></button>
                 </form>
             </div>
@@ -56,9 +56,9 @@
     <div class="navbar"  [class.menuClass]="navDisplay" >
        
         <ul>
-            <li id="active"><a routerLink="/home" (click)="gotoHome()">HOME</a></li>
-            <li><a routerLink="/favourite" (click)="gotoFavorite()">FAVOURITE</a></li>
-            <li><a routerLink="/recent-search" (click)="gotoRecentSearch()">RECENT SEARCH</a></li>
+            <li id="active"><a [routerLink]="['/home']" [queryParams]="{ id: '1'}" (click)="gotoHome()">HOME</a></li>
+            <li><a [routerLink]="['/favourite']" [queryParams]="{ id: '2'}" (click)="gotoFavorite()">FAVOURITE</a></li>
+            <li><a [routerLink]="['/recent-search']" [queryParams]="{ id: '3'}" (click)="gotoRecentSearch()">RECENT<span class="hide">_</span>SEARCH</a></li>
         </ul>
     </div>
     <div class="date"><p>{{date |date:'ccc' }},{{date | date:'dd MMM yyyy HH:mm:ss a'}}</p></div>

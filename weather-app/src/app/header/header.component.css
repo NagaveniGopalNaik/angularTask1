@@ -1,7 +1,9 @@
 /* Header part style */
 .header{
+    /* box-sizing:content-box; */
     width: 80%;
     margin: auto;
+    /* margin-top: 10%; */
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
@@ -94,27 +96,36 @@ input:focus{
     width: 100%;
     list-style: none;
     display: flex;
-    margin-bottom: 0;
+    /* margin-bottom: -2%; */
     
 }
 .date p{
-    margin-top: 2.3%;
+    /* margin-top: 2.3%; */
     padding: 0;
+}
+.navbar ul{
+    width: 70%;
 }
 .navbar ul li{
     margin-right: 2.5rem;
     padding: 0 1%;
-    display: inline-block;
+    /* display: inline-block; */
+    margin-bottom: 0;
 }
 
 
 .navbar ul li a, .date{
+    display: block;
+    /* width: 80%; */
     font-weight: 500;
+    /* width: 100%; */
+    /* display: inline-block; */
     letter-spacing: 0;
     /* color: #FFD639; */
     color:#fff;
     font-size: 1rem;
     text-decoration: none;
+    
     
 }
 
@@ -130,6 +141,9 @@ input:focus{
     display:none;
     
     /* line-height: 80px; */
+}
+.hide{
+    color:transparent;
 }
 .search{
     display: none;
@@ -255,7 +269,7 @@ input:focus{
         font-size: 0.5rem;
         display: block;
         margin: 5px 0;
-        
+        width: 100%;
         
     }
     .navbar ul li a{
@@ -284,6 +298,7 @@ input:focus{
 
     .searchBar{
         position: fixed;
+        top:0;
         box-sizing: border-box;
         margin: 0;
         margin-top: 0;
@@ -291,7 +306,7 @@ input:focus{
         background: white;
         height: 100vh;
         z-index: 1;
-        transition: 0.5s ;
+        transition: 0.5s ease-out;
 
 
     }
@@ -324,7 +339,7 @@ input:focus{
         position: fixed;
         font-size: 1.5rem;
         right: 3%;
-        top: 8.5vh;
+        top: 5%;
         color:rgba(0,0,0,0.5);
         /* padding: 10vh; */
     }
@@ -333,10 +348,12 @@ input:focus{
         position: fixed;
         font-size: 1.5rem;
         right: 10%;
-        top: 8.2vh;
+        top: 5%;
         color:rgba(0,0,0,0.5);
+        /* display: none; */
         /* padding: 10vh; */
     }
+    
     .fevourite{
         background-color: #fff;
         margin: 0;
