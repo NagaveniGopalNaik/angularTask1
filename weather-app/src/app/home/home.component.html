@@ -5,6 +5,7 @@
     <div class="home">
         <div class="location">
             <p class="current-location">{{currentData.name}}</p>
+            <!-- <p class="current-location">udupi</p> -->
             <div class="fevourite">
                 <p><mat-icon *ngIf="favourite" class="icon" (click)="change()">favorite_border</mat-icon>
                     <mat-icon *ngIf="favourite1" class="icon-selected" (click)="change()">favorite</mat-icon></p>
@@ -14,9 +15,11 @@
         <div class="weather">
             <div class="image-div">
                 <img src="http://openweathermap.org/img/wn/{{icon}}@4x.png" alt="sunny" class="image" width="120%" height="120%">
+                <!-- <img src="../../assets/images/rain-small.png" alt=""> -->
             </div>
             <div class="temp-data">
-                <span class="value">{{temp}}</span>
+                <!-- <span class="value">{{temp}}</span> -->
+                <span class="value">87</span>
                     <div class="but">
                         <button (click)="celcius()">&#176;C</button>
                     <button (click)="farenheit()" id="background">&#176;F</button>
@@ -25,6 +28,7 @@
                 
             </div>
             <p id="text-size">{{currentData.description}}</p>
+            <!-- <p id="text-size">heavy rainy</p> -->
         </div>
     </div>
     <app-footer></app-footer>

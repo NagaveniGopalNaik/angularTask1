@@ -27,7 +27,7 @@ temp='';
     // this.currentData = this.service.data;
     this.currentData = localStorage.getItem('data');
     this.currentData = JSON.parse(this.currentData);
-    this.icon = this.currentData.icon;
+    // this.icon = this.currentData.icon;
     this.temp = (this.currentData.temp).toFixed(0);
     
     // console.log(this.icon);
@@ -43,9 +43,12 @@ change(){
   this.favourite1 = !this.favourite1;
   localStorage.setItem('like',String(this.favourite1));
   this.currentData.like = true;
-  let value = JSON.stringify(this.currentData);
-  this.fevData.push(value);
-  localStorage.setItem('fevourite',this.fevData);
+  if(localStorage.getItem('favourite')){
+    let fevData = [];
+    let oldData = JSON.parse(localStorage.getItem('favourite') || '[]');
+    fevData = [this.currentData,...oldData]
+  }
+  localStorage.setItem('favourite',this.fevData);
   
 }
 celcius(){

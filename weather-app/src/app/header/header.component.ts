@@ -37,8 +37,15 @@ like=false;
 
   ngOnInit(): void {
     this.date = new Date();
+    
     // this.route.queryParams.subscribe(data=>this.id=data['id']);
     // this.fev = false;
+
+    // if(localStorage.getItem('store')==null){
+    //   localStorage.setItem('store','[]');
+    // } 
+      
+    
    
   }
 
@@ -131,24 +138,17 @@ like=false;
       this.cityData.visibility = this.data['visibility'];
       this.cityData.like = Boolean(localStorage.getItem('like'));
       
-
-      if(localStorage.getItem('recent')==null){
-        localStorage.setItem('recent','');
-      } else {
-        let oldData = [JSON.parse(localStorage.getItem('recent') || '{}')];
-        oldData.push(this.cityData);
-        localStorage.setItem('recent',JSON.stringify(oldData));
-      }
-
+      this.service.addData(this.cityData);
+// reload home page to update data automatically
+      
+      
       this.router.navigate(['/home']).then
       window.location.reload();
-      
     });
-   
 
 
   }
-    
 
+  
 
 }
