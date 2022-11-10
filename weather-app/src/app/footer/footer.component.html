@@ -1,51 +1,51 @@
 <div class="footer scroll">
     <div class="foot-div">
         <div>
-            <img src="../../assets/images/temperature.png" alt="temperature">
+            <img src="../../assets/images/temperature.png" alt="temperature" class="img">
         </div>
         <div class="margin-left">
             <p>Min-Max</p>
-            <p class="data">75 <span>&#176;</span>- 90 <span>&#176;</span></p>
+            <p class="data">{{temp_min}} <span>&#176;</span>-{{temp_max}}<span>&#176;</span></p>
         </div>
     </div>
 
     <div class="foot-div">
         <div>
-            <img src="../../assets/images/rainy.png" alt="Precipitation">
+            <img src="../../assets/images/rainy.png" alt="Precipitation"  class="img">
         </div>
         <div class="margin-left">
-            <p>Precipitation</p>
-            <p class="data">0%</p>
+            <p>Pressure</p>
+            <p class="data">{{currentData.pressure}} %</p>
         </div>
     </div>
 
     <div class="foot-div">
         <div>
-            <img src="../../assets/images/humility.png" alt="humility">
+            <img src="../../assets/images/humility.png" alt="humility" class="img">
         </div>
         <div class="margin-left">
-            <p>Humility</p>
-            <p class="data">47%</p>
+            <p>Humidity</p>
+            <p class="data">{{currentData.humidity}}%</p>
         </div>
     </div>
 
     <div class="foot-div">
         <div>
-            <img src="../../assets/images/wind.png" alt="wind">
+            <img src="../../assets/images/wind.png" alt="wind" class="img">
         </div>
         <div class="margin-left">
             <p>Wind</p>
-            <p class="data">4 mph</p>
+            <p class="data">{{wind}}&nbsp;mph</p>
         </div>
     </div>
 
     <div class="foot-div">
         <div>
-            <img src="../../assets/images/visibility.png" alt="visibility">
+            <img src="../../assets/images/visibility.png" alt="visibility"  class="img">
         </div>
         <div class="margin-left">
             <p>Visibility</p>
-            <p class="data">12 mph</p>
+            <p class="data">{{visibility}}&nbsp;mph</p>
         </div>
     </div>
 </div>

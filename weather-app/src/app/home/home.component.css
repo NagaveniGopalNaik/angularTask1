@@ -40,6 +40,7 @@ position: relative;
     
 }
 .fevourite{
+    margin-top: 10%;
     width: 100%;
     display: flex;
 
@@ -49,20 +50,23 @@ position: relative;
 .location .current-location{
     font-family: Roboto;
     line-height: 2rem;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 500;
 }
+/* .current-location{
+    font-size: 6rem;
+} */
 .fevourite #text{
     padding: 0.3% 0.5%;
     font-family: Roboto;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
 .weather{
     /* position: absolute; */
     width: 80%;
-    height: 100%;
+    /* height: 100%; */
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -72,9 +76,19 @@ position: relative;
     
 
 }
-
+.temp-data{
+    /* position: absolute; */
+    display: flex;
+    margin-left: 88%;
+    
+} 
 .value{
-    font-size: 4rem;
+    font-size: 5.5rem;
+    /* margin-top: 5%; */
+}
+.but{
+    display: flex;
+    margin-bottom: 5%;
 }
 
 .weather .image-div{
@@ -116,6 +130,12 @@ position: relative;
 .icon-selected,.col{
     color: #FFD639;
 }
+#text-size{
+    /* margin-top: 3vh; */
+    font-size: 2rem;
+    font-weight: 400;
+}
+
 
 @media(max-width:500px){
     *{
@@ -123,14 +143,41 @@ position: relative;
         margin: 0;
         padding: 0;
     }
+    .container{
+        height: 100%;
+        /* width: 80%; */
+    }
+    .fevourite #text{
+        width: inline-block;
+        padding: 0.3% 0.5%;
+        font-family: Roboto;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    /* .temp-data{
+        display: flex;
+        margin-left: 0%;
+        
+    }  */
+    .temp-data{
+        /* position: absolute; */
+        display: flex;
+        margin-left: 50%;
+        
+    } 
+    .value{
+        font-size: 3.5rem;
+        /* margin-top: 5%; */
+    }
     .home{
         
         /* width: fit-content; */
+        height: 50%;
         margin-top: 1.5vh;
         margin-left: 4vh;
         flex-direction: column;
         text-align: center;
-       justify-content: center;
+       justify-content: space-around;
        align-items: center;
        
        /* margin: 0; */
@@ -144,7 +191,7 @@ position: relative;
         /* margin-top: 0.02vw; */
         line-height: 0.5rem;
         font-family: 'Roboto';
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         /* font-weight:200; */
         color:rgba(255,255,255)
         
@@ -153,12 +200,18 @@ position: relative;
         align-items: center;
         /* margin-left: 5vh; */
         /* line-height: 8vh; */
-        margin-top: 4vh;
+        /* margin-top: 4vh; */
         justify-content: center;
     }
     .fevourite #text{
         padding: 0.3% 0.5%;
     }
+    /* .weather{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    } */
 
     .weather .image-div{
         width: 40%;

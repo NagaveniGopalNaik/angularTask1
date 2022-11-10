@@ -4,25 +4,27 @@
     <app-header></app-header>
     <div class="home">
         <div class="location">
-            <p class="current-location">Udupi,Karnataka</p>
+            <p class="current-location">{{currentData.name}}</p>
             <div class="fevourite">
                 <p><mat-icon *ngIf="favourite" class="icon" (click)="change()">favorite_border</mat-icon>
                     <mat-icon *ngIf="favourite1" class="icon-selected" (click)="change()">favorite</mat-icon></p>
-                <p id="text" [class.col]="favourite1">Add to favourite</p>
+                <p id="text" [class.col]="favourite1">Add&nbsp;to&nbsp;favourite</p>
             </div>
         </div>
         <div class="weather">
             <div class="image-div">
-                <img src="../../assets/images/sunny.png" alt="sunny" class="image" width="100%" height="100%">
+                <img src="http://openweathermap.org/img/wn/{{icon}}@4x.png" alt="sunny" class="image" width="120%" height="120%">
             </div>
             <div class="temp-data">
-                <span class="value">87 </span>
-                    <button>&#176;C</button>
-                    <button id="background">&#176;F</button>
+                <span class="value">{{temp}}</span>
+                    <div class="but">
+                        <button (click)="celcius()">&#176;C</button>
+                    <button (click)="farenheit()" id="background">&#176;F</button>
+                    </div>
                 
                 
             </div>
-            <p id="text-size">Mostly Sunny</p>
+            <p id="text-size">{{currentData.description}}</p>
         </div>
     </div>
     <app-footer></app-footer>

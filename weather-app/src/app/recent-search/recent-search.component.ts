@@ -10,9 +10,27 @@ import { RemoveRecentSearchComponent } from '../remove-recent-search/remove-rece
 export class RecentSearchComponent implements OnInit {
   public favourite:boolean=true;
   public favourite1:boolean=false;
+  currentData:any;
+  data=false;
+  data1 = false;
   constructor(private dialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.currentData = localStorage.getItem('fevourite');
+    this.currentData = JSON.parse(this.currentData);
+    let length = this.currentData;
+    console.log(length);
+    
+    this.currentData=[];
+    if(this.currentData.length < 0){
+      this.data = true;
+    } else {
+      this.data1 = true; 
+    }
+    
+    
+    
+    
   }
   change(){
   

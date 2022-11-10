@@ -39,3 +39,33 @@ p{
 #position{
     margin-left:15%
 }
+@media(max-width:500px){
+  p{
+    font-size: 1rem;
+    color: rgba(0,0,0,0.54);
+  }
+
+  #position button{
+  background-color: transparent;
+  color: rgba(103,58,183,1);
+  font-family: 'Roboto';
+  
+  font-size: 1rem;
+  
+}
+#position .ok{
+
+background-color: transparent;
+color: rgba(103,58,183,1);
+
+font-size: 1rem;
+
+
+}
+
+#position{
+  margin-right: 5%;
+  display: flex;
+  float: right;
+}
+}

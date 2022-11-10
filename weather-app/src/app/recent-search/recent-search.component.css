@@ -128,22 +128,24 @@ margin: 0;    /* margin: -1%; */
     text-align: center;
 }
 .img1{
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
 }
 .place_temp{
     font-family: 'Roboto';
-    font-size: 1rem;
+    font-size: 1.5rem;
 
 }
 .place1{
     width: 10%;
     font-family: 'Roboto';
-    font-weight: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 .right{
     width: 5%;
-    margin-top: -6%;
+    margin-top: -3%;
+    size: 2rem;
     float: right;
     color:#FFD639
 }
@@ -179,7 +181,7 @@ table tr .right{
 }
 .place,.temp{
     font-family: 'Roboto';
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 19px;
@@ -193,7 +195,7 @@ table tr .right{
 }
 .temp{
     margin-top: 5%;
-    font-size:1.75rem;
+    font-size:3rem;
 
 }
 .down{
@@ -237,9 +239,13 @@ table tr .right{
         position: absolute;
         padding-bottom: 2%;
         left: 10%;
+        font-size: 1rem;
         /* margin-bottom: 2%; */
         font-family: 'Roboto';
         
+    }
+    .place_temp{
+        font-size: 1rem;
     }
     .no-fevourite p{
   

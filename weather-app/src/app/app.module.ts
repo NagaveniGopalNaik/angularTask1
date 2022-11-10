@@ -12,6 +12,8 @@ import { RecentSearchComponent } from './recent-search/recent-search.component';
 import { FooterComponent } from './footer/footer.component';
 import { RemoveAlertComponent } from './remove-alert/remove-alert.component';
 import { RemoveRecentSearchComponent } from './remove-recent-search/remove-recent-search.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { RemoveRecentSearchComponent } from './remove-recent-search/remove-recen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

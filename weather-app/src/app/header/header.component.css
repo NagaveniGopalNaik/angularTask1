@@ -1,6 +1,7 @@
 /* Header part style */
 .header{
     /* box-sizing:content-box; */
+    /* height: 30%; */
     width: 80%;
     margin: auto;
     /* margin-top: 10%; */
@@ -72,7 +73,7 @@ input:focus{
 }
 .search-button .search-icon{
     color: rgba(255,255,255,0.8);
-    font-size: 1rem;
+    font-size: 2rem;
     
 }  
 
@@ -105,10 +106,11 @@ input:focus{
 }
 .navbar ul{
     width: 70%;
+    
 }
 .navbar ul li{
     margin-right: 2.5rem;
-    padding: 0 1%;
+    padding: 0 2%;
     /* display: inline-block; */
     margin-bottom: 0;
 }
@@ -123,16 +125,20 @@ input:focus{
     letter-spacing: 0;
     /* color: #FFD639; */
     color:#fff;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-decoration: none;
     
     
 }
 
 
-#active,a:hover{
+#active{
+    padding-bottom:2.8% ;
     border-bottom:2px solid #FFD639;
 }
+/* .a:hover{
+    color: #fccd0e;
+} */
 #active a{
     
     color: #FFD639;
@@ -159,6 +165,7 @@ input:focus{
     .header{
         border: none;
         width: 100%;
+        /* height: 100%; */
         
     }
 
@@ -199,7 +206,7 @@ input:focus{
         color:black;
     }
     .search{
-        margin-right:2% ;
+        margin-right:5% ;
         margin-top: 2%;
         display: block;
         color:white;
@@ -302,7 +309,8 @@ input:focus{
         box-sizing: border-box;
         margin: 0;
         margin-top: 0;
-        width: 120%;
+        width: 100%;
+        margin-left: 0;
         background: white;
         height: 100vh;
         z-index: 1;

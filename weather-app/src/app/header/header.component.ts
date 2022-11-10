@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { WeatherService } from '../weather.service';
+import { WeatherData } from '../weather-data';
+import { NgForm } from '@angular/forms';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-header',
@@ -14,50 +18,28 @@ navDisplay=false;
 search=false;
 search1=true;
 home=true;
-fev=true;
+fev=false;
 recent=false;
 fev1=false;
 textFocus=false;
 mobileMedia:any=window.matchMedia("('max-width:500')");
+weather!:NgForm;
+data:any;
+city='';
+cityData = new WeatherData();
+index:number=0;
+dataList:any;
+fevData:any=[];
 
+like=false;
 
-
-
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private service:WeatherService,private router : Router) { }
 
   ngOnInit(): void {
     this.date = new Date();
-    this.route.queryParams.subscribe(data=>this.id=data['id']);
-    this.fev = false;
-    console.log(this.mobileMedia);
-    
-    // console.log(this.id);
+    // this.route.queryParams.subscribe(data=>this.id=data['id']);
+    // this.fev = false;
    
-    // if(this.mobileMedia){
-    //   console.log(1);
-      
-    //   if(this.id == 2){
-    //     this.home = false;
-    //     this.fev = true;
-    //     this.fev1 = true;
-    //     this.recent = false;
-    //   } else if(this.id == 3) {
-    //     this.home=false;
-    //     this.fev = true;
-    //     this.recent = true;
-    //     this.fev1 = false;
-    //   } else {
-    //     this.fev = false;
-    //     this.home = true;
-    //   this.fev1=false;
-    // this.recent = false;}
-    // } else { 
-    //   this.fev = false;
-    //   this.fev1=false;
-    //   this.recent = false;
-    //   this.home = true; }
-    
-    
   }
 
   clearBtn(){
@@ -127,6 +109,44 @@ mobileMedia:any=window.matchMedia("('max-width:500')");
       this.home=true;
     }
     
+  }
+  submit(formValue:NgForm){
+     
+    this.service.loadData(this.city).subscribe((result)=>{
+      
+      this.data=result;
+     
+      // console.log(this.data['name']);
+      this.cityData.name=this.data['name'];
+      let weatherDetails = this.data['weather'][0];
+      let weather=weatherDetails.icon
+      this.cityData.icon =  weather;
+      this.cityData.temp = this.data['main'].temp;
+      this.cityData.description = this.data['weather'][0].description;
+      this.cityData.temp_min = this.data['main'].temp_min;
+      this.cityData.temp_max = this.data['main'].temp_max;
+      this.cityData.pressure = this.data['main'].pressure;
+      this.cityData.humidity = this.data['main'].humidity;
+      this.cityData.wind = this.data['wind'].speed;
+      this.cityData.visibility = this.data['visibility'];
+      this.cityData.like = Boolean(localStorage.getItem('like'));
+      
+
+      if(localStorage.getItem('recent')==null){
+        localStorage.setItem('recent','');
+      } else {
+        let oldData = [JSON.parse(localStorage.getItem('recent') || '{}')];
+        oldData.push(this.cityData);
+        localStorage.setItem('recent',JSON.stringify(oldData));
+      }
+
+      this.router.navigate(['/home']).then
+      window.location.reload();
+      
+    });
+   
+
+
   }
     
 
