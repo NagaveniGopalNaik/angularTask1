@@ -33,7 +33,7 @@ p{
 }
 .margin-left{
     position: absolute;
-    margin-left: 3%;
+    margin-left: 2%;
 }
 .data{
     font-size: 2rem;
@@ -65,7 +65,7 @@ p{
       font-weight: 500;
     }
     .data{
-        font-size: 1.35rem;
+        font-size: 100%;
     }
     .margin-left{
         position: absolute;

@@ -6,9 +6,10 @@
         <div class="location">
             <p class="current-location">{{currentData.name}}</p>
             <div class="fevourite">
-                <p><mat-icon *ngIf="favourite" class="icon" (click)="change()">favorite_border</mat-icon>
-                    <mat-icon *ngIf="favourite1" class="icon-selected" (click)="change()">favorite</mat-icon></p>
-                <p id="text" [class.col]="favourite1">Add&nbsp;to&nbsp;favourite</p>
+                <!-- <p (click)="change()"><mat-icon *ngIf="currentData.like==false" class="icon">favorite_border</mat-icon></p>
+                    <p (click)="removeLike()"><mat-icon *ngIf="currentData.like == true" class="icon-selected">favorite</mat-icon></p> -->
+                <p  *ngIf="currentData.like==false"  (click)="change()" id="text" [class.col]="currentData.like"><mat-icon class="icon">favorite_border</mat-icon>Add&nbsp;to&nbsp;favourite</p>
+                <p *ngIf="currentData.like == true" (click)="removeLike()" id="text" [class.col]="currentData.like"><mat-icon class="icon-selected">favorite</mat-icon>Add&nbsp;to&nbsp;favourite</p>
             </div>
         </div>
         <div class="weather">

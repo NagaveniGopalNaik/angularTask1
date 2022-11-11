@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-remove-recent-search',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RemoveRecentSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  yes(){
+    
+    localStorage.setItem('recentSearch','');
+    this.router.navigate(['/recent-search']).then
+    window.location.reload();
+
   }
 
 }

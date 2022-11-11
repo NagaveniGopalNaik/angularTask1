@@ -20,6 +20,9 @@ position: relative;
 
 
 }
+.icon-selected,.col{
+    color: #FFD639;
+}
 /* .header{
     width: fit-content;
     display: block;
@@ -78,7 +81,7 @@ img{
 .remove,.list{
     border: none;
     background-color: transparent;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: 'Roboto';
     color:#fff;
     font-weight: 500;
@@ -89,7 +92,7 @@ img{
     box-sizing: border-box;
     /* padding: 0; */
 
-margin: 0;    /* margin: -1%; */
+    margin-bottom: 0.5%;    /* margin: -1%; */
     /* margin-bottom: -1.75em; */
     background-color: rgba(255,255,255,0.1);
     font-size: 1rem;
@@ -144,7 +147,7 @@ margin: 0;    /* margin: -1%; */
 }
 .right{
     width: 5%;
-    margin-top: -3%;
+    margin-top: -5%;
     size: 2rem;
     float: right;
     color:#FFD639
@@ -294,5 +297,16 @@ table tr .right{
         width: 1%;
         height: 1%;
         background-color: #FFD639;
+    }
+    .remove,.list{
+        font-size: 1rem;
+    }
+    .img1{
+        width: 90%;
+        height: 90%;
+    }
+    .place_temp{
+        font-size: 0.75rem;
+        font-weight: 500;
     }
 }

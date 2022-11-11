@@ -57,12 +57,16 @@
 
 .search-input::placeholder{
     color: rgba(255,255,255,0.8);
-    font-size: 1rem;
+    font-size: 1.25rem;
+}
+input{
+    font-size: 1.25rem;
 }
 input:focus{
     outline: none;
-    font-size: 1rem;
-    padding: 1%;
+    background-color: transparent;
+    font-size: 1.25rem;
+    /* padding: 1%; */
     
 }
 .search-button{
@@ -106,6 +110,7 @@ input:focus{
 }
 .navbar ul{
     width: 70%;
+    /* margin-bottom: 0; */
     
 }
 .navbar ul li{
@@ -132,8 +137,10 @@ input:focus{
 }
 
 
-#active{
-    padding-bottom:2.8% ;
+.active{
+    padding-bottom:13% ;
+    color:#FFD639;
+
     border-bottom:2px solid #FFD639;
 }
 /* .a:hover{

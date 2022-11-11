@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WeatherService } from '../weather.service';
 import { WeatherData } from '../weather-data';
@@ -30,17 +30,34 @@ cityData = new WeatherData();
 index:number=0;
 dataList:any;
 fevData:any=[];
-
+width:any;
 like=false;
 
   constructor(private route: ActivatedRoute,private service:WeatherService,private router : Router) { }
 
   ngOnInit(): void {
     this.date = new Date();
-    // this.route.queryParams.subscribe(data=>this.id=data['id']);
-    // this.fev = false;
+    
+    this.route.queryParams.subscribe(data=>this.id=data['id']);
+   
+    this.width = window.innerWidth;
+
+    if(this.id == 1){
+      this.home=true;
+    } else if (this.id == 2 && this.width <500){
+      this.fev1=true;
+    this.recent= false;
+    this.fev = true;
+    this.home = false;
+    } else if(this.id == 3 && this.width < 500){
+      this.fev1=false;
+    this.recent= true;
+    this.fev = true;
+    this.home = false;
+    }
    
   }
+ 
 
   clearBtn(){
     this.textFocus = true;
@@ -75,75 +92,53 @@ like=false;
   clear(){
 
   }
-  gotoHome(){
-  this.home=true;
-  this.fev= false;
   
-  }
-
-  gotoFavorite(){
-    // debugger;
-    this.fev1=true;
-    this.recent= false;
-    if(this.mobileMedia){
-      this.home=false;
-      this.fev= true;
-      
-    
-    } else{
-      this.fev=false;
-      this.home=true;
-    }
-    
+  get mobile(){
+    return this.fev = true;
   }
   gotoRecentSearch(){
     this.recent= true;
     this.fev1=false;
-    if(this.mobileMedia){
+    if(this.width<500 && this.id == 3){
       this.home=false;
       this.fev= true;
       
-    
-    } else{
-      this.fev=false;
-      this.home=true;
+      
     }
     
   }
   submit(formValue:NgForm){
-     
-    this.service.loadData(this.city).subscribe((result)=>{
+    if(this.city){
+      this.service.loadData(this.city).subscribe((result)=>{
       
-      this.data=result;
-     
-      // console.log(this.data['name']);
-      this.cityData.name=this.data['name'];
-      let weatherDetails = this.data['weather'][0];
-      let weather=weatherDetails.icon
-      this.cityData.icon =  weather;
-      this.cityData.temp = this.data['main'].temp;
-      this.cityData.description = this.data['weather'][0].description;
-      this.cityData.temp_min = this.data['main'].temp_min;
-      this.cityData.temp_max = this.data['main'].temp_max;
-      this.cityData.pressure = this.data['main'].pressure;
-      this.cityData.humidity = this.data['main'].humidity;
-      this.cityData.wind = this.data['wind'].speed;
-      this.cityData.visibility = this.data['visibility'];
-      this.cityData.like = Boolean(localStorage.getItem('like'));
-      
-
-      if(localStorage.getItem('recent')==null){
-        localStorage.setItem('recent','');
-      } else {
-        let oldData = [JSON.parse(localStorage.getItem('recent') || '{}')];
-        oldData.push(this.cityData);
-        localStorage.setItem('recent',JSON.stringify(oldData));
-      }
-
-      this.router.navigate(['/home']).then
-      window.location.reload();
-      
-    });
+        this.data=result;
+       
+        // console.log(this.data['name']);
+        this.cityData.name=this.data['name'];
+        let weatherDetails = this.data['weather'][0];
+        let weather=weatherDetails.icon
+        this.cityData.icon =  weather;
+        this.cityData.temp = this.data['main'].temp;
+        this.cityData.description = this.data['weather'][0].description;
+        this.cityData.temp_min = this.data['main'].temp_min;
+        this.cityData.temp_max = this.data['main'].temp_max;
+        this.cityData.pressure = this.data['main'].pressure;
+        this.cityData.humidity = this.data['main'].humidity;
+        this.cityData.wind = this.data['wind'].speed;
+        this.cityData.visibility = this.data['visibility'];
+       
+        this.cityData.like = false;
+  
+        this.service.addData(this.cityData);
+        localStorage.setItem('data',JSON.stringify(this.cityData));
+  
+        this.router.navigate(['/home']).then
+        window.location.reload();
+      });
+    } else {
+      alert('Oooops! you are fail to type city name ,please enter valid city name');
+    }
+    
    
 
 
@@ -152,3 +147,7 @@ like=false;
 
 
 }
+function mobileHead() {
+  throw new Error('Function not implemented.');
+}
+

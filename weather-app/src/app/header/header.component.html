@@ -56,9 +56,9 @@
     <div class="navbar"  [class.menuClass]="navDisplay" >
        
         <ul>
-            <li id="active"><a [routerLink]="['/home']" [queryParams]="{ id: '1'}" (click)="gotoHome()">HOME</a></li>
-            <li><a [routerLink]="['/favourite']" [queryParams]="{ id: '2'}" (click)="gotoFavorite()">FAVOURITE</a></li>
-            <li><a [routerLink]="['/recent-search']" [queryParams]="{ id: '3'}" (click)="gotoRecentSearch()">RECENT<span class="hide">_</span>SEARCH</a></li>
+            <li><a  [class.active]="id==1" [routerLink]="['/home']" [queryParams]="{ id: '1'}">HOME</a></li>
+            <li><a  [class.active]="id==2" [routerLink]="['/favourite']" [queryParams]="{ id: '2'}">FAVOURITE</a></li>
+            <li><a  [class.active]="id==3" [routerLink]="['/recent-search']" [queryParams]="{ id: '3'}" >RECENT<span class="hide">_</span>SEARCH</a></li>
         </ul>
     </div>
     <div class="date"><p>{{date |date:'ccc' }},{{date | date:'dd MMM yyyy HH:mm:ss a'}}</p></div>

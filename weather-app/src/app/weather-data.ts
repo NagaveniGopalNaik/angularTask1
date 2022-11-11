@@ -1,14 +1,14 @@
 export class WeatherData {
     "name":string="Udupi,Karnataka";
-    "icon":any="http://openweathermap.org/img/wn/01d@4x.png";
-    "temp":number=87;
+    "icon":any="01d";
+    "temp":number=298.48;
     "description":string="Mostly Sunny";
-    "temp_min":string='75';
-    "temp_max":string='90';
-    "pressure":string='0';
-    "humidity":string='47';
-    "wind":string='4';
-    "visibility":string='12';
-    "like":boolean;
+    "temp_min":string='298.56';
+    "temp_max":string='300.00';
+    "pressure":string='1015';
+    "humidity":string='64';
+    "wind":string='0.62';
+    "visibility":string='10000';
+    "like":boolean=false;
 
 }

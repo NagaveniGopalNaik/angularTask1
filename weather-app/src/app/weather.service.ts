@@ -15,4 +15,29 @@ export class WeatherService {
   loadData(data:any){
     return this.httpClient.get(`${API_URL}/weather?q=${data}&appid=${API_KEY}`);
   }
+
+  addData(data:any){
+    let datas = [];
+    if(localStorage.getItem('recentSearch')){
+      let oldData = JSON.parse(localStorage.getItem('recentSearch') || '[]');
+      let previousData = oldData.find((old:any)=>{
+        return old['name']== data['name'];
+      })
+      if(previousData == undefined){
+        datas=[data,...oldData];
+      }
+      else {
+        let searchedData = oldData.indexOf(previousData);
+      let currentValue = oldData.splice(searchedData,1)[0]
+      datas= [currentValue,...oldData];
+      }
+      // datas = [data,...oldData];
+    
+    } else {
+      datas = [data]
+    }
+    localStorage.setItem('recentSearch',JSON.stringify(datas));
+    
+    
+  }
 }

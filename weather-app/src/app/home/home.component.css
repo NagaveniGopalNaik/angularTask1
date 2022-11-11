@@ -50,7 +50,7 @@ position: relative;
 .location .current-location{
     font-family: Roboto;
     line-height: 2rem;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 /* .current-location{
@@ -144,7 +144,10 @@ position: relative;
         padding: 0;
     }
     .container{
+        position: absolute;
         height: 100%;
+        padding: 0;
+        margin: 0;
         /* width: 80%; */
     }
     .fevourite #text{
@@ -173,7 +176,7 @@ position: relative;
         
         /* width: fit-content; */
         height: 50%;
-        margin-top: 1.5vh;
+        /* margin-top: 1.5vh; */
         margin-left: 4vh;
         flex-direction: column;
         text-align: center;

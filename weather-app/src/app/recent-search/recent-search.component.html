@@ -17,31 +17,35 @@
                 <button class="remove" (click)="onpenDialog()">clear All</button>
             </div>
         </div>
-<div class="scroll">
-    <mat-card class="fav-data1">
-        <div class="p_data">
-            <div class="place1">
-                Udupi,Karnataka
-            </div>
-            <div class="s_data">
-                <div class="img1">
-                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
-                </div>
-                <div class="temp_data">
-                    <h1><span class="temp">31&nbsp;</span><span>&#176;c</span></h1>
-                </div>
-                <div class="place_temp">
-                    Mostly&nbsp;sunny
-                </div>
-            </div>
-        </div>
-            <div class="right">
-                <mat-icon>favorite</mat-icon>
-            </div>
-        
 
-    </mat-card>
-</div>
+    <div class="scroll" *ngFor="let recent of currentData;index as i" (click)="getData(recent,i)">
+        <mat-card class="fav-data1">
+            <div class="p_data">
+                <div class="place1">
+                    {{recent.name}}
+                </div>
+                <div class="s_data">
+                    <div class="img1">
+                        <img src="http://openweathermap.org/img/wn/{{currentData[i].icon}}@4x.png" alt="sunny" class="image" width="140%" height="140%">
+                    </div>
+                    <div class="temp_data">
+                        <h1><span class="temp">{{(recent.temp-273.15).toFixed(0)}}&nbsp;</span><span>&#176;c</span></h1>
+                    </div>
+                    <div class="place_temp">
+                        <!-- Mostly&nbsp;sunny -->
+                        {{recent.description}}
+                    </div>
+                </div>
+            </div>
+                
+                <div class="right">
+                    <mat-icon class="icon" *ngIf="recent.like ==false">favorite_border</mat-icon>
+                    <mat-icon class="icon-selected" *ngIf="recent.like == true">favorite</mat-icon>
+                </div>
+    
+        </mat-card>
+    </div>
+
         
        </div>
     </div>

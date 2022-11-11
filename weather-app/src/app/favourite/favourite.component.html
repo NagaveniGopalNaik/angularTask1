@@ -7,182 +7,47 @@
     </div> -->
 
     <div class="fevourite">
-        <div class="no-fevourite" *ngIf="false">
+        <div class="no-fevourite" *ngIf="data">
             
                 <img src="../../assets/images/no-data.png" alt="no-fevourite">
             
-            <p>No Fevourites added</p>
+            <p>No Favourites added</p>
         </div>
+       <div *ngIf="data1">
         <div class="fevourite-list">
             <div class="update-data-delete">
-                <div class="list">6 City added as favourite</div>
+                <div class="list">{{length}} City added as favourite</div>
                 <button class="remove" mat-dialog-close (click)="openDialog()">Remove All</button>
             </div>
         </div>
-<div class="scroll">
-    
-    <mat-card class="fav-data1">
-        <div class="p_data">
-            <div class="place1">
-                Udupi,Karnataka
-            </div>
-            <div class="s_data">
-                <div class="img1">
-                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
+        <div class="scroll" *ngFor="let recent of currentData;index as i">
+            <mat-card class="fav-data1">
+                <div class="p_data">
+                    <div class="place1">
+                        {{recent.name}}
+                    </div>
+                    <div class="s_data">
+                        <div class="img1">
+                            <img src="http://openweathermap.org/img/wn/{{recent.icon}}@4x.png" alt="sunny" class="image" width="140%" height="140%">
+                        </div>
+                        <div class="temp_data">
+                            <h1><span class="temp">{{(recent.temp-273.15).toFixed(0)}}&nbsp;</span><span>&#176;c</span></h1>
+                        </div>
+                        <div class="place_temp">
+                            <!-- Mostly&nbsp;sunny -->
+                            {{recent.description}}
+                        </div>
+                    </div>
                 </div>
-                <div class="temp_data">
-                    <h1><span class="temp">31&nbsp;</span><span>&#176;c</span></h1>
-                </div>
-                <div class="place_temp">
-                    Mostly&nbsp;sunny
-                </div>
-            </div>
-        </div>
-            <div class="right">
-                <mat-icon>favorite</mat-icon>
-            </div>
+                    
+                    <div class="right" *ngIf="currentData[i].like? 'true_icon' : 'false_icon'">
+                        <mat-icon class="icon" *ngIf="currentData[i].like ==false">favorite_border</mat-icon>
+                        <mat-icon class="icon-selected" *ngIf="currentData[i].like == true">favorite</mat-icon>
+                    </div>
         
-
-    </mat-card>
-    <mat-card class="fav-data1">
-        <div class="p_data">
-            <div class="place1">
-                Udupi,Karnataka
-            </div>
-            <div class="s_data">
-                <div class="img1">
-                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
-                </div>
-                <div class="temp_data">
-                    <h1><span class="temp">31&nbsp;</span><span>&#176;c</span></h1>
-                </div>
-                <div class="place_temp">
-                    Mostly&nbsp;sunny
-                </div>
-            </div>
+            </mat-card>
         </div>
-            <div class="right">
-                <mat-icon>favorite</mat-icon>
-            </div>
-        
-
-    </mat-card>
-    <mat-card class="fav-data1">
-        <div class="p_data">
-            <div class="place1">
-                Udupi,Karnataka
-            </div>
-            <div class="s_data">
-                <div class="img1">
-                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
-                </div>
-                <div class="temp_data">
-                    <h1><span class="temp">31&nbsp;</span><span>&#176;c</span></h1>
-                </div>
-                <div class="place_temp">
-                    Mostly&nbsp;sunny
-                </div>
-            </div>
-        </div>
-            <div class="right">
-                <mat-icon>favorite</mat-icon>
-            </div>
-        
-
-    </mat-card>
-    <mat-card class="fav-data1">
-        <div class="p_data">
-            <div class="place1">
-                Udupi,Karnataka
-            </div>
-            <div class="s_data">
-                <div class="img1">
-                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
-                </div>
-                <div class="temp_data">
-                    <h1><span class="temp">31&nbsp;</span><span>&#176;c</span></h1>
-                </div>
-                <div class="place_temp">
-                    Mostly&nbsp;sunny
-                </div>
-            </div>
-        </div>
-            <div class="right">
-                <mat-icon>favorite</mat-icon>
-            </div>
-        
-
-    </mat-card>
-    <mat-card class="fav-data1">
-        <div class="p_data">
-            <div class="place1">
-                Udupi,Karnataka
-            </div>
-            <div class="s_data">
-                <div class="img1">
-                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
-                </div>
-                <div class="temp_data">
-                    <h1><span class="temp">31&nbsp;</span><span>&#176;c</span></h1>
-                </div>
-                <div class="place_temp">
-                    Mostly&nbsp;sunny
-                </div>
-            </div>
-        </div>
-            <div class="right">
-                <mat-icon>favorite</mat-icon>
-            </div>
-        
-
-    </mat-card>
-    <mat-card class="fav-data1">
-        <div class="p_data">
-            <div class="place1">
-                Udupi,Karnataka
-            </div>
-            <div class="s_data">
-                <div class="img1">
-                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
-                </div>
-                <div class="temp_data">
-                    <h1><span class="temp">31&nbsp;</span><span>&#176;c</span></h1>
-                </div>
-                <div class="place_temp">
-                    Mostly&nbsp;sunny
-                </div>
-            </div>
-        </div>
-            <div class="right">
-                <mat-icon>favorite</mat-icon>
-            </div>
-        
-
-    </mat-card>
-    <mat-card class="fav-data1">
-        <div class="p_data">
-            <div class="place1">
-                Udupi,Karnataka
-            </div>
-            <div class="s_data">
-                <div class="img1">
-                    <img src="../../assets/images/sunny-small.png" alt="sunny" class="image">
-                </div>
-                <div class="temp_data">
-                    <h1><span class="temp">31&nbsp;</span><span>&#176;c</span></h1>
-                </div>
-                <div class="place_temp">
-                    Mostly&nbsp;sunny
-                </div>
-            </div>
-        </div>
-            <div class="right">
-                <mat-icon>favorite</mat-icon>
-            </div>
-        
-
-    </mat-card>
-</div>
+       </div>
         
     </div>
 </div>
