@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+<<<<<<< HEAD
     if (localStorage.getItem('data')) {
       this.currentData = localStorage.getItem('data');
       console.log(this.currentData);
@@ -67,6 +68,47 @@ export class HomeComponent implements OnInit {
     recentData[id] = this.currentData;
 
     localStorage.setItem('recentSearch', JSON.stringify(recentData));
+=======
+    // localStorage.setItem('like',String(this.favourite1));
+    // console.log(this.data);
+    // this.currentData = this.service.data;
+    this.currentData = localStorage.getItem('data');
+    this.currentData = JSON.parse(this.currentData);
+    // this.icon = this.currentData.icon;
+    this.temp = (this.currentData.temp).toFixed(0);
+    
+    // console.log(this.icon);
+    
+
+    // console.log(typeof this.currentData);
+    
+    // console.log(this.currentData['name']);
+  }
+change(){
+  
+  this.favourite = !this.favourite;
+  this.favourite1 = !this.favourite1;
+  localStorage.setItem('like',String(this.favourite1));
+  this.currentData.like = true;
+  if(localStorage.getItem('favourite')){
+    let fevData = [];
+    let oldData = JSON.parse(localStorage.getItem('favourite') || '[]');
+    fevData = [this.currentData,...oldData]
+  }
+  localStorage.setItem('favourite',this.fevData);
+  
+}
+celcius(){
+  
+    this.temp = (Number(this.currentData.temp )- 273.15).toFixed(0);
+    
+  // }
+}
+farenheit(){
+  // alert("hello");
+    this.temp = ((1.8*(Number(this.currentData.temp)- 273.15))+32).toFixed(0);
+    
+>>>>>>> 8286b8893e531bda6ea8b5be9816bcbd349958d6
   }
   change() {
     this.currentData.like = true;

@@ -20,6 +20,7 @@ export class WeatherService {
     let datas = [];
     if(localStorage.getItem('recentSearch')){
       let oldData = JSON.parse(localStorage.getItem('recentSearch') || '[]');
+<<<<<<< HEAD
       let previousData = oldData.find((old:any)=>{
         return old['name']== data['name'];
       })
@@ -32,12 +33,19 @@ export class WeatherService {
       datas= [currentValue,...oldData];
       }
       // datas = [data,...oldData];
+=======
+    
+>>>>>>> 8286b8893e531bda6ea8b5be9816bcbd349958d6
     
     } else {
       datas = [data]
     }
     localStorage.setItem('recentSearch',JSON.stringify(datas));
+<<<<<<< HEAD
     
+=======
+ 
+>>>>>>> 8286b8893e531bda6ea8b5be9816bcbd349958d6
     
   }
 }
