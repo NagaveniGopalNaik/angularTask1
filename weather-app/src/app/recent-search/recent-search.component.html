@@ -18,10 +18,10 @@
             </div>
         </div>
 
-    <div class="scroll" *ngFor="let recent of currentData;index as i" (click)="getData(recent,i)">
+    <div class="scroll" *ngFor="let recent of currentData;index as i">
         <mat-card class="fav-data1">
             <div class="p_data">
-                <div class="place1">
+                <div class="place1"  (click)="getData(recent,i)">
                     {{recent.name}}
                 </div>
                 <div class="s_data">

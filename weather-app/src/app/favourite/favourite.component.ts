@@ -15,6 +15,7 @@ export class FavouriteComponent implements OnInit {
   constructor(public dialog:MatDialog,private router : Router) { }
 
   ngOnInit(): void {
+    localStorage.setItem('page','/favourite');
    this.datas();
    
   }

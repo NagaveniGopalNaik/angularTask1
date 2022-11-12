@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="logo-searchbar">
+        <div class="logo1">
+            <div class="logo">
+                <img src="../../assets/images/logo.png" alt="logo" class="image">
+            </div>
+            <div class="searchbar">
+                
+                <input type="text" placeholder="Search city" class="search-input" name="city">
+                <button class="search-button"> <mat-icon class="search">search</mat-icon></button>
+                
+            </div>
+        </div>
+    </div>
+    <div class="navbar-date">
+        <div class="navbar">
+            <ul>
+                <li><a routerLink="/home">HOME</a>
+                </li>
+                <li><a routerLink="/favourite">FAVOURITE</a>
+                </li>
+                <li><a routerLink="/recent-search">RECENT SEARCH</a></li>
+            </ul>
+        </div>
+        <div class="date">
+            <p>{{date |date:'ccc' }},{{date | date:'dd MMM yyyy HH:mm:ss a'}}</p>
+        </div>
+    </div>
+</div>

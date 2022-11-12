@@ -1,11 +1,9 @@
 export class WeatherData {
     "name":string="Udupi,Karnataka";
     "icon":any="01d";
-<<<<<<< HEAD
-    "temp":number=298.48;
-=======
 
->>>>>>> 8286b8893e531bda6ea8b5be9816bcbd349958d6
+    "temp":number=298.48;
+
     "description":string="Mostly Sunny";
     "temp_min":string='298.56';
     "temp_max":string='300.00';

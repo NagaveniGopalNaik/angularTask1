@@ -22,6 +22,7 @@ export class RecentSearchComponent implements OnInit {
   constructor(private dialog:MatDialog,private router:Router) { }
 
   ngOnInit(): void {
+    localStorage.setItem('page','/recent-search');
     this.dataDetails();
 
     if(this.length <= 0){

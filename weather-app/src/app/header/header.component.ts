@@ -38,7 +38,7 @@ like=false;
   ngOnInit(): void {
     this.date = new Date();
     
-<<<<<<< HEAD
+
     this.route.queryParams.subscribe(data=>this.id=data['id']);
    
     this.width = window.innerWidth;
@@ -56,16 +56,7 @@ like=false;
     this.fev = true;
     this.home = false;
     }
-=======
-    // this.route.queryParams.subscribe(data=>this.id=data['id']);
-    // this.fev = false;
 
-    // if(localStorage.getItem('store')==null){
-    //   localStorage.setItem('store','[]');
-    // } 
-      
-    
->>>>>>> 8286b8893e531bda6ea8b5be9816bcbd349958d6
    
   }
  
@@ -122,7 +113,7 @@ like=false;
     if(this.city){
       this.service.loadData(this.city).subscribe((result)=>{
       
-<<<<<<< HEAD
+
         this.data=result;
        
         // console.log(this.data['name']);
@@ -151,10 +142,7 @@ like=false;
       alert('Oooops! you are fail to type city name ,please enter valid city name');
     }
     
-   
-=======
-      
->>>>>>> 8286b8893e531bda6ea8b5be9816bcbd349958d6
+
 
 
   }

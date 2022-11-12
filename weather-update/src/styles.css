@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+body{
+    background: url('/assets/images/background.png') no-repeat center center/cover;
+    object-fit: cover;
+    padding:3% 10%;
+    font-family: 'Roboto';
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
