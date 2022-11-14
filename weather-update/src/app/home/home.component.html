@@ -1,5 +1,35 @@
-<div class="home">
+<div class="body">
     <div class="header">
         <app-header></app-header>
+    </div>
+    <div class="home">
+        <div class="place">
+            <div class="location-name">
+                <p class="place-name">Udupi</p>
+            </div>
+            <div class="favourite">
+                
+                <p><mat-icon class="not-like">favorite_border</mat-icon></p>
+                <p>&nbsp;Add to favourite</p>
+                <!-- <p><mat-icon class="like">favourite</mat-icon>&nbsp;Add to favourite</p> -->
+            </div>
+        </div>
+        <div class="temp-details">
+            <div class="image-div">
+               <img src="../../assets/images/cloudy-small.png" alt="">
+            </div>
+            
+                <div class="with-button">
+                    <p class="temp">87</p>
+                    <button class="celci">&#176;C</button>
+                    <button id="background">&#176;F</button>
+                </div>
+            <div class="description">
+                <p> heavy rainy </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <app-footer></app-footer>
     </div>
 </div>

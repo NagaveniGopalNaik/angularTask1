@@ -11,6 +11,7 @@ date:any;
 
   ngOnInit(): void {
     this.date = new Date();
+    
   }
 
 }

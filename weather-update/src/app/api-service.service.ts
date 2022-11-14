@@ -17,5 +17,13 @@ export class ApiServiceService {
   loadData(data:any){
     return this,this.httpClient.get(`${API_URL}/weather?q=${data}&appid=${API_KEY}`);
   }
+
+  getActive(value:any){
+    if(localStorage.getItem('active')){
+      localStorage.setItem('active',JSON.stringify(value));
+    } else{
+      localStorage.setItem('active',JSON.stringify(1));
+    }
+  }
   
 }

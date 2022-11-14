@@ -1,0 +1,160 @@
+.favourite{
+    width: 100%;
+    height: 100%;
+}
+.header{
+    height: 20%;
+    width: 100%;
+}
+.body{
+    height: 80%;
+    width: 100%;
+}
+
+/* no favourite data image display styling */
+.no-favourite{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.no-data p{
+    color:#fff;
+    font-family: 'Roboto';
+    font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 2.1rem;
+  margin-top: 5%;
+}
+
+/* favourite data display */
+.updateData-delete{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5% ;
+}
+
+.updateData-delete p{
+    color:#fff;
+    font-family: 'Roboto';
+    font-size: 1.3rem;
+    letter-spacing: 0;
+    line-height: 1.5rem;
+}
+
+/* list of data styling */
+.favourite1{
+    color:white;
+}
+.favourite-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(225,225,225, 0.2);
+    margin-bottom: 0.1%;
+    padding: 1% 0;
+    /* padding: 0 3%; */
+}
+.data{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+   
+}
+.temp-data{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.place-name{
+    margin-left: 2%;
+    font-family: 'Roboto';
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+}
+.like{
+    margin-right: 2%;
+}
+.icon{
+    color:rgba(250,208,91,1)
+}
+.temp{
+    font-family: 'Roboto';
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    
+}
+.description{
+    font-family: Roboto;
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    line-height: 2.1rem;
+}
+.description::first-letter{
+    text-transform: uppercase;
+}
+#temp-data{
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+}
+.image{
+    object-fit: cover;
+}
+
+/* @media (max-width:1300px){
+    .temp-data{
+        width: 40%;
+    }
+} */
+@media (max-width:1300px){
+    .data{
+        width: 70%;
+        justify-content: space-around;
+    }
+    .temp-data{
+        width: 50%;
+    }
+}
+
+@media(max-width:650px){
+    .temp-data{
+        width: 65%;
+    }
+
+    .data{
+        width: 90%;
+        margin-left: 3%;
+        flex-direction: column;
+        align-items:flex-start;
+    }
+    .place-name{
+        font-size: 1.5rem;
+         font-weight: 500;
+        letter-spacing: 0;
+         line-height: 1.8rem;
+         
+    }
+    .image{
+        object-fit: cover;
+    }
+
+    #temp-data{
+        font-size: 1.8rem;
+  
+  line-height: 2.1rem;
+    }
+
+    .description{
+        font-size: 1.4rem;
+  
+  line-height: 1.6rem;
+    }
+    
+    
+}

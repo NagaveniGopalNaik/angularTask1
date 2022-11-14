@@ -3,6 +3,7 @@
     /* box-sizing:content-box; */
     /* height: 30%; */
     width: 80%;
+    height: fit-content;
     margin: auto;
     /* margin-top: 10%; */
     margin-bottom: 0;
