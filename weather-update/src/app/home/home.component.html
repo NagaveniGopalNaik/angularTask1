@@ -1,11 +1,12 @@
-<div class="body">
-    <div class="header">
-        <app-header></app-header>
-    </div>
+{{call()}}
+<div class="header">
+    <app-header></app-header>
+</div><div class="body">
+    
     <div class="home">
         <div class="place">
             <div class="location-name">
-                <p class="place-name">Udupi</p>
+                <p class="place-name">{{currentData.name}}</p>
             </div>
             <div class="favourite">
                 
@@ -16,16 +17,16 @@
         </div>
         <div class="temp-details">
             <div class="image-div">
-               <img src="../../assets/images/cloudy-small.png" alt="">
+               <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="" width="100%" height="100%">
             </div>
             
                 <div class="with-button">
-                    <p class="temp">87</p>
-                    <button class="celci">&#176;C</button>
-                    <button id="background">&#176;F</button>
+                    <p class="temp">{{temp}}</p>
+                    <button [class.styleButton]="flag" (click)="celcius()">&#176;C</button>
+                    <button [class.styleButton]="flag1" (click)="farenheit()">&#176;F</button>
                 </div>
             <div class="description">
-                <p> heavy rainy </p>
+                <p>{{currentData.description}}</p>
             </div>
         </div>
     </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatDialog } from '@angular/material/dialog';
+import { ApiServiceService } from '../api-service.service';
+import { RemoveRecentSearchComponent } from '../remove-recent-search/remove-recent-search.component';
 @Component({
   selector: 'app-recent-search',
   templateUrl: './recent-search.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: ApiServiceService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.apiService.setId(3);
+  }
+
+  openDialog(){
+    this.dialog.open(RemoveRecentSearchComponent,{panelClass:'removeAll'})
   }
 
 }

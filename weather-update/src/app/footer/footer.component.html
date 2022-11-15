@@ -6,7 +6,7 @@
         </div>
         <div class="margin-left">
             <p>Min-Max</p>
-            <p class="data">78<span>&#176;</span>-&nbsp;89<span>&#176;</span></p>
+            <p class="data">{{temp_min}}<span>&#176;</span>-&nbsp;{{temp_max}}<span>&#176;</span></p>
         </div>
     </div>
 
@@ -16,7 +16,7 @@
         </div>
         <div class="margin-left">
             <p>Pressure</p>
-            <p class="data">78 %</p>
+            <p class="data">{{currentData.pressure}} pa</p>
         </div>
     </div>
 
@@ -26,7 +26,7 @@
         </div>
         <div class="margin-left">
             <p>Humidity</p>
-            <p class="data">789%</p>
+            <p class="data">{{currentData.humidity}}%</p>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
         </div>
         <div class="margin-left">
             <p>Wind</p>
-            <p class="data">99&nbsp;mph</p>
+            <p class="data">{{wind}}&nbsp;mph</p>
         </div>
     </div>
 
@@ -46,7 +46,7 @@
         </div>
         <div class="margin-left">
             <p>Visibility</p>
-            <p class="data">89&nbsp;mph</p>
+            <p class="data">{{visibility}}&nbsp;mph</p>
         </div>
     </div>
 </div>

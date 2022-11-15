@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-
-const materialProperty = [MatIconModule];
+import {MatDialogModule} from '@angular/material/dialog';
+const materialProperty = [
+  MatIconModule,
+  MatDialogModule];
 
 @NgModule({
   imports: [materialProperty],

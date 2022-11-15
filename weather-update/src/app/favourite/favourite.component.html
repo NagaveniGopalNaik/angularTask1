@@ -1,7 +1,8 @@
+<div class="header">
+    <app-header></app-header>
+</div>
 <div class="favourite">
-    <div class="header">
-        <app-header></app-header>
-    </div>
+   
     <div class="body">
         <div class="no-favourite" *ngIf="false">
             <div>
@@ -14,7 +15,7 @@
         <div class="favourite1">
             <div class="updateData-delete">
                 <p class="update">6 City added as favourite</p>
-                <p class="remove">Remove all</p>
+                <p class="remove" (click)="openDialog()">Remove all</p>
             </div>
             <div class="favourite-list">
                 <div class="data">

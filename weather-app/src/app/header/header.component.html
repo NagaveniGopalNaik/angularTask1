@@ -61,7 +61,7 @@
             <li><a  [class.active]="id==3" [routerLink]="['/recent-search']" [queryParams]="{ id: '3'}" >RECENT<span class="hide">_</span>SEARCH</a></li>
         </ul>
     </div>
-    <div class="date"><p></p></div>
+    <div class="date"><p>{{date |date:'ccc' }},{{date | date:'dd MMM yyyy HH:mm:ss a'}}</p></div>
 </div>
 
 </div>

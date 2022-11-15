@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiServiceService } from '../api-service.service';
 
 @Component({
   selector: 'app-header',
@@ -10,42 +13,74 @@ date:any;
 home=true;
 fev=false;
 search=false;
-search1 = false;
+search1 = true;
 recent=false;
 fev1=false;
 city='';
 width=0;
-  constructor() { }
+id:any;
+navDisplay= false;
+  constructor(private http:ApiServiceService,private router:Router) { }
 
   ngOnInit(): void {
     this.date = new Date();
     this.width=window.innerWidth;
+    this.id = this.http.getId();
+    console.log(this.id);
+    
+    // get the id from the server
+    
 
-    // if(this.id == 1){
-    //   this.home=true;
-    // } else if (this.id == 2 && this.width <500){
-    //   this.fev1=true;
-    // this.recent= false;
-    // this.fev = true;
-    // this.home = false;
-    // } else if(this.id == 3 && this.width < 500){
-    //   this.fev1=false;
-    // this.recent= true;
-    // this.fev = true;
-    // this.home = false;
-    // }
+    if(this.id == 1){
+      this.home=true;
+    } else if (this.id == 2 && this.width <500){
+      this.fev1=true;
+    this.recent= false;
+    this.fev = true;
+    this.home = false;
+    } else if(this.id == 3 && this.width < 500){
+      this.fev1=false;
+    this.recent= true;
+    this.fev = true;
+    this.home = false;
+    }
   }
 
-  navDisplayPermission(){}
+  navDisplayPermission(){
+    // if(this.width <= 500){
+      
+      this.fev= false;
+    this.home=true;
+    
+    // } else{
+    //   this.fev=false;
+    //   this.home=true;
+    // }
+    
+    // this.display=!this.display;
+    this.navDisplay = true;
+  }
 
   searchBar(){
-
+    this.search=true;
+    this.search1=false;
+    
   }
   clear(){}
 
-  backHome(){}
+  backHome(){
+    this.search = false;
+    this.search1 = true;
+    // this.navDisplay = false;
+  }
   submit(){
-  
+    
+   let data = this.http.loadData(this.city);
+   this.city = '';
+   this.router.navigate(["/home"]);
+   
+  //  this.router.navigate(['/home']).then
+  //  window.location.reload();
   }
   clearBtn(){}
 }

@@ -31,3 +31,14 @@ a{
     color:white;
     text-decoration: none;
 }
+
+.alert-remove .mat-dialog-container{
+    padding: 13%;
+    width: 30vw;
+}
+
+
+.removeAll .mat-dialog-container{
+    padding: 13%;
+    width: 30vw;
+}
