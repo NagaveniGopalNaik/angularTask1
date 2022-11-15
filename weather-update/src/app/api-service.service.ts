@@ -42,6 +42,7 @@ data:any;
         
       this.setData(this.cityData);
       this.addRecentSearch(this.cityData);
+      
       //  this.router.navigate(['/home']).then
       //   window.location.reload();
       
@@ -108,17 +109,61 @@ data:any;
   }
 
   addRecentSearch(data:any){
-    let list=[];
-    if(localStorage.getItem('resentSearch')){
+    let list: any[]=[];
+    if(localStorage.getItem('recentSearch')){
       
-      let oldData = JSON.parse(localStorage.getItem('resentSearch') ||'[]');
-      list=[data,...oldData];
-      
-      
+      let oldData = JSON.parse(localStorage.getItem('recentSearch') ||'[]');
+      let previousData = oldData.find((old:any)=>{
+        return old['name']==data['name'];
+      });
+      if(previousData == undefined){
+        list=[data,...oldData];
+      } else{
+        let searchData = oldData.indexOf(previousData);
+        let currentValue = oldData.splice(searchData)[0];
+      list = [currentValue,...oldData]
+          }
     } else {
       list=[data];
     }
-    localStorage.setItem('resentSearch',JSON.stringify(list));
+    localStorage.setItem('recentSearch',JSON.stringify(list));
+  }
+
+  getRecentSearch(){
+    if(localStorage.getItem('recentSearch')){
+      return localStorage.getItem('recentSearch');
+    } else {
+      return '[]';
+    }
+  }
+
+  addfavourite(data:any){
+    let list: any[]=[];
+    if(localStorage.getItem('favourite')){
+      
+      let oldData = JSON.parse(localStorage.getItem('favourite') ||'[]');
+      let previousData = oldData.find((old:any)=>{
+        return old['name']==data['name'];
+      });
+      if(previousData == undefined){
+        list=[data,...oldData];
+      } else{
+        let searchData = oldData.indexOf(previousData);
+        let currentValue = oldData.splice(searchData)[0];
+      list = [currentValue,...oldData]
+          }
+    } else {
+      list=[data];
+    }
+    localStorage.setItem('favourite',JSON.stringify(list));
+  }
+
+  getfavourite(){
+    if(localStorage.getItem('favourite')){
+      return localStorage.getItem('favourite');
+    } else {
+      return '[]';
+    }
   }
   
 }

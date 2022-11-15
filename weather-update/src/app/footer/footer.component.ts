@@ -18,7 +18,7 @@ visibility:any;
     this.currentData = JSON.parse(this.apiService.getData() || '{}');
     this.temp_min = (this.currentData.temp_min - 273.15).toFixed(0);
   this.temp_max = (this.currentData.temp_max-273.15).toFixed(0);
-  this.wind = (this.currentData.wind)*100;
+  this.wind = (this.currentData.wind).toFixed(2) || (this.currentData.wind)*100 ;
   this.visibility = ((this.currentData.visibility) * 0.001).toFixed(0);
   }
 

@@ -8,16 +8,23 @@
             <div class="location-name">
                 <p class="place-name">{{currentData.name}}</p>
             </div>
-            <div class="favourite">
+            <div class="favourite" *ngIf="currentData.like==false" (click)="addtoFavorite()">
                 
                 <p><mat-icon class="not-like">favorite_border</mat-icon></p>
                 <p>&nbsp;Add to favourite</p>
-                <!-- <p><mat-icon class="like">favourite</mat-icon>&nbsp;Add to favourite</p> -->
+                
+            </div>
+
+            <div class="favourite" *ngIf="currentData.like==true" [class.liked]="currentData.like==true">
+                
+                <p><mat-icon class="not-like">favorite_border</mat-icon></p>
+                <p>&nbsp;Add to favourite</p>
+                
             </div>
         </div>
         <div class="temp-details">
             <div class="image-div">
-               <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="" width="100%" height="100%">
+               <img src="http://openweathermap.org/img/wn/{{currentData.icon}}@2x.png" alt="" width="100%" height="100%">
             </div>
             
                 <div class="with-button">

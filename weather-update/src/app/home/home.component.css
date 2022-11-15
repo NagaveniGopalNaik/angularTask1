@@ -20,6 +20,10 @@
     height: 19%;
     width: 100%;
 }
+.liked p, .liked p .mat-icon{
+    color:rgba(250,208,91,1);
+}
+
 
 .place{
     height: 20%;

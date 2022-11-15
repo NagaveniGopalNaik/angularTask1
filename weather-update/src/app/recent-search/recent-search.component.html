@@ -1,10 +1,12 @@
+{{getData()}}
+
 <div class="header">
     <app-header></app-header>
 </div>
 <div class="favourite">
     
     <div class="body">
-        <div class="no-favourite" *ngIf="false">
+        <div class="no-favourite" *ngIf="length == 0">
             <div>
                 <img src="../../assets/images/no-data.png" alt="no favourites">
             </div>
@@ -12,74 +14,34 @@
                 <p>No Favourites added</p>
             </div>
         </div>
-        <div class="favourite1">
-            <div class="updateData-delete">
+        <div class="favourite1" >
+            <div class="updateData-delete" >
                 <p class="update">You recently searched for</p>
                 <p class="remove" (click)="openDialog()">Clear all</p>
             </div>
-            <div class="favourite-list">
+            <div class="favourite-list" *ngFor="let recent of recentSearch;index as i">
                 <div class="data">
                     <div class="place-name">
-                        Udupi
+                        {{recent.name}}
                     </div>
                     <div class="temp-data">
                         <div class="image">
-                            <img src="../../assets/images/rain-small.png" alt="weather update image">
+                            <img src="http://openweathermap.org/img/wn/{{recent.icon}}@2x.png" alt="weather update image" height="80%" width="80%">
                         </div>
                         <div class="temp">
-                            <span id="temp-data">31</span>&nbsp;&#176;c
+                            <span id="temp-data">{{(recent.temp-273.15).toFixed(0)}}</span>&nbsp;&#176;c
                         </div>
                         <div class="description">
-                            heavy rainy
+                            {{recent.description}}
                         </div>
                     </div>
                 </div>
                 <div class="like">
-                    <mat-icon class="icon">favorite</mat-icon>
+                    <mat-icon class="icon" *ngIf="recent.like==true">favorite</mat-icon>
+                    <mat-icon *ngIf="recent.like==false">favorite_border</mat-icon>
                 </div>
             </div>
-            <div class="favourite-list">
-                <div class="data">
-                    <div class="place-name">
-                        Udupi
-                    </div>
-                    <div class="temp-data">
-                        <div class="image">
-                            <img src="../../assets/images/rain-small.png" alt="weather update image">
-                        </div>
-                        <div class="temp">
-                            <span id="temp-data">31</span>&nbsp;&#176;c
-                        </div>
-                        <div class="description">
-                            heavy rainy
-                        </div>
-                    </div>
-                </div>
-                <div class="like">
-                    <mat-icon class="icon">favorite</mat-icon>
-                </div>
-            </div>
-            <div class="favourite-list">
-                <div class="data">
-                    <div class="place-name">
-                        Udupi
-                    </div>
-                    <div class="temp-data">
-                        <div class="image">
-                            <img src="../../assets/images/rain-small.png" alt="weather update image">
-                        </div>
-                        <div class="temp">
-                            <span id="temp-data">31</span>&nbsp;&#176;c
-                        </div>
-                        <div class="description">
-                            heavy rainy
-                        </div>
-                    </div>
-                </div>
-                <div class="like">
-                    <mat-icon class="icon">favorite</mat-icon>
-                </div>
-            </div>
+            
             
         </div>
     </div>

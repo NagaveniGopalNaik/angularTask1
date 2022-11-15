@@ -9,13 +9,18 @@ import { RemoveFavouriteComponent } from '../remove-favourite/remove-favourite.c
 })
 export class FavouriteComponent implements OnInit {
 id:any;
+currentData:any;
   constructor(private http:ApiServiceService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.id = this.http.setId(2);
+    localStorage.setItem('page','/favourite')
   }
 
   openDialog(){
     this.dialog.open(RemoveFavouriteComponent,{panelClass:'alert-remove'});
+  }
+  getData(){
+    this.http.getfavourite();
   }
 }

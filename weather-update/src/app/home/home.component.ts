@@ -17,7 +17,7 @@ icon:any;
 
   ngOnInit(): void {
     this.apiService.setId(1);
-    
+    localStorage.setItem('page','/home');
     this.call();
     
     this.icon = this.currentData.icon;
@@ -58,6 +58,11 @@ icon:any;
       0
     );
     return this.temp
+  }
+
+  addtoFavorite(){
+    this.currentData['like']=true;
+    this.apiService.addfavourite(this.currentData);
   }
   
 
