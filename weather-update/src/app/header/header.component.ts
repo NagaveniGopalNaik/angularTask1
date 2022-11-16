@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiServiceService } from '../api-service.service';
 
@@ -29,22 +29,48 @@ navDisplay= false;
     console.log(this.id);
     
     // get the id from the server
-    
+  
+      let screenWidth=window.innerWidth;
+  
 
+    
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.width = window.innerWidth;
+    this.findWindowScreen()
+    
+  }
+
+  findWindowScreen(){
     if(this.id == 1){
       this.home=true;
-    } else if (this.id == 2 && this.width <500){
-      this.fev1=true;
+    } else if (this.id == 2){
+      if(this.width <650){
+        this.fev1=true;
     this.recent= false;
     this.fev = true;
     this.home = false;
-    } else if(this.id == 3 && this.width < 500){
-      this.fev1=false;
+      } else{
+        this.fev = false;
+        this.home=true;
+      }
+      
+    } else if(this.id == 3){
+      if(this.width < 650){
+        this.fev1=false;
     this.recent= true;
     this.fev = true;
     this.home = false;
+      } else{
+        this.fev = false;
+        this.home=true;
+      }
+      
     }
   }
+
 
   navDisplayPermission(){
     // if(this.width <= 500){
@@ -83,4 +109,12 @@ navDisplay= false;
   //  window.location.reload();
   }
   clearBtn(){}
+
+  @HostListener('document:keydown.enter') submitdata(){
+    let data = this.http.loadData(this.city);
+   this.city = '';
+   this.router.navigate(["/home"]);
+  }
+
+
 }

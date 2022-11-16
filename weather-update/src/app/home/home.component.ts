@@ -13,6 +13,7 @@ temp:any;
 flag:any;
 flag1:any;
 icon:any;
+color=false;
   constructor(private apiService:ApiServiceService) { }
 
   ngOnInit(): void {
@@ -63,6 +64,18 @@ icon:any;
   addtoFavorite(){
     this.currentData['like']=true;
     this.apiService.addfavourite(this.currentData);
+    this.apiService.updateRecentSearch(this.currentData);
+    // this.apiService.addRecentSearch(this.currentData);
+    this.color=true;
+    this.call();
+  }
+
+  removeFavourite(){
+    this.currentData['like']=false;
+    this.apiService.removeFavourite(this.currentData);
+    this.apiService.updateRecentSearch(this.currentData);
+    this.color=false;
+    this.call();
   }
   
 

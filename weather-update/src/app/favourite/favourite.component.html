@@ -1,10 +1,12 @@
+{{getData()}}
+
 <div class="header">
     <app-header></app-header>
 </div>
 <div class="favourite">
    
     <div class="body">
-        <div class="no-favourite" *ngIf="false">
+        <div class="no-favourite" *ngIf="fevouriteData.length < 1">
             <div>
                 <img src="../../assets/images/no-data.png" alt="no favourites">
             </div>
@@ -12,75 +14,32 @@
                 <p>No Favourites added</p>
             </div>
         </div>
-        <div class="favourite1">
+        <div class="favourite1" *ngIf="fevouriteData.length > 0">
             <div class="updateData-delete">
-                <p class="update">6 City added as favourite</p>
+                <p class="update">{{length}} City added as favourite</p>
                 <p class="remove" (click)="openDialog()">Remove all</p>
             </div>
-            <div class="favourite-list">
+            <div class="favourite-list" *ngFor="let fev of fevouriteData;index as i">
                 <div class="data">
-                    <div class="place-name">
-                        Udupi
+                    <div class="place-name" (click)="details(fev)">
+                        {{fev.name}}
                     </div>
                     <div class="temp-data">
                         <div class="image">
-                            <img src="../../assets/images/rain-small.png" alt="weather update image">
+                            <img src="http://openweathermap.org/img/wn/{{fev.icon}}@2x.png" alt="weather update image" height="80%" width="80%">
                         </div>
                         <div class="temp">
-                            <span id="temp-data">31</span>&nbsp;&#176;c
+                            <span id="temp-data">{{(fev.temp-273.15).toFixed(0)}}</span>&nbsp;&#176;c
                         </div>
                         <div class="description">
-                            heavy rainy
+                            {{fev.description}}
                         </div>
                     </div>
                 </div>
-                <div class="like">
+                <div class="like" (click)="removeFavourite(fev)">
                     <mat-icon class="icon">favorite</mat-icon>
                 </div>
             </div>
-            <div class="favourite-list">
-                <div class="data">
-                    <div class="place-name">
-                        Udupi
-                    </div>
-                    <div class="temp-data">
-                        <div class="image">
-                            <img src="../../assets/images/rain-small.png" alt="weather update image">
-                        </div>
-                        <div class="temp">
-                            <span id="temp-data">31</span>&nbsp;&#176;c
-                        </div>
-                        <div class="description">
-                            heavy rainy
-                        </div>
-                    </div>
-                </div>
-                <div class="like">
-                    <mat-icon class="icon">favorite</mat-icon>
-                </div>
-            </div>
-            <div class="favourite-list">
-                <div class="data">
-                    <div class="place-name">
-                        Udupi
-                    </div>
-                    <div class="temp-data">
-                        <div class="image">
-                            <img src="../../assets/images/rain-small.png" alt="weather update image">
-                        </div>
-                        <div class="temp">
-                            <span id="temp-data">31</span>&nbsp;&#176;c
-                        </div>
-                        <div class="description">
-                            heavy rainy
-                        </div>
-                    </div>
-                </div>
-                <div class="like">
-                    <mat-icon class="icon">favorite</mat-icon>
-                </div>
-            </div>
-            
         </div>
     </div>
 </div>

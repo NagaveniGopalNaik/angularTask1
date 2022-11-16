@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ApiServiceService } from '../api-service.service';
 import { RemoveRecentSearchComponent } from '../remove-recent-search/remove-recent-search.component';
 @Component({
@@ -10,7 +11,7 @@ import { RemoveRecentSearchComponent } from '../remove-recent-search/remove-rece
 export class RecentSearchComponent implements OnInit {
 recentSearch:any;
 length:any;
-  constructor(private apiService: ApiServiceService,public dialog:MatDialog) { }
+  constructor(private apiService: ApiServiceService,public dialog:MatDialog,private router:Router) { }
 
   ngOnInit(): void {
     this.apiService.setId(3);
@@ -19,7 +20,8 @@ length:any;
   }
 
   openDialog(){
-    this.dialog.open(RemoveRecentSearchComponent,{panelClass:'removeAll'})
+    this.dialog.open(RemoveRecentSearchComponent,{panelClass:'removeAll'});
+    this.getData();
   }
 
   getData(){
@@ -27,6 +29,25 @@ length:any;
     // this.length = this.recentSearch.length;
     // console.log(this.recentSearch);
     
+  }
+  addtoFavorite(recent:any){
+    recent['like'] = true;
+    this.apiService.addfavourite(recent);
+    this.apiService.updateRecentSearch(recent);
+    this.getData();
+  }
+
+  removeFavourite(recent:any){
+    recent['like']=false;
+    this.apiService.removeFavourite(recent);
+    this.apiService.updateRecentSearch(recent);
+    this.getData();
+  }
+
+  details(data:any){
+    this.apiService.setData(data);
+    this.getData();
+    this.router.navigate(['/home']);
   }
 
 }

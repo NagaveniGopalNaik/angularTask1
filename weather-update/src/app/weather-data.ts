@@ -9,7 +9,7 @@ export class WeatherData {
     "temp_max":string='300.00';
     "pressure":string='1015';
     "humidity":string='64';
-    "wind":string='0.62';
+    "wind":string='0.62000';
     "visibility":string='10000';
     "like":boolean=false;
 

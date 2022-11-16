@@ -1,12 +1,11 @@
 {{getData()}}
-
 <div class="header">
     <app-header></app-header>
 </div>
 <div class="favourite">
     
     <div class="body">
-        <div class="no-favourite" *ngIf="length == 0">
+        <div class="no-favourite" *ngIf="recentSearch.length < 1">
             <div>
                 <img src="../../assets/images/no-data.png" alt="no favourites">
             </div>
@@ -14,14 +13,14 @@
                 <p>No Favourites added</p>
             </div>
         </div>
-        <div class="favourite1" >
+        <div class="favourite1" *ngIf="recentSearch.length > 0">
             <div class="updateData-delete" >
                 <p class="update">You recently searched for</p>
                 <p class="remove" (click)="openDialog()">Clear all</p>
             </div>
             <div class="favourite-list" *ngFor="let recent of recentSearch;index as i">
                 <div class="data">
-                    <div class="place-name">
+                    <div class="place-name" (click)="details(recent)">
                         {{recent.name}}
                     </div>
                     <div class="temp-data">
@@ -37,8 +36,8 @@
                     </div>
                 </div>
                 <div class="like">
-                    <mat-icon class="icon" *ngIf="recent.like==true">favorite</mat-icon>
-                    <mat-icon *ngIf="recent.like==false">favorite_border</mat-icon>
+                    <mat-icon class="icon" *ngIf="recent.like==true"  (click)="removeFavourite(recent)">favorite</mat-icon>
+                    <mat-icon *ngIf="recent.like==false" (click)="addtoFavorite(recent)" class="not-like">favorite_border</mat-icon>
                 </div>
             </div>
             

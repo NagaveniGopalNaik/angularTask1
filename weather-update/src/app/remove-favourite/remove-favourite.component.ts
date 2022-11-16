@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiServiceService } from '../api-service.service';
 
 @Component({
   selector: 'app-remove-favourite',
@@ -8,16 +9,23 @@ import { Router } from '@angular/router';
 })
 export class RemoveFavouriteComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private http:ApiServiceService) { }
 
   ngOnInit(): void {
   }
 
   yes(){
-    
-    localStorage.setItem('favourite','');
-    this.router.navigate(['/favourite']).then
-    window.location.reload();
+    if(localStorage.getItem('favourite')){
+      let oldData = JSON.parse(this.http.getfavourite() || '[]');
+      for(let data of oldData){
+        data.like = false;
+        this.http.updateRecentSearch(data);
+      }
+    }
+    localStorage.removeItem('favourite');
+
+    // this.router.navigate(['/favourite']).then
+    // window.location.reload();
 
   }
 

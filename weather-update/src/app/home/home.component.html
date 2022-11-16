@@ -8,17 +8,17 @@
             <div class="location-name">
                 <p class="place-name">{{currentData.name}}</p>
             </div>
-            <div class="favourite" *ngIf="currentData.like==false" (click)="addtoFavorite()">
+            <div class="favourite" *ngIf="currentData.like == false" (click)="addtoFavorite()">
                 
                 <p><mat-icon class="not-like">favorite_border</mat-icon></p>
                 <p>&nbsp;Add to favourite</p>
                 
             </div>
 
-            <div class="favourite" *ngIf="currentData.like==true" [class.liked]="currentData.like==true">
+            <div class="favourite" *ngIf="currentData.like == true" [class.liked]="currentData.like==true" (click)="removeFavourite()">
                 
-                <p><mat-icon class="not-like">favorite_border</mat-icon></p>
-                <p>&nbsp;Add to favourite</p>
+                <p><mat-icon class="not-like" [class.color]="color">favorite </mat-icon></p>
+                <p  [class.color]="color">&nbsp;Add to favourite</p>
                 
             </div>
         </div>
@@ -37,7 +37,8 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <app-footer></app-footer>
-    </div>
+    
+</div>
+<div class="footer">
+    <app-footer></app-footer>
 </div>

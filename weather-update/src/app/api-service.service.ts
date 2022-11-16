@@ -99,34 +99,60 @@ data:any;
   }
 
   setData(data:any){
-    
-   if(localStorage.getItem('data')){
-    //  console.log('hello');
-    localStorage.setItem('data',JSON.stringify(data));
-   } else {
-     localStorage.setItem('data',JSON.stringify(this.cityData));
-   }
+    if(localStorage.getItem('data')){
+      if(localStorage.getItem('recentSearch')){
+        let oldData = JSON.parse(localStorage.getItem('recentSearch') ||'[]');
+        let previousData = oldData.find((old:any)=>{
+          return old['name']==data['name'];
+        });
+        if(previousData){
+          localStorage.setItem('data',JSON.stringify(previousData));
+        } else {
+          localStorage.setItem('data',JSON.stringify(data));
+        }
+      } else{
+        localStorage.setItem('data',JSON.stringify(data));
+      }
+    }else{
+      localStorage.setItem('data',JSON.stringify(this.cityData));
+    }
+   
   }
 
   addRecentSearch(data:any){
     let list: any[]=[];
     if(localStorage.getItem('recentSearch')){
       
+
       let oldData = JSON.parse(localStorage.getItem('recentSearch') ||'[]');
       let previousData = oldData.find((old:any)=>{
         return old['name']==data['name'];
       });
+      // this.setData(previousData);
       if(previousData == undefined){
         list=[data,...oldData];
       } else{
         let searchData = oldData.indexOf(previousData);
-        let currentValue = oldData.splice(searchData)[0];
+        let currentValue = oldData.splice(searchData,1)[0];
       list = [currentValue,...oldData]
           }
     } else {
       list=[data];
     }
     localStorage.setItem('recentSearch',JSON.stringify(list));
+  }
+
+  updateRecentSearch(data:any){
+    let oldData = JSON.parse(this.getRecentSearch() || '[]');
+    let listData = oldData.find((old:any)=>{
+      
+      return old['name']==data['name'];
+    });
+    // this.setData(listData);
+    let index = oldData.indexOf(listData);
+    oldData[index]=data;
+    localStorage.setItem('recentSearch',JSON.stringify(oldData));
+    this.setData(data);
   }
 
   getRecentSearch(){
@@ -164,6 +190,20 @@ data:any;
     } else {
       return '[]';
     }
+  }
+
+  removeFavourite(data:any){
+    if(localStorage.getItem('favourite')){
+      let oldData = JSON.parse(localStorage.getItem('favourite') || '[]');
+      let presentData = oldData.find((old:any)=>{
+        return old['name']== data['name'];
+      });
+      let index = oldData.indexOf(presentData)
+      oldData.splice(index,1);
+      localStorage.setItem('favourite',JSON.stringify(oldData));
+
+    }
+
   }
   
 }

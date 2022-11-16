@@ -13,14 +13,20 @@
 }
 .home{
     margin-top: 2%;
-    height: 60vh;
+    height: 65vh;
     width: 100%;
+    margin: auto;
 }
 .footer{
-    height: 19%;
-    width: 100%;
+    position: fixed;
+    /* bottom: 10%; */
+    /* height: 19%; */
+    width: 80%;
+    margin-left: 10%;
+    
+    
 }
-.liked p, .liked p .mat-icon{
+.liked p, .liked p .mat-icon,.color{
     color:rgba(250,208,91,1);
 }
 
@@ -35,6 +41,7 @@
 }
 .favourite{
     display: flex;
+    cursor: pointer;
 }
 .place-name{
     margin-top: 1%;
@@ -91,13 +98,18 @@
 
 @media(max-width:650px){
     .header{
-       
+       margin: auto;
         width: 100%;
         padding:0 5% ;
        
     }
+    .footer{
+        width: 100%;
+        margin-left: 0;
+    }
     .home{
         margin-top:-5%;
+        width: 100%;
     }
     .place{
         height: 15%;
