@@ -19,25 +19,27 @@
                 <p class="update">{{length}} City added as favourite</p>
                 <p class="remove" (click)="openDialog()">Remove all</p>
             </div>
-            <div class="favourite-list" *ngFor="let fev of fevouriteData;index as i">
-                <div class="data">
-                    <div class="place-name" (click)="details(fev)">
-                        {{fev.name}}
+            <div class="scroll">
+                <div class="favourite-list" *ngFor="let fev of fevouriteData;index as i">
+                    <div class="data">
+                        <div class="place-name" (click)="details(fev)">
+                            {{fev.name}}
+                        </div>
+                        <div class="temp-data">
+                            <div class="image">
+                                <img src="http://openweathermap.org/img/wn/{{fev.icon}}@2x.png" alt="weather update image" height="60%" width="60%">
+                            </div>
+                            <div class="temp">
+                                <span id="temp-data">{{(fev.temp-273.15).toFixed(0)}}</span>&nbsp;&#176;c
+                            </div>
+                            <div class="description">
+                                {{fev.description}}
+                            </div>
+                        </div>
                     </div>
-                    <div class="temp-data">
-                        <div class="image">
-                            <img src="http://openweathermap.org/img/wn/{{fev.icon}}@2x.png" alt="weather update image" height="80%" width="80%">
-                        </div>
-                        <div class="temp">
-                            <span id="temp-data">{{(fev.temp-273.15).toFixed(0)}}</span>&nbsp;&#176;c
-                        </div>
-                        <div class="description">
-                            {{fev.description}}
-                        </div>
+                    <div class="like" (click)="removeFavourite(fev)">
+                        <mat-icon class="icon">favorite</mat-icon>
                     </div>
-                </div>
-                <div class="like" (click)="removeFavourite(fev)">
-                    <mat-icon class="icon">favorite</mat-icon>
                 </div>
             </div>
         </div>

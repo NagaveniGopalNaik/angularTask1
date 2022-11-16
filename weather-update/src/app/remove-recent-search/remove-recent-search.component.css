@@ -1,7 +1,6 @@
 p{
     color: rgba(0,0,0,1);
   font-family: 'Roboto';
-  /* font-weight: 500; */
   font-size: 1.4rem;
   letter-spacing: 0;
   line-height: 18px;
@@ -40,9 +39,10 @@ p{
     margin-left:15%
 }
 
-@media(max-width:500px){
+@media(max-width:650px){
   p{
-    font-size: 1rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     color: rgba(0,0,0,0.54);
   }
 
@@ -51,7 +51,8 @@ p{
   color: rgba(103,58,183,1);
   font-family: 'Roboto';
   
-  font-size: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
   
 }
 #position .ok{
@@ -59,7 +60,8 @@ p{
 background-color: transparent;
 color: rgba(103,58,183,1);
 
-font-size: 1rem;
+font-size: 1.4rem;
+  line-height: 1.6rem;
 
 
 }

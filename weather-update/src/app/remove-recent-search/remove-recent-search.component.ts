@@ -15,8 +15,7 @@ export class RemoveRecentSearchComponent implements OnInit {
   yes(){
     
     localStorage.removeItem('recentSearch');
-    // this.router.navigate(['/recent-search']).then
-    // window.location.reload();
+   
 
   }
 

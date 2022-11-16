@@ -42,3 +42,20 @@ a{
     padding: 13%;
     width: 30vw;
 }
+
+@media(max-width:650px){
+    .alert-remove .mat-dialog-container{
+        /* padding: 33%; */
+        width: 350px;
+        height: 150px;
+        
+    }
+    
+    
+    .removeAll .mat-dialog-container{
+        /* padding: 33%; */
+        width: 350px;
+        height: 150px;
+        
+    }
+}

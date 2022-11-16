@@ -24,9 +24,6 @@ export class RemoveFavouriteComponent implements OnInit {
     }
     localStorage.removeItem('favourite');
 
-    // this.router.navigate(['/favourite']).then
-    // window.location.reload();
-
   }
 
 }

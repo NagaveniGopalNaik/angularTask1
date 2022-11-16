@@ -12,7 +12,6 @@
 .foot-div{
     width: 20%;
     display: flex;
-    /* justify-content: space-around; */
     align-items: center;
 }
 p{
@@ -37,8 +36,6 @@ p{
     .footer{
       
         height: 100%;
-        /* width: 100%; */
-        /* margin: 2vh; */
         padding: 3% 0 0 0;
         align-items: center; 
         justify-content: left;

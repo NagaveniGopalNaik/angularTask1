@@ -1,6 +1,5 @@
 .header{
     width: 100%;
-  /* margin: auto; */
     padding-top:5% ;
     border-bottom: 1px solid rgba(225,225,225,0.3);
    
@@ -16,9 +15,6 @@
     width: 38%;
    
     padding: 0.7%;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
     border-radius: 3px;
     border:1px solid rgba(225,225,225,0.3);
 }
@@ -65,11 +61,9 @@ input:focus{
 
  button .search-button{
      width: 10%;
-   /* display: block; */
     border: none;
     object-fit: cover;
     background: transparent;
-    /* background-color: red; */
 }
 .search-icon{
     display: block;
@@ -102,8 +96,6 @@ p{
   font-size: 1.4rem;
   letter-spacing: 0;
   line-height: 1.6rem;
- 
-  /* margin-right: 1.1%; */
 
   
 }
@@ -258,8 +250,6 @@ ul li a{
       font-size: 1.3rem;
       letter-spacing: 0;
       line-height: 1.5rem;
-        
-      /* margin-right:30%; */
       margin-bottom: 5%;
     
       
@@ -314,7 +304,6 @@ ul li a{
    }
 
     .fevourite .logo1 #name{
-        /* margin: 0 10%; */
     color: rgba(41,47,51,1);
     font-family: 'Roboto';
     font-size: 2.0rem;
@@ -322,7 +311,6 @@ ul li a{
     letter-spacing: 0;
     line-height: 2.4rem;
     text-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
-    /* margin-bottom: 7%; */
   
     }
     .fev{

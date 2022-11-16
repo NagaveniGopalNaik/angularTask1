@@ -1,44 +1,57 @@
-{{call()}}
+{{ call() }}
 <div class="header">
-    <app-header></app-header>
-</div><div class="body">
-    
-    <div class="home">
-        <div class="place">
-            <div class="location-name">
-                <p class="place-name">{{currentData.name}}</p>
-            </div>
-            <div class="favourite" *ngIf="currentData.like == false" (click)="addtoFavorite()">
-                
-                <p><mat-icon class="not-like">favorite_border</mat-icon></p>
-                <p>&nbsp;Add to favourite</p>
-                
-            </div>
+  <app-header></app-header>
+</div>
+<div class="body">
+  <div class="home">
+    <div class="place">
+      <div class="location-name">
+        <p class="place-name">{{ currentData.name }}</p>
+      </div>
+      <div
+        class="favourite"
+        *ngIf="currentData.like == false"
+        (click)="addtoFavorite()"
+      >
+        <p><mat-icon class="not-like">favorite_border</mat-icon></p>
+        <p>&nbsp;Add to favourite</p>
+      </div>
 
-            <div class="favourite" *ngIf="currentData.like == true" [class.liked]="currentData.like==true" (click)="removeFavourite()">
-                
-                <p><mat-icon class="not-like" [class.color]="color">favorite </mat-icon></p>
-                <p  [class.color]="color">&nbsp;Add to favourite</p>
-                
-            </div>
-        </div>
-        <div class="temp-details">
-            <div class="image-div">
-               <img src="http://openweathermap.org/img/wn/{{currentData.icon}}@2x.png" alt="" width="100%" height="100%">
-            </div>
-            
-                <div class="with-button">
-                    <p class="temp">{{temp}}</p>
-                    <button [class.styleButton]="flag" (click)="celcius()">&#176;C</button>
-                    <button [class.styleButton]="flag1" (click)="farenheit()">&#176;F</button>
-                </div>
-            <div class="description">
-                <p>{{currentData.description}}</p>
-            </div>
-        </div>
+      <div
+        class="favourite"
+        *ngIf="currentData.like == true"
+        [class.liked]="currentData.like == true"
+        (click)="removeFavourite()"
+      >
+        <p>
+          <mat-icon class="not-like" [class.color]="color">favorite </mat-icon>
+        </p>
+        <p [class.color]="color">&nbsp;Add to favourite</p>
+      </div>
     </div>
-    
+    <div class="temp-details">
+      <div class="image-div">
+        <img
+          src="http://openweathermap.org/img/wn/{{ currentData.icon }}@2x.png"
+          alt=""
+          width="100%"
+          height="100%"
+        />
+      </div>
+
+      <div class="with-button">
+        <p class="temp">{{ temp }}</p>
+        <button [class.styleButton]="flag" (click)="celcius()">&#176;C</button>
+        <button [class.styleButton]="flag1" (click)="farenheit()">
+          &#176;F
+        </button>
+      </div>
+      <div class="description">
+        <p>{{ currentData.description }}</p>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="footer">
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 </div>
