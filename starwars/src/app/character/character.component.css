@@ -77,10 +77,6 @@
     /* border-radius: 10px; */
   }
 
-  /* .overflow-data::-webkit-scrollbar-track{
-      height: 1px;
-  } */
-   
   /* Handle */
   .overflow-data::-webkit-scrollbar-thumb {
     background: #00A8FF; 
@@ -109,6 +105,7 @@
     .character{
         width: 100%;
         flex-direction: column;
+        background-color: transparent;
     }
     .image{
         width: 80%;
