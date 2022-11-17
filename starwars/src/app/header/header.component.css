@@ -1,0 +1,40 @@
+.header{
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    
+
+    border-bottom: 1px solid #054979;
+}
+.img{
+    
+    margin: 3% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    /* image-resolution: 1; */
+    display: block;
+    
+    /* margin: 10%; */
+    /* object-fit: cover; */
+    height: 90px;
+    width: 180px;
+}
+.img{
+    object-fit: cover;
+}
+
+@media(max-width:800px){
+    .header{
+        width: 100%;
+    }
+    .image{
+        height: 60px;
+        width: 100px;
+    }
+}
+
+    

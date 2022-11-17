@@ -1,0 +1,131 @@
+.character{
+    width: 70%;
+    height: 55vh;
+    margin: auto;
+    margin-top: 2%;
+    background-color: rgba(117,140,255,0.12);
+    padding: 5% 4.5%;
+    display: flex;
+}
+
+.image{
+    width: 50%;
+    height: 100%;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.details{
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+    padding: 4% 3.5%;
+}
+
+
+
+.name{
+    font-family: 'Open Sans Bold';
+    font-size: 4.0rem;
+    color:#fff;
+    margin-bottom: 8%;
+}
+.destination-data{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    /* align-items: center; */
+    margin-bottom: 1%;
+}
+.data-details{
+    width: 30%;
+    font-family: 'Open Sans Regular';
+    font-size: 2rem;
+    line-height: 2.0rem;
+    color:#A5C1D3;
+
+}
+.data-details-value{
+    width: 60%;
+    font-family: 'Open Sans SemiBold';
+    line-height: 2.0rem;
+    font-size:2.0rem;
+    color:#fff;
+    margin-left: 0.5%;
+}
+.overflow-data{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+}
+
+/* width */
+.overflow-data::-webkit-scrollbar {
+    width: 4px;
+    background-color: rgba(0,0,0,0.3);
+  }
+  
+  /* Track */
+  .overflow-data::-webkit-scrollbar-track {
+    box-shadow: black;
+
+    /* border-radius: 10px; */
+  }
+
+  /* .overflow-data::-webkit-scrollbar-track{
+      height: 1px;
+  } */
+   
+  /* Handle */
+  .overflow-data::-webkit-scrollbar-thumb {
+    background: #00A8FF; 
+    border-radius: 10px;
+  }
+
+@media(max-width:1350px){
+    .data-details,.data-details-value{
+        font-size: 1.5rem;
+    }
+    .data-details{
+        width: 35%;
+
+    }
+    .data-details-value{
+        width: 55%;
+    }
+}
+/* @media(max-width:1150px){
+    .data-details,.data-details-value{
+        font-size: 1.4rem;
+    }
+} */
+
+@media(max-width:850px){
+    .character{
+        width: 100%;
+        flex-direction: column;
+    }
+    .image{
+        width: 80%;
+        margin: auto;
+        height: 50%;
+    }
+    .details{
+        width: 80%;
+        margin: auto;
+        height: 50%;
+    }
+    
+    .name{
+        font-size: 2.2rem;
+        margin-top: 2%;
+    }
+    .data-details,.data-details-value{
+        font-size: 1.5rem;
+    }
+}
