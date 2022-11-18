@@ -5,6 +5,7 @@
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #054979;
+    border-top: 1px solid #054979;
     /* background-color: rgb(1, 11, 20); */
 }
 .navbar p{
@@ -12,8 +13,9 @@
 }
 .navbar p a{
     text-decoration: none;
-    font-family: 'Open Sans Semibold';
-    font-size: 2.2rem;
+    font-family: 'Open Sans','Semibold';
+    font-size: 1.6rem;
+    line-height: 2.0rem;
     color:#fff;
     
 }

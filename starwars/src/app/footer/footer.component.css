@@ -30,7 +30,7 @@
     width: fit-content;
     /* padding: 0 5%; */
     margin-right: 6.7%;
-    font-family: 'Open Sans Semibold';
+    font-family: 'Open Sans','Semibold';
     font-size: 1.4rem;
     line-height: 1.6rem;
     color:#1B6BA2;
@@ -46,13 +46,16 @@
 
 
 .copyright{
-    font-family: Open 'Sans Regula';
+    font-family: 'Open Sans','Regular';
     color:#49586B;
     font-size: 1.4rem;
     
 }
 
 @media(max-width:800px){
+    .footer{
+        height: 30%;
+    }
     .footer-links{
         display: none;
     }
@@ -64,14 +67,15 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        margin-top:2%;
+        margin-top:0;
          margin-bottom: 4rem;
          text-align: center;
     }
     .links{
         width: 20%;
-        padding: 5% 0 0 0;
-        font-size: 1.2rem;
+        padding: 0;
+        font-size: 1.5rem;
+        line-height: 5rem;
     }
     .width{
         text-align: center;
@@ -81,6 +85,6 @@
         width: 35%;
     }
     .copyright{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 }

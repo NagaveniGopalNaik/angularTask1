@@ -3,27 +3,28 @@
 </div>
 <div class="home">
     <div class="data">
-        <img src="../../assets/images/films.png" alt="films">
+        <img [src]="image[0]" alt="films" routerLink="/films-charactor">
+        
         <p class="name">FILMS</p>
     </div>
     <div class="data">
-        <img src="../../assets/images/species.png" alt="species" routerLink="/details">
+        <img [src]="image[1]" alt="species" routerLink="/species-charactor">
         <p class="name">SPECIES</p>
     </div>
     <div class="data">
-        <img src="../../assets/images/planets.png" alt="planets">
+        <img [src]="image[2]" alt="planets" routerLink="/planets-charactor">
         <p class="name">PLANETS</p>
     </div>
     <div class="data">
-        <img src="../../assets/images/people.png" alt="people">
+        <img [src]="image[3]" alt="people" routerLink="/character">
         <p class="name">PEOPLE</p>
     </div>
     <div class="data">
-        <img src="../../assets/images/vehicle.png" alt="vehicle">
+        <img [src]="image[4]" alt="vehicle" routerLink="/starship-charactor">
         <p class="name">STARSHIP</p>
     </div>
     <div class="data">
-        <img src="../../assets/images/driod.png" alt="driods">
+        <img [src]="image[5]" alt="driods" routerLink="/vehicles-charactor">
         <p class="name">VEHICLES</p>
     </div>
 </div>

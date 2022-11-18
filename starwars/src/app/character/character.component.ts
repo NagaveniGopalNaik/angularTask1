@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-character',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character.component.css']
 })
 export class CharacterComponent implements OnInit {
+people:any=[];
 
-  constructor() { }
+
+  constructor(private data:DataService) { }
 
   ngOnInit(): void {
+  
+
+  }
+
+  details(index:any){
+   
+
   }
 
 }
