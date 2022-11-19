@@ -9,7 +9,7 @@
     /* background-color: rgb(1, 11, 20); */
 }
 .navbar p{
-    padding: 1.5% 2%;
+    padding: 1.5% 5.2%;
 }
 .navbar p a{
     text-decoration: none;
@@ -19,7 +19,7 @@
     color:#fff;
     
 }
-.navbar p:hover{
+.navbar p:hover,.active_page{
     background-color: rgba(0, 171, 255, 0.4);
     
 }

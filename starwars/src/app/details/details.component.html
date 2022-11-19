@@ -1,23 +1,64 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<div class="details1">
+<div class="details1" *ngIf = 'displayCharacter'>
    
     <div class="data-list">
-        <div class="details-list">
-            <p class="data" routerLink="/character">sadfasd</p>
-            <p class="data">asdfaf</p>
-            <p class="data">ahjsdgklfds</p>
-            <p class="data">;klsdfgjskdr</p>
-            <p class="data">jkldf;fdsg</p>
-            <p class="data">jkdfs;ahdf</p>
-            <p class="data">klsadjf;lkda</p>
-            <p class="data">Uajkdsfajk</p>
-            <p class="data">klsadjf;lkda</p>
+        <div class="details-list" *ngFor = "let data of dataArray;index as i">
+            <p class="data" (click)="dataDetails(i)">{{data.name}}</p>
+           
         </div>
-        <div class="button">
-            <button class="btn">PREVIOUS</button>
-            <button class="btn btn1">NEXT</button>
+        <div class="button" *ngIf="dataArray">
+            <button class="btn" (click)="previous()">PREVIOUS</button>
+            <button class="btn btn1" (click)="next()">NEXT</button>
         </div>
     </div>
 </div>
+
+<div class="character" *ngIf = 'displayDetails'>
+    <div class="image" (click)="back_to_character()">
+        <img src="https://wallpaperaccess.com/full/1920267.jpg" alt="yoda image" class="img">
+    </div>
+    <div class="details">
+        <h1 class="name">{{currentData.name | uppercase}}</h1>
+        <div class="overflow-data">
+           <div class="destination-data">
+               <p class="data-details">Birth_year&nbsp;: </p>
+               <p class="data-details-value">{{currentData.birth_year}}</p>
+           </div>
+           <div class="destination-data">
+            <p class="data-details">Eye_color&nbsp;: </p>
+            <p class="data-details-value">{{currentData.eye_color}}
+        </div>
+        <div class="destination-data">
+            <p class="data-details">gender&nbsp;: </p>
+            <p class="data-details-value">{{currentData.gender}}</p>
+        </div>
+        <div class="destination-data">
+            <p class="data-details">Hair_color&nbsp;: </p>
+            <p class="data-details-value">{{currentData.hair_color}}</p>
+        </div>
+        <div class="destination-data">
+            <p class="data-details">Height&nbsp;: </p>
+            <p class="data-details-value">{{currentData.height}}</p>
+        </div>
+        <div class="destination-data">
+            <p class="data-details">Mass&nbsp;: </p>
+            <p class="data-details-value">{{currentData.mass}}</p>
+        </div>
+        <div class="destination-data">
+            <p class="data-details">Skin_color&nbsp;: </p>
+            <p class="data-details-value">{{currentData.skin_color}}</p>
+        </div>
+        <!-- <div class="destination-data">
+            <p class="data-details">Home_world&nbsp;: </p>
+            <p class="data-details-value">{{currentData.home}}</p>
+        </div> -->
+        
+        
+        </div>
+    
+    
+        
+    </div>
+    </div>
 <app-footer></app-footer>

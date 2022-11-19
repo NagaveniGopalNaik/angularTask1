@@ -1,1 +1,67 @@
-<p>species-charactor works!</p>
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="details1" *ngIf = 'displayCharacter'>
+   
+    <div class="data-list">
+        <div class="details-list" *ngFor = "let data of dataArray;index as i">
+            <p class="data" (click)="dataDetails(i)">{{data.name}}</p>
+           
+        </div>
+        <div class="button" *ngIf="dataArray">
+            <button class="btn" (click)="previous()">PREVIOUS</button>
+            <button class="btn btn1" (click)="next()">NEXT</button>
+        </div>
+    </div>
+</div>
+
+<div class="character" *ngIf = 'displayDetails'>
+    <div class="image" (click)="back_to_character()">
+        <img src="https://wallpaperaccess.com/full/1920267.jpg" alt="yoda image" class="img">
+    </div>
+    <div class="details">
+        <h1 class="name">{{currentData.name | uppercase}}</h1>
+        <div class="overflow-data">
+            <div class="destination-data">
+                <p class="data-details">Classification : </p>
+                <p class="data-details-value">{{currentData.classification}}</p>
+            </div>
+            <div class="destination-data">
+             <p class="data-details">Designation : </p>
+             <p class="data-details-value">{{currentData.designation}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Average height : </p>
+             <p class="data-details-value">{{currentData.average_height}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Average_lifespan : </p>
+             <p class="data-details-value">{{currentData.average_lifespan}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Eye_colors : </p>
+             <p class="data-details-value">{{currentData.eye_colors}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Hair_colors : </p>
+             <p class="data-details-value">{{currentData.hair_colors}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Skin_colors : </p>
+             <p class="data-details-value">{{currentData.skin_colors}}</p>
+         </div><div class="destination-data">
+             <p class="data-details">Language : </p>
+             <p class="data-details-value">{{currentData.language}}</p>
+         </div>
+         <!-- <div class="destination-data">
+             <p class="data-details">Homeworld : </p>
+             <p class="data-details-value">{{currentData.homeworld}}</p>
+         </div> -->
+         
+        
+        </div>
+    
+    
+        
+    </div>
+    </div>
+<app-footer></app-footer>

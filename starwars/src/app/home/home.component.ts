@@ -9,6 +9,9 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent implements OnInit {
 details:any;
+index:any;
+peopleArray:any;
+peopleArrayLength=0;
 image=[
   "../../assets/images/films.png",
   "../../assets/images/species.png",
@@ -17,12 +20,15 @@ image=[
   "../../assets/images/vehicle.png",
   "../../assets/images/driod.png"
 ]
+
   constructor(private http:DataService) { }
 
   ngOnInit(): void {
+    // this.http.getUsers();
     
   }
 
- 
+  
+
 
 }

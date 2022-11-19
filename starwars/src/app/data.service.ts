@@ -6,32 +6,45 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
+  url=[
+    'https://swapi.dev/api/people',
+    'https://swapi.dev/api/films',
+    'https://swapi.dev/api/starships',
+    'https://swapi.dev/api/vehicles',
+    'https://swapi.dev/api/species',
+    'https://swapi.dev/api/planets'
+  ]
   constructor(private http:HttpClient) { }
 
-  getUsers(refresh?: boolean):Observable<HttpResponse<any>>{
-    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/people');
+  getUsers(url:any):Observable<HttpResponse<any>>{
+    return this.http.get<HttpResponse<any>>(url);
   }
 
-  getFilms(refresh?: boolean):Observable<HttpResponse<any>>{
-    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/films');
-  }
+  // getUsers(){
+  //   return this.http.get('https://swapi.dev/api/people/');
+  // }
 
-  getPlanets(refresh?: boolean):Observable<HttpResponse<any>>{
-    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/planets');
-  }
 
-  getSpecies(refresh?: boolean):Observable<HttpResponse<any>>{
-    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/species');
-  }
+  // storePeople(data:any){
+  //   let list = []
+  //   if(localStorage.getItem('people')){
+  //     let olddata = JSON.parse(localStorage.getItem('people')as any); 
+  //     list = [...olddata,data];
+  //   } else{
+  //     list = [data]
+  //   }
+  //   localStorage.setItem('people',JSON.stringify(list));
+  // }
 
-  getStarship(refresh?: boolean):Observable<HttpResponse<any>>{
-    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/starships');
-  }
+  // getPeople(){
+  //   if(localStorage.getItem('people')){
+  //     return JSON.parse(localStorage.getItem('people')as any)
+  //   } else {
+  //     return JSON.parse('[]');
+  //   }
+  // }
 
-  getVehicles(refresh?: boolean):Observable<HttpResponse<any>>{
-    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/vehicles');
-  }
+  
   
 
 }

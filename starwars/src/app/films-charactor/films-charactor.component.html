@@ -1,1 +1,53 @@
-<p>films-charactor works!</p>
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="details1" *ngIf = 'displayCharacter'>
+   
+    <div class="data-list">
+        <div class="details-list" *ngFor = "let data of dataArray;index as i">
+            <p class="data" (click)="dataDetails(i)">{{data.title}}</p>
+           
+        </div>
+        <div class="button" *ngIf="dataArray">
+            <button class="btn" (click)="previous()">PREVIOUS</button>
+            <button class="btn btn1" (click)="next()">NEXT</button>
+        </div>
+    </div>
+</div>
+
+<div class="character" *ngIf = 'displayDetails'>
+    <div class="image" (click)="back_to_character()">
+        <img src="https://wallpaperaccess.com/full/1920267.jpg" alt="yoda image" class="img">
+    </div>
+    <div class="details">
+        <h1 class="name">{{currentData.title | uppercase}}</h1>
+        <div class="overflow-data">
+           <div class="destination-data">
+               <span class="data-details">Episode id&nbsp;: </span>
+               <span class="data-details-value">{{currentData.episode_id}}</span>
+           </div>
+           <div class="destination-data">
+            <p class="data-details">Opening crawl&nbsp;: </p>
+            <p class="data-details-value">{{currentData.opening_crawl}}</p>
+        </div>
+        <div class="destination-data">
+            <p class="data-details">Director&nbsp;: </p>
+            <p class="data-details-value">{{currentData.director}}</p>
+        </div>
+        <div class="destination-data">
+            <p class="data-details">Producer&nbsp;: </p>
+            <p class="data-details-value">{{currentData.producer}}</p>
+        </div>
+        <div class="destination-data">
+            <p class="data-details">Release date&nbsp;: </p>
+            <p class="data-details-value">&nbsp;{{currentData.release_date}}</p>
+        </div>
+        
+        
+        
+        </div>
+    
+    
+        
+    </div>
+    </div>
+<app-footer></app-footer>

@@ -1,1 +1,72 @@
-<p>vehicles-charactor works!</p>
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="details1" *ngIf = 'displayCharacter'>
+   
+    <div class="data-list">
+        <div class="details-list" *ngFor = "let data of dataArray;index as i">
+            <p class="data" (click)="dataDetails(i)">{{data.name}}</p>
+           
+        </div>
+        <div class="button" *ngIf="dataArray">
+            <button class="btn" (click)="previous()">PREVIOUS</button>
+            <button class="btn btn1" (click)="next()">NEXT</button>
+        </div>
+    </div>
+</div>
+
+<div class="character" *ngIf = 'displayDetails'>
+    <div class="image" (click)="back_to_character()">
+        <img src="https://wallpaperaccess.com/full/1920267.jpg" alt="yoda image" class="img">
+    </div>
+    <div class="details">
+        <h1 class="name">{{currentData.name | uppercase}}</h1>
+        <div class="overflow-data">
+            <div class="destination-data">
+                <p class="data-details">Model : </p>
+                <p class="data-details-value">{{currentData.model}}</p>
+            </div>
+            <div class="destination-data">
+             <p class="data-details">Vehicle class : </p>
+             <p class="data-details-value">{{currentData.vehicle_class}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Manufacturer : </p>
+             <p class="data-details-value">{{currentData.manufacturer}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Length : </p>
+             <p class="data-details-value">{{currentData.length}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Cost in credits : </p>
+             <p class="data-details-value">{{currentData.cost_in_credits}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Crew : </p>
+             <p class="data-details-value">{{currentData.crew}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Passengers : </p>
+             <p class="data-details-value">{{currentData.passengers}}</p>
+         </div><div class="destination-data">
+             <p class="data-details">Max atmosphering speed : </p>
+             <p class="data-details-value">{{currentData.max_atmosphering_speed}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details">Cargo capacity : </p>
+             <p class="data-details-value">{{currentData.cargo_capacity}}</p>
+         </div>
+         <div class="destination-data">
+             <p class="data-details"> Consumables : </p>
+             <p class="data-details-value">{{currentData.consumables}}</p>
+         </div>
+        
+        
+        
+        </div>
+    
+    
+        
+    </div>
+    </div>
+<app-footer></app-footer>

@@ -14,10 +14,10 @@ people:any=[];
   constructor(private data:DataService) { }
 
   ngOnInit(): void {
-  this.data.getUsers().subscribe((users)=>{
-    console.log(users);
+  // this.data.getUsers().subscribe((users)=>{
+  //   console.log(users);
     
-  })
+  // })
 
   }
 
