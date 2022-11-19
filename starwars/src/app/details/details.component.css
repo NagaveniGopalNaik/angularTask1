@@ -1,20 +1,19 @@
-.details{
+/* .details1{
     width: 70%;
     margin: auto;
 }
 .data-list{
     width: 70%;
-    /* height: 90%; */
     margin: auto;
     margin-top: 2%;
     margin-bottom:2% ;
-    /* background-color: red; */
+ 
     
 }
 .details-list{
     width: 40%;
     margin: auto;
-    /* margin-top: 5%; */
+ 
     
     
     
@@ -22,12 +21,12 @@
 .button{
     
     width: 250px;
-    /* align-items: center; */
+ 
     justify-content: center;
     margin: auto;
 }
 .data{
-    /* width: 40%; */
+
     font-family: 'Open Sans','Bold';
     font-size: 2.0rem;
     color:#fff;
@@ -75,4 +74,4 @@
         font-size: 1.5rem;
         line-height: 3.8rem;
     }
-}
+} */

@@ -54,7 +54,7 @@
 
 @media(max-width:800px){
     .footer{
-        height: 30%;
+        height: 25%;
     }
     .footer-links{
         display: none;

@@ -9,11 +9,30 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  // getUsers(refresh?: boolean):Observable<HttpResponse<any>>{
-  //   return this.http.get<HttpResponse<any>>('https://swapi.dev/api/people');
-  // }
+  getUsers(refresh?: boolean):Observable<HttpResponse<any>>{
+    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/people');
+  }
 
-  // searchUsers(name:string):Observable<HttpResponse<any>>{
-  //   const httpOptions = 
-  // }
+  getFilms(refresh?: boolean):Observable<HttpResponse<any>>{
+    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/films');
+  }
+
+  getPlanets(refresh?: boolean):Observable<HttpResponse<any>>{
+    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/planets');
+  }
+
+  getSpecies(refresh?: boolean):Observable<HttpResponse<any>>{
+    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/species');
+  }
+
+  getStarship(refresh?: boolean):Observable<HttpResponse<any>>{
+    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/starships');
+  }
+
+  getVehicles(refresh?: boolean):Observable<HttpResponse<any>>{
+    return this.http.get<HttpResponse<any>>('https://swapi.dev/api/vehicles');
+  }
+  
+
 }
+

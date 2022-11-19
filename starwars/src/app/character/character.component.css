@@ -21,7 +21,6 @@
 .details{
     width: 50%;
     height: 100%;
-    /* background-color: red; */
     padding: 3% 3%;
 }
 
@@ -37,7 +36,6 @@
     width: 100%;
     display: flex;
     justify-content: left;
-    /* align-items: center; */
     margin-bottom: 1%;
 }
 .data-details{
@@ -152,11 +150,11 @@
 @media(max-width:1000px){
     
     .data-details{
-        width: 40%;
+        width: 42%;
 
     }
     .data-details-value{
-        width: 60%;
+        width: 58%;
     }
 }
 
