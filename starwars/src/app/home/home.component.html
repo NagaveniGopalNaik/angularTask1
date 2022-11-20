@@ -3,28 +3,28 @@
 </div>
 <div class="home">
     <div class="data">
-        <img [src]="image[0]" alt="films" routerLink="/films-charactor">
+        <img [src]="image[0]" alt="films" routerLink="/films-charactor" (mouseenter)="changeImage(0)" (mouseleave)="rechangeImage(0)">
         
         <p class="name">FILMS</p>
     </div>
     <div class="data">
-        <img [src]="image[1]" alt="species" routerLink="/species-charactor">
+        <img [src]="image[1]" alt="species" routerLink="/species-charactor" (mouseenter)="changeImage(1)" (mouseleave)="rechangeImage(1)">
         <p class="name">SPECIES</p>
     </div>
     <div class="data">
-        <img [src]="image[2]" alt="planets" routerLink="/planets-charactor">
+        <img [src]="image[2]" alt="planets" routerLink="/planets-charactor" (mouseenter)="changeImage(2)" (mouseleave)="rechangeImage(2)">
         <p class="name">PLANETS</p>
     </div>
     <div class="data">
-        <img [src]="image[3]" alt="people" routerLink="/details">
+        <img [src]="image[3]" alt="people" routerLink="/details" (mouseenter)="changeImage(3)" (mouseleave)="rechangeImage(3)">
         <p class="name">PEOPLE</p>
     </div>
     <div class="data">
-        <img [src]="image[4]" alt="vehicle" routerLink="/starship-charactor">
+        <img [src]="image[4]" alt="vehicle" routerLink="/starship-charactor" (mouseenter)="changeImage(4)" (mouseleave)="rechangeImage(4)">
         <p class="name">STARSHIP</p>
     </div>
     <div class="data">
-        <img [src]="image[5]" alt="driods" routerLink="/vehicles-charactor">
+        <img [src]="image[5]" alt="driods" routerLink="/vehicles-charactor" (mouseenter)="changeImage(5)" (mouseleave)="rechangeImage(5)">
         <p class="name">VEHICLES</p>
     </div>
 </div>

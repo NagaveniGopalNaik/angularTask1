@@ -8,8 +8,8 @@
            
         </div>
         <div class="button" *ngIf="dataArray">
-            <button class="btn" (click)="previous()">PREVIOUS</button>
-            <button class="btn btn1" (click)="next()">NEXT</button>
+            <button class="btn" (click)="previous()" [disabled]="filmData.previous == null" [class.disabled]="filmData.previous == null">PREVIOUS</button>
+            <button class="btn btn1" (click)="next()" [disabled]="filmData.next == null" [class.disabled]="filmData.next == null">NEXT</button>
         </div>
     </div>
 </div>

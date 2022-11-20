@@ -101,7 +101,7 @@
     margin-top: 5%;
     font-family: 'Open Sans','Regular';
     font-size: 1.6rem;
-    color:#7692A7;
+    color:#fff;
     border: none;
     width: 40%;
     padding: 2% 3%;
@@ -110,6 +110,9 @@
 .btn1{
     color:#fff;
     margin-left: 20%;
+}
+.disabled{
+    color:#7692A7;
 }
 
 
