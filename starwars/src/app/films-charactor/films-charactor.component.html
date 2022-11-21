@@ -16,10 +16,13 @@
     </div>
 </div>
 <div class="loading" *ngIf="dataArray == undefined">
+    <h1>Loading...</h1>
+</div>
+<!-- <div class="loading" *ngIf="dataArray == undefined">
     <div class="ring">Loading
         <span></span>
       </div>
-</div>
+</div> -->
 <div class="character" *ngIf = 'displayDetails'>
     <div class="image" (click)="back_to_character()">
         <img [src]="newImage" alt="yoda image" class="img">
@@ -40,19 +43,19 @@
         <div class="destination-data">
             <p class="data-details">Director&nbsp; </p>
             <p class="colon">:</p>
-            <p class="data-details-value">{{currentData.director}}</p>
+            <p class="data-details-value">{{currentData.director | titlecase}}</p>
         </div>
         <div class="destination-data">
             <p class="data-details">Producer&nbsp; </p>
             <p class="colon">:</p>
-            <p class="data-details-value">{{currentData.producer}}</p>
+            <p class="data-details-value">{{currentData.producer | titlecase}}</p>
         </div>
         <div class="destination-data" *ngIf = "species_list.length > 0">
             <p class="data-details">Speciess&nbsp; </p>
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let species of species_list">
-                    <li class="array_list">{{species}}</li>
+                    <li class="array_list">{{species | titlecase}}</li>
                 </ul>
             </div>
         </div>
@@ -66,7 +69,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let starship of starship_list">
-                    <li class="array_list">{{starship}}</li>
+                    <li class="array_list">{{starship | titlecase}}</li>
                 </ul>
             </div>
         </div>

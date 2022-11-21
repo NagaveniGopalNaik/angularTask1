@@ -15,10 +15,13 @@
         </div>
     </div>
 </div>
-<div class="loading" *ngIf="dataArray == undefined">
+<!-- <div class="loading" *ngIf="dataArray == undefined">
     <div class="ring">Loading
         <span></span>
       </div>
+</div> -->
+<div class="loading" *ngIf="dataArray == undefined">
+    <h1>Loading...</h1>
 </div>
 <div class="character" *ngIf = 'displayDetails'>
     <div class="image" (click)="back_to_character()">
@@ -55,12 +58,12 @@
          <div class="destination-data">
              <p class="data-details">Climate  </p>
              <p class="colon">:</p>
-             <p class="data-details-value">{{currentData.climate}}</p>
+             <p class="data-details-value">{{currentData.climate | titlecase}}</p>
          </div>
          <div class="destination-data">
              <p class="data-details">Terrain  </p>
              <p class="colon">:</p>
-             <p class="data-details-value">{{currentData.terrain}}</p>
+             <p class="data-details-value">{{currentData.terrain | titlecase}}</p>
          </div><div class="destination-data">
              <p class="data-details">Surface water </p>
              <p class="colon">:</p>
@@ -76,7 +79,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let film of film_list">
-                    <li class="array_list">{{film}}</li>
+                    <li class="array_list">{{film | titlecase}}</li>
                 </ul>
             </div>
         </div>
@@ -86,7 +89,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let resident of residents_list">
-                    <li class="array_list">{{resident}}</li>
+                    <li class="array_list">{{resident | titlecase}}</li>
                 </ul>
             </div>
         </div>

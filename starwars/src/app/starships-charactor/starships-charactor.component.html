@@ -15,10 +15,13 @@
         </div>
     </div>
 </div>
-<div class="loading" *ngIf="dataArray == undefined">
+<!-- <div class="loading" *ngIf="dataArray == undefined">
     <div class="ring">Loading
         <span></span>
       </div>
+</div> -->
+<div class="loading" *ngIf="dataArray == undefined">
+    <h1>Loading...</h1>
 </div>
 <div class="character" *ngIf = 'displayDetails'>
     <div class="image" (click)="back_to_character()">
@@ -30,17 +33,17 @@
            <div class="destination-data">
                <span class="data-details">Model&nbsp; </span>
                <p class="colon">:</p>
-               <span class="data-details-value">{{currentData.model}}</span>
+               <span class="data-details-value">{{currentData.model | titlecase}}</span>
            </div>
            <div class="destination-data">
             <p class="data-details">Starship class&nbsp; </p>
             <p class="colon">:</p>
-            <p class="data-details-value">{{currentData.starship_class}}</p>
+            <p class="data-details-value">{{currentData.starship_class | titlecase}}</p>
         </div>
         <div class="destination-data">
             <p class="data-details">Manufacturer&nbsp; </p>
             <p class="colon">:</p>
-            <p class="data-details-value">{{currentData.manufacturer}}</p>
+            <p class="data-details-value">{{currentData.manufacturer | titlecase}}</p>
         </div>
         <div class="destination-data">
             <p class="data-details">Cost in credits&nbsp; </p>
@@ -60,7 +63,7 @@
         <div class="destination-data">
             <p class="data-details">Passengers&nbsp; </p>
             <p class="colon">:</p>
-            <p class="data-details-value">&nbsp;{{currentData.passengers}}</p>
+            <p class="data-details-value">&nbsp;{{currentData.passengers | titlecase}}</p>
         </div>
         <div class="destination-data">
             <p class="data-details">Max atmosphering speed&nbsp; </p>
@@ -92,7 +95,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let film of films_list">
-                    <li class="array_list">{{film}}</li>
+                    <li class="array_list">{{film | titlecase}}</li>
                 </ul>
             </div>
         </div>
@@ -102,7 +105,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let person of people_list">
-                    <li class="array_list">{{person}}</li>
+                    <li class="array_list">{{person | titlecase}}</li>
                 </ul>
             </div>
         </div>

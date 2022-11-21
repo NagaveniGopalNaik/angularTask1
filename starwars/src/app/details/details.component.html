@@ -15,10 +15,13 @@
         </div>
     </div>
 </div>
-<div class="loading" *ngIf="dataArray == undefined">
+<!-- <div class="loading" *ngIf="dataArray == undefined">
     <div class="ring">Loading
         <span></span>
       </div>
+</div> -->
+<div class="loading" *ngIf="dataArray == undefined">
+    <h1>Loading...</h1>
 </div>
 
 <div class="character" *ngIf = 'displayDetails'>
@@ -36,17 +39,17 @@
            <div class="destination-data">
             <p class="data-details">Eye color&nbsp; </p>
             <p class="colon">:</p>
-            <p class="data-details-value">{{currentData.eye_color}}
+            <p class="data-details-value">{{currentData.eye_color | titlecase}}
         </div>
         <div class="destination-data">
             <p class="data-details">gender&nbsp;</p>
             <p class="colon">:</p>
-            <p class="data-details-value">{{currentData.gender}}</p>
+            <p class="data-details-value">{{currentData.gender | titlecase}}</p>
         </div>
         <div class="destination-data">
             <p class="data-details">Hair color&nbsp; </p>
             <p class="colon">:</p>
-            <p class="data-details-value">{{currentData.hair_color}}</p>
+            <p class="data-details-value">{{currentData.hair_color | titlecase}}</p>
         </div>
         <div class="destination-data">
             <p class="data-details">Height&nbsp; </p>
@@ -61,14 +64,14 @@
         <div class="destination-data">
             <p class="data-details">Skin color&nbsp; </p>
             <p class="colon">:</p>
-            <p class="data-details-value">{{currentData.skin_color}}</p>
+            <p class="data-details-value">{{currentData.skin_color | titlecase}}</p>
         </div>
         <div class="destination-data" *ngIf = "films_list.length > 0">
             <p class="data-details">Films&nbsp; </p>
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let film of films_list">
-                    <li class="array_list">{{film}}</li>
+                    <li class="array_list">{{film | titlecase}}</li>
                 </ul>
             </div>
         </div>
@@ -77,7 +80,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let vehicle of vehicle_list">
-                    <li class="array_list">{{vehicle}}</li>
+                    <li class="array_list">{{vehicle | titlecase}}</li>
                 </ul>
             </div>
         </div>
@@ -87,7 +90,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let starship of starship_list">
-                    <li class="array_list">{{starship}}</li>
+                    <li class="array_list">{{starship | titlecase}}</li>
                 </ul>
             </div>
         </div>
@@ -97,7 +100,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let species of species_list">
-                    <li class="array_list">{{species}}</li>
+                    <li class="array_list">{{species | titlecase}}</li>
                 </ul>
             </div>
         </div>

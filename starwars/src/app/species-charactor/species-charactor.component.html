@@ -15,10 +15,13 @@
         </div>
     </div>
 </div>
-<div class="loading" *ngIf="dataArray == undefined">
+<!-- <div class="loading" *ngIf="dataArray == undefined">
     <div class="ring">Loading
         <span></span>
       </div>
+</div> -->
+<div class="loading" *ngIf="dataArray == undefined">
+    <h1>Loading...</h1>
 </div>
 <div class="character" *ngIf = 'displayDetails'>
     <div class="image" (click)="back_to_character()">
@@ -30,12 +33,12 @@
             <div class="destination-data">
                 <p class="data-details">Classification </p>
                 <p class="colon">:</p>
-                <p class="data-details-value">{{currentData.classification}}</p>
+                <p class="data-details-value">{{currentData.classification | titlecase}}</p>
             </div>
             <div class="destination-data">
              <p class="data-details">Designation </p>
              <p class="colon">:</p>
-             <p class="data-details-value">{{currentData.designation}}</p>
+             <p class="data-details-value">{{currentData.designation | titlecase}}</p>
          </div>
          <div class="destination-data">
              <p class="data-details">Average height </p>
@@ -50,28 +53,28 @@
          <div class="destination-data">
              <p class="data-details">Eye colors </p>
              <p class="colon">:</p>
-             <p class="data-details-value">{{currentData.eye_colors}}</p>
+             <p class="data-details-value">{{currentData.eye_colors | titlecase}}</p>
          </div>
          <div class="destination-data">
              <p class="data-details">Hair colors </p>
              <p class="colon">:</p>
-             <p class="data-details-value">{{currentData.hair_colors}}</p>
+             <p class="data-details-value">{{currentData.hair_colors | titlecase}}</p>
          </div>
          <div class="destination-data">
              <p class="data-details">Skin colors </p>
              <p class="colon">:</p>
-             <p class="data-details-value">{{currentData.skin_colors}}</p>
+             <p class="data-details-value">{{currentData.skin_colors | titlecase}}</p>
          </div><div class="destination-data">
              <p class="data-details">Language  </p>
              <p class="colon">:</p>
-             <p class="data-details-value">{{currentData.language}}</p>
+             <p class="data-details-value">{{currentData.language | titlecase}}</p>
          </div>
          <div class="destination-data" *ngIf = "films_list.length > 0">
             <p class="data-details">Films&nbsp; </p>
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let film of films_list">
-                    <li class="array_list">{{film}}</li>
+                    <li class="array_list">{{film | titlecase}}</li>
                 </ul>
             </div>
         </div>
@@ -80,7 +83,7 @@
             <p class="colon">:</p>
             <div class="data-details-value">
                 <ul class="data-details-value1" *ngFor="let person of people_list">
-                    <li class="array_list">{{person}}</li>
+                    <li class="array_list">{{person | titlecase}}</li>
                 </ul>
             </div>
         </div>
