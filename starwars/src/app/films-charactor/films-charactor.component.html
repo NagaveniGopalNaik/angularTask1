@@ -6,7 +6,7 @@
    
     <div class="data-list">
         <div class="details-list" *ngFor = "let data of dataArray;index as i">
-            <p class="data" (click)="dataDetails(i)">{{data.title}}</p>
+            <p class="data" (click)="dataDetails(i)">{{data.title | uppercase}}</p>
            
         </div>
         <div class="button" *ngIf="dataArray">
