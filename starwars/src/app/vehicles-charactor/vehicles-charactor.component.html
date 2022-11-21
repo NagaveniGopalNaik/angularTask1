@@ -1,5 +1,7 @@
-<app-header></app-header>
+<div class="header">
+    <app-header></app-header>
 <app-navbar></app-navbar>
+</div>
 <div class="details1" *ngIf = 'displayCharacter'>
    
     <div class="data-list">
@@ -13,54 +15,86 @@
         </div>
     </div>
 </div>
-
+<div class="loading" *ngIf="dataArray == undefined">
+    <div class="ring">Loading
+        <span></span>
+      </div>
+</div>
 <div class="character" *ngIf = 'displayDetails'>
     <div class="image" (click)="back_to_character()">
-        <img src="https://wallpaperaccess.com/full/1920267.jpg" alt="yoda image" class="img">
+        <img [src]="newImage" alt="yoda image" class="img">
     </div>
     <div class="details">
         <h1 class="name">{{currentData.name | uppercase}}</h1>
         <div class="overflow-data">
             <div class="destination-data">
-                <p class="data-details">Model : </p>
+                <p class="data-details">Model  </p>
+                <p class="colon">:</p>
                 <p class="data-details-value">{{currentData.model}}</p>
             </div>
             <div class="destination-data">
-             <p class="data-details">Vehicle class : </p>
+             <p class="data-details">Vehicle class </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.vehicle_class}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Manufacturer : </p>
+             <p class="data-details">Manufacturer  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.manufacturer}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Length : </p>
+             <p class="data-details">Length </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.length}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Cost in credits : </p>
+             <p class="data-details">Cost in credits  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.cost_in_credits}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Crew : </p>
+             <p class="data-details">Crew </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.crew}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Passengers : </p>
+             <p class="data-details">Passengers  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.passengers}}</p>
          </div><div class="destination-data">
-             <p class="data-details">Max atmosphering speed : </p>
+             <p class="data-details">Max atmosphering speed  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.max_atmosphering_speed}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Cargo capacity : </p>
+             <p class="data-details">Cargo capacity  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.cargo_capacity}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details"> Consumables : </p>
+             <p class="data-details"> Consumables  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.consumables}}</p>
          </div>
-        
+         <div class="destination-data" *ngIf = "films_list.length > 0">
+            <p class="data-details">Films&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let film of films_list">
+                    <li class="array_list">{{film}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="destination-data" *ngIf = "people_list.length > 0">
+            <p class="data-details">Pilots&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let person of people_list">
+                    <li class="array_list">{{person}}</li>
+                </ul>
+            </div>
+        </div>
         
         
         </div>
@@ -69,4 +103,6 @@
         
     </div>
     </div>
-<app-footer></app-footer>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

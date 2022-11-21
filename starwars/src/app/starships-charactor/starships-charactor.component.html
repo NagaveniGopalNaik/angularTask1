@@ -1,5 +1,7 @@
-<app-header></app-header>
+<div class="header">
+    <app-header></app-header>
 <app-navbar></app-navbar>
+</div>
 <div class="details1" *ngIf = 'displayCharacter'>
    
     <div class="data-list">
@@ -13,63 +15,97 @@
         </div>
     </div>
 </div>
-
+<div class="loading" *ngIf="dataArray == undefined">
+    <div class="ring">Loading
+        <span></span>
+      </div>
+</div>
 <div class="character" *ngIf = 'displayDetails'>
     <div class="image" (click)="back_to_character()">
-        <img src="https://wallpaperaccess.com/full/1920267.jpg" alt="yoda image" class="img">
+        <img [src]="newImage" alt="yoda image" class="img">
     </div>
     <div class="details">
         <h1 class="name">{{currentData.name | uppercase}}</h1>
         <div class="overflow-data">
            <div class="destination-data">
-               <span class="data-details">Model&nbsp;: </span>
+               <span class="data-details">Model&nbsp; </span>
+               <p class="colon">:</p>
                <span class="data-details-value">{{currentData.model}}</span>
            </div>
            <div class="destination-data">
-            <p class="data-details">Starship class&nbsp;: </p>
+            <p class="data-details">Starship class&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.starship_class}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Manufacturer&nbsp;: </p>
+            <p class="data-details">Manufacturer&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.manufacturer}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Cost in credits&nbsp;: </p>
+            <p class="data-details">Cost in credits&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.cost_in_credits}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Length&nbsp;: </p>
+            <p class="data-details">Length&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">&nbsp;{{currentData.length}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Crew&nbsp;: </p>
+            <p class="data-details">Crew&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">&nbsp;{{currentData.crew}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Passengers&nbsp;: </p>
+            <p class="data-details">Passengers&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">&nbsp;{{currentData.passengers}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Max atmosphering speed&nbsp;: </p>
+            <p class="data-details">Max atmosphering speed&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">&nbsp;{{currentData.max_atmosphering_speed}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Hyperdrive rating&nbsp;: </p>
+            <p class="data-details">Hyperdrive rating&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">&nbsp;{{currentData.hyperdrive_rating}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">MGLT&nbsp;: </p>
+            <p class="data-details">MGLT&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">&nbsp;{{currentData.MGLT}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Cargo capacity&nbsp;: </p>
+            <p class="data-details">Cargo capacity&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">&nbsp;{{currentData.cargo_capacity}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Consumables&nbsp;: </p>
+            <p class="data-details">Consumables&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">&nbsp;{{currentData.consumables}}</p>
         </div>
-        
+        <div class="destination-data" *ngIf = "films_list.length > 0">
+            <p class="data-details">Films&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let film of films_list">
+                    <li class="array_list">{{film}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="destination-data" *ngIf = "people_list.length > 0">
+            <p class="data-details">Pilots&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let person of people_list">
+                    <li class="array_list">{{person}}</li>
+                </ul>
+            </div>
+        </div>
         
         
         </div>
@@ -78,4 +114,6 @@
         
     </div>
     </div>
-<app-footer></app-footer>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

@@ -1,5 +1,7 @@
+<div class="header">
 <app-header></app-header>
 <app-navbar></app-navbar>
+</div>
 <div class="details1" *ngIf = 'displayCharacter'>
    
     <div class="data-list">
@@ -13,52 +15,99 @@
         </div>
     </div>
 </div>
+<div class="loading" *ngIf="dataArray == undefined">
+    <div class="ring">Loading
+        <span></span>
+      </div>
+</div>
 
 <div class="character" *ngIf = 'displayDetails'>
     <div class="image" (click)="back_to_character()">
-        <img src="https://wallpaperaccess.com/full/1920267.jpg" alt="yoda image" class="img">
+        <img [src]="newImage" alt="yoda image" class="img">
     </div>
     <div class="details">
         <h1 class="name">{{currentData.name | uppercase}}</h1>
         <div class="overflow-data">
            <div class="destination-data">
-               <p class="data-details">Birth_year&nbsp;: </p>
+               <p class="data-details">Birth year </p>
+               <p class="colon">:</p>
                <p class="data-details-value">{{currentData.birth_year}}</p>
            </div>
            <div class="destination-data">
-            <p class="data-details">Eye_color&nbsp;: </p>
+            <p class="data-details">Eye color&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.eye_color}}
         </div>
         <div class="destination-data">
-            <p class="data-details">gender&nbsp;: </p>
+            <p class="data-details">gender&nbsp;</p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.gender}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Hair_color&nbsp;: </p>
+            <p class="data-details">Hair color&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.hair_color}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Height&nbsp;: </p>
+            <p class="data-details">Height&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.height}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Mass&nbsp;: </p>
+            <p class="data-details">Mass&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.mass}}</p>
         </div>
         <div class="destination-data">
-            <p class="data-details">Skin_color&nbsp;: </p>
+            <p class="data-details">Skin color&nbsp; </p>
+            <p class="colon">:</p>
             <p class="data-details-value">{{currentData.skin_color}}</p>
         </div>
-        <!-- <div class="destination-data">
-            <p class="data-details">Home_world&nbsp;: </p>
-            <p class="data-details-value">{{currentData.home}}</p>
-        </div> -->
-        
-        
+        <div class="destination-data" *ngIf = "films_list.length > 0">
+            <p class="data-details">Films&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let film of films_list">
+                    <li class="array_list">{{film}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="destination-data" *ngIf = "vehicle_list.length > 0">
+            <p class="data-details">Vehicles&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let vehicle of vehicle_list">
+                    <li class="array_list">{{vehicle}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="destination-data" *ngIf = "starship_list.length > 0">
+            <p class="data-details">Starship&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let starship of starship_list">
+                    <li class="array_list">{{starship}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="destination-data" *ngIf = "species_list.length > 0">
+            <p class="data-details">Species&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let species of species_list">
+                    <li class="array_list">{{species}}</li>
+                </ul>
+            </div>
+        </div>
+       
         </div>
     
     
         
     </div>
     </div>
-<app-footer></app-footer>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

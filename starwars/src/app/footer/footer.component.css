@@ -34,11 +34,12 @@
     font-size: 1.4rem;
     line-height: 1.6rem;
     color:#1B6BA2;
+    /* font-weight: 600; */
     
     
 }
 .img{
-    width: 100px;
+    width: 120px;
     height: 50px;
 }
 
@@ -49,17 +50,24 @@
     font-family: 'Open Sans','Regular';
     color:#49586B;
     font-size: 1.4rem;
+    margin-bottom: 1.0%;
     
 }
 
 @media(max-width:700px){
     .footer{
-        height: 25%;
+        height: 30%;
+        
+     
     }
     .footer-links{
         display: none;
     }
     .footer-links1{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+
         width: 90%;
         margin: auto;
         display: block;
@@ -68,8 +76,9 @@
         align-items: center;
         flex-wrap: wrap;
         margin-top:0;
-         margin-bottom: 4rem;
+         margin-bottom: 2rem;
          text-align: center;
+         font-weight: 600;
     }
     .links{
         width: 20%;
@@ -79,12 +88,13 @@
     }
     .width{
         text-align: center;
-        width: 45%;
+        width: 50%;
     }
     .width1{
         width: 35%;
     }
     .copyright{
         font-size: 1.4rem;
+        margin-bottom: 15%;
     }
 }

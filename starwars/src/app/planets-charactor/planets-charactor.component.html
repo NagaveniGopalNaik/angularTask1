@@ -1,5 +1,7 @@
-<app-header></app-header>
+<div class="header">
+    <app-header></app-header>
 <app-navbar></app-navbar>
+</div>
 <div class="details1" *ngIf = 'displayCharacter'>
    
     <div class="data-list">
@@ -13,49 +15,81 @@
         </div>
     </div>
 </div>
-
+<div class="loading" *ngIf="dataArray == undefined">
+    <div class="ring">Loading
+        <span></span>
+      </div>
+</div>
 <div class="character" *ngIf = 'displayDetails'>
     <div class="image" (click)="back_to_character()">
-        <img src="https://wallpaperaccess.com/full/1920267.jpg" alt="yoda image" class="img">
+        <img [src]="newImage" alt="yoda image" class="img">
     </div>
     <div class="details">
         <h1 class="name">{{currentData.name | uppercase}}</h1>
         <div class="overflow-data">
             <div class="destination-data">
-                <p class="data-details">Diameter : </p>
+                <p class="data-details">Diameter  </p>
+                <p class="colon">:</p>
                 <p class="data-details-value">{{currentData.diameter}}</p>
             </div>
             <div class="destination-data">
-             <p class="data-details">Rotation period : </p>
+             <p class="data-details">Rotation period </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.rotation_period}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Orbital period : </p>
+             <p class="data-details">Orbital period </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.orbital_period}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Gravity : </p>
+             <p class="data-details">Gravity  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.gravity}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Population : </p>
+             <p class="data-details">Population  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.population}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Climate : </p>
+             <p class="data-details">Climate  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.climate}}</p>
          </div>
          <div class="destination-data">
-             <p class="data-details">Terrain : </p>
+             <p class="data-details">Terrain  </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.terrain}}</p>
          </div><div class="destination-data">
-             <p class="data-details">Surface_water : </p>
+             <p class="data-details">Surface water </p>
+             <p class="colon">:</p>
              <p class="data-details-value">{{currentData.surface_water}}</p>
          </div>
-         <div class="destination-data">
+         <!-- <div class="destination-data">
              <p class="data-details">Residents : </p>
              <p class="data-details-value">{{currentData.residents}}</p>
-         </div>
+         </div> -->
+
+         <div class="destination-data" *ngIf = "film_list.length > 0">
+            <p class="data-details">Films&nbsp;</p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let film of film_list">
+                    <li class="array_list">{{film}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="destination-data" *ngIf = "residents_list.length > 0">
+            <p class="data-details">Residents&nbsp; </p>
+            <p class="colon">:</p>
+            <div class="data-details-value">
+                <ul class="data-details-value1" *ngFor="let resident of residents_list">
+                    <li class="array_list">{{resident}}</li>
+                </ul>
+            </div>
+        </div>
          
         
         </div>
@@ -64,4 +98,6 @@
         
     </div>
     </div>
-<app-footer></app-footer>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

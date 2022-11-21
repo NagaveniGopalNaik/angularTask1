@@ -16,6 +16,7 @@
     font-family: 'Open Sans','Semibold';
     font-size: 1.6rem;
     line-height: 2.0rem;
+    font-weight: 600;
     color:#fff;
     
 }
@@ -24,11 +25,11 @@
     
 }
 
-@media(max-width:800px){
+@media(max-width:600px){
     .navbar p{
         /* margin-right: 5%; */
-        padding: 3% 2%;
-      
+        padding: 3% 4%;
+        margin-right: 5%;
     }
     
     .navbar{
@@ -46,5 +47,6 @@
     }
     .navbar p a{
         font-size: 1.5rem;
+        
     }
 }

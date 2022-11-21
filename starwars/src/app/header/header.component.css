@@ -20,7 +20,7 @@
     
     /* margin: 10%; */
     /* object-fit: cover; */
-    height: 90px;
+    height: 80px;
     width: 180px;
 }
 .img{
@@ -30,11 +30,15 @@
 @media(max-width:700px){
     .header{
         width: 100%;
-        border-bottom: none;
+        
+        margin-top: 5%;
     }
     .image{
         height: 60px;
-        width: 100px;
+        width: 120px;
+    }
+    .image{
+        margin:6% 0 4% 0;
     }
 }
 

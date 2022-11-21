@@ -21,3 +21,13 @@ body{
     background:url('./assets/images/background-image.png') no-repeat center center fixed;
     background-size: cover;
 }
+
+.loading{
+    width: 100%;
+    height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+
+}

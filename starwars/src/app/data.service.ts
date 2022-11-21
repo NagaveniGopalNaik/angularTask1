@@ -20,6 +20,10 @@ export class DataService {
     return this.http.get<HttpResponse<any>>(url);
   }
 
+  // getData(url:any):Observable<HttpResponse<any>>{
+  //   return this.http.get<HttpResponse<any>>(url);
+  // }
+
   // getUsers(){
   //   return this.http.get('https://swapi.dev/api/people/');
   // }
